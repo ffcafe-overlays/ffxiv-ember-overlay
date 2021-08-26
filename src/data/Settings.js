@@ -28,7 +28,7 @@ const default_settings = {
 		hide_top_bar          : false,
 		decimal_accuracy      : 2,
 		shorten_thousands     : false,
-		language              : "en",
+		language              : "cn",
 		auto_hide             : false,
 		auto_hide_delay       : 0
 	},
