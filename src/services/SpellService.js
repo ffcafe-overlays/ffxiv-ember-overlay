@@ -42,20 +42,36 @@ class SpellService {
 		return skill.recast;
 	}
 
+	getSkillCharges(id, level) {
+		let skill = SkillData.oGCDSkills[id];
+
+		if (level && skill.level_charges) {
+			for (let level_data of skill.level_charges) {
+				if (level >= level_data.level) {
+					return level_data.charges;
+				}
+			}
+		}
+
+		return skill.charges;
+	}
+
 	processSpells(used, lost, changed_default) {
 		let current_level = store.getState().internal.character_level;
 
 		for (let i in used) {
-			let date      = used[i].time;
-			let new_date  = new Date(date);
-			let recast    = 0;
-			let type      = used[i].type;
-			let defaulted = (new_date.getFullYear() === 1970);
+			let date        = used[i].time;
+			let new_date    = new Date(date);
+			let recast      = 0;
+			let max_charges = 0;
+			let type        = used[i].type;
+			let defaulted   = (new_date.getFullYear() === 1970);
 
 			if (!defaulted) {
 				switch (type) {
 					case "skill":
-						recast = this.getSkillRecast(used[i].id, (used[i].party) ? 0 : current_level);
+						recast      = this.getSkillRecast(used[i].id, (used[i].party) ? 0 : current_level);
+						max_charges = this.getSkillCharges(used[i].id, (used[i].party) ? 0 : current_level);
 
 						break;
 
@@ -71,6 +87,14 @@ class SpellService {
 				new_date.setSeconds(date.getSeconds() + recast);
 			}
 
+			if (max_charges) {
+				if (this.spells[i] && !this.spells[i].recharging && this.spells[i].charges && this.spells[i].charges < max_charges) {
+					this.spells[i].charges -= 1;
+
+					continue;
+				}
+			}
+
 			this.spells[i] = {
 				type          : used[i].type,
 				subtype       : used[i].subtype,
@@ -79,9 +103,13 @@ class SpellService {
 				time          : new_date,
 				name          : used[i].name,
 				recast        : recast,
+				charges       : (defaulted) ? used[i].max_charges : max_charges - 1,
+				max_charges   : (defaulted) ? used[i].max_charges : max_charges,
+				recharging    : false,
 				remaining     : recast,
 				cooldown      : Math.max(0, recast),
 				dot           : (used[i].subtype === "dot"),
+				debuff        : (used[i].subtype === "debuff"),
 				party         : used[i].party,
 				defaulted     : used[i].defaulted,
 				type_position : used[i].type_position,
@@ -147,19 +175,48 @@ class SpellService {
 
 			let tts_key = (this.spells[i].party) ? "party_use_tts" : "use_tts";
 
-			if (this.settings[tts_key] && this.spells[i].remaining > -10000000 && this.spells[i].remaining <= threshold) {
-				this.processTTS(i);
+			if (this.settings[tts_key] && this.spells[i].remaining > -10000000 && (this.spells[i].remaining <= threshold || this.spells[i].debuff)) {
+				this.processTTS(i, threshold);
+			}
+
+			if (this.spells[i].cooldown === 0 && this.spells[i].max_charges) {
+				if (this.spells[i].charges < this.spells[i].max_charges) {
+					this.spells[i].charges += 1;
+				}
+
+				if (this.spells[i].charges < this.spells[i].max_charges) {
+					this.spells[i].time       = now;
+					this.spells[i].remaining  = this.spells[i].recast;
+					this.spells[i].cooldown   = this.spells[i].remaining;
+					this.spells[i].recharging = true;
+
+					const tmp_used = {};
+
+					tmp_used[i] = this.spells[i];
+
+					this.processSpells(tmp_used);
+				}
 			}
 		}
 
 		return changed;
 	}
 
-	processTTS(key) {
+	processTTS(key, threshold) {
 		let tts_key = (this.spells[key].party) ? "party_use_tts" : "use_tts";
 
 		if (!this.settings[tts_key] || this.spells[key].tts) {
 			return;
+		}
+
+		if (this.spells[key].debuff) {
+			if (this.spells[key].party && this.spells[key].remaining <= threshold)  {
+				return;
+			}
+
+			if (!this.spells[key].party && this.spells[key].remaining > threshold)  {
+				return;
+			}
 		}
 
 		let log_key = `${this.spells[key].subtype}-${this.spells[key].id}`;
@@ -179,6 +236,10 @@ class SpellService {
 	}
 
 	processProcTTS(key) {
+		if (["dot", "debuff"].indexOf(this.spells[key].subtype) !== -1) {
+			return;
+		}
+
 		let tts_key = (this.spells[key].party) ? `party_tts_on_${this.spells[key].type}` : `tts_on_${this.spells[key].type}`;
 
 		if (!this.settings[tts_key]) {
@@ -215,9 +276,11 @@ class SpellService {
 			spells        : {},
 			effects       : {},
 			dots          : {},
+			debuffs       : {},
 			party_spells  : {},
 			party_effects : {},
-			party_dots    : {}
+			party_dots    : {},
+			party_debuffs : {}
 		};
 
 		for (let key in this.valid_names) {
@@ -255,6 +318,7 @@ class SpellService {
 
 			case "effect":
 			case "dot":
+			case "debuff":
 				data = (SkillData.Effects[id]) ? SkillData.Effects[id].jobs : false;
 
 				break;
@@ -280,7 +344,8 @@ class SpellService {
 		let data         = {
 			skill  : state.settings.spells_mode.spells,
 			effect : state.settings.spells_mode.effects,
-			dot    : state.settings.spells_mode.dots
+			dot    : state.settings.spells_mode.dots,
+			debuff : state.settings.spells_mode.debuffs
 		};
 		let data_names   = [];
 		let in_use_names = {};
@@ -336,8 +401,13 @@ class SpellService {
 					continue;
 				}
 
-				let main_type = (type === "dot") ? "effect" : type;
-				let key       = (main_type === "effect") ? `${main_type}-${english_name}` : `${main_type}-${id}`;
+				let main_type   = (["dot", "debuff"].indexOf(type) !== -1) ? "effect" : type;
+				let key         = (main_type === "effect") ? `${main_type}-${english_name}` : `${main_type}-${id}`;
+				let max_charges = 0;
+
+				if (main_type === "skill") {
+					max_charges = this.getSkillCharges(id, state.internal.character_level);
+				}
 
 				state.internal.spells.defaulted[name] = {
 					id       : id,
@@ -349,6 +419,8 @@ class SpellService {
 					subtype       : type,
 					id            : +id,
 					time          : new Date("1970-01-01"),
+					charges       : max_charges,
+					max_charges   : max_charges,
 					duration      : 0,
 					stacks        : 0,
 					log_type      : `you-${type}`,
@@ -375,6 +447,7 @@ class SpellService {
 			cooldown      : 0,
 			stacks        : 0,
 			dot           : SkillData.oGCDSkills[id].dot,
+			debuff        : SkillData.oGCDSkills[id].debuff,
 			party         : false,
 			defaulted     : false,
 			type_position : 0,

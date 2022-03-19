@@ -57,8 +57,10 @@ class About extends React.Component {
 					<h3>Credits</h3>
 					<p id="credits">
 						<ul>
-							<li><strong class="featured">Pimpy Shortstocking</strong> - Featured donor</li>
-							<li><strong class="featured">FortiusTTV</strong> - <SocialLink name="fortiusttv" type="twitch"/> - Featured donor</li>
+							<li><strong className="featured">Pimpy Shortstocking</strong> - Featured donor</li>
+							<li><strong className="featured">FortiusTTV</strong> - <SocialLink name="fortiusttv" type="twitch"/> - Featured donor</li>
+							<li><strong className="featured">loski3</strong> - Featured donor</li>
+							<li><strong className="featured">Vale Alania</strong> - Featured donor</li>
 						</ul>
 
 						<ul>
@@ -72,6 +74,7 @@ class About extends React.Component {
 							<li><strong>Okâme</strong> - French translation</li>
 							<li><strong>Tsunari96</strong> - Tsunari96#8491 (Discord) - Korean translation</li>
 							<li><strong>justscribe</strong> <SocialLink name="justscribe" type="twitch"/><SocialLink type="globe" url="https://ffxiv.gaming4eternity.online/"/> - Ukrainian translation</li>
+							<li><strong>Gisar</strong> - Russian translation</li>
 						</ul>
 
 						<ul>
@@ -79,6 +82,7 @@ class About extends React.Component {
 							<li><strong>Vulasuw</strong> - Donor</li>
 							<li><strong>Jessica</strong> - Donor</li>
 							<li><strong>mehdont</strong> - Donor</li>
+							<li><strong>Tomo</strong> - Donor</li>
 						</ul>
 					</p>
 				</Container>

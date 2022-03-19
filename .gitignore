@@ -31,3 +31,5 @@ package-lock.json
 
 # developer junkyard
 /misc
+/scripts/local/data
+/scripts/local/test/**/*.*

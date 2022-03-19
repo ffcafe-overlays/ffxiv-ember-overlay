@@ -2,14 +2,16 @@
 	"name": "ffxiv-ember-overlay",
 	"description": "React + Redux overlay for the OverlayPlugin and ACTWebSocket plugins for Advanced Combat Tracker for use with Final Fantasy XIV.",
 	"license": "GPL-3.0-only",
-	"version": "0.32.0-alpha",
+	"version": "1.0.2",
 	"keywords": [
+		"ffxiv",
+		"endwalker",
 		"ffxiv-overlays",
 		"ffxiv-act",
-		"ffxiv",
 		"overlayplugin",
 		"overlayplugin-skin",
-		"actwebsocket"
+		"actwebsocket",
+		"ember"
 	],
 	"private": true,
 	"dependencies": {
@@ -34,7 +36,7 @@
 		"react-scripts": "3.0.1",
 		"react-simple-code-editor": "^0.9.14",
 		"react-string-replace": "^0.4.4",
-		"react-tooltip": "^3.10.0",
+		"react-tooltip": "^4.2.7",
 		"redux": "^4.0.4",
 		"redux-promise-middleware": "^6.1.1",
 		"semantic-ui-react": "^0.87.3",

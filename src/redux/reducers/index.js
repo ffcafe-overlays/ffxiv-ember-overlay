@@ -52,7 +52,8 @@ const initial_state = {
 			allowed_types : {
 				skill  : {},
 				effect : {},
-				dot    : {}
+				dot    : {},
+				debuff : {}
 			}
 		},
 		viewing_history      : false,
@@ -248,6 +249,15 @@ function rootReducer(state, action) {
 								log_type : "you-dot",
 								party    : false,
 							},
+							"effect-Trick Attack" : {
+								type     : "effect",
+								subtype  : "debuff",
+								id       : 2014,
+								time     : new Date(),
+								duration : 15,
+								log_type : "you-debuff",
+								party    : false,
+							},
 							"skill-3571-party" : {
 								type     : "skill",
 								subtype  : "skill",
@@ -298,6 +308,15 @@ function rootReducer(state, action) {
 								time     : new Date(),
 								duration : 24,
 								log_type : "dps-dot",
+								party    : true,
+							},
+							"effect-Death's Design-party" : {
+								type     : "effect",
+								subtype  : "debuff",
+								id       : 2586,
+								time     : new Date(),
+								duration : 30,
+								log_type : "dps-debuff",
 								party    : true,
 							},
 							"skill-44-party" : {
@@ -423,6 +442,10 @@ function rootReducer(state, action) {
 						);
 
 						new_state.internal.character_level = state_data.char_level;
+					} else if (state_data === "wipe") {
+						new_state = clone(state);
+
+						updateSpells(new_state, true);
 					} else if (state_data !== false) {
 						new_state = clone(state);
 
@@ -523,6 +546,20 @@ function createNewState(state, full_key, action) {
 		ThemeService.toggleMinimal(minimal_theme);
 	}
 
+	if (["settings", "settings.interface.horizontal", "internal.viewing", "interal.mode"].indexOf(full_key) !== -1) {
+		let horizontal = (full_key === "settings")
+			? action.payload.interface.horizontal
+			: ((full_key === "settings.interface.horizontal")
+				? action.payload
+				: new_state.settings.interface.horizontal);
+
+		if (new_state.internal.mode !== "stats" || new_state.internal.viewing !== "tables") {
+			horizontal = false;
+		}
+
+		ThemeService.toggleHorizontal(horizontal);
+	}
+
 	if (full_key === "internal.mode") {
 		ThemeService.setMode(action.payload);
 	}
@@ -547,21 +584,32 @@ function createNewState(state, full_key, action) {
 		[
 			"settings",
 			"internal.character_job",
+			"internal.character_level",
 			"internal.current_zone_id",
 			"settings.spells_mode.spells",
 			"settings.spells_mode.effects",
 			"settings.spells_mode.dots",
+			"settings.spells_mode.debuffs",
 			"settings.spells_mode.party_spells",
 			"settings.spells_mode.party_effects",
 			"settings.spells_mode.party_dots",
+			"settings.spells_mode.party_debuffs",
 			"settings.spells_mode.always_skill",
 			"settings.spells_mode.always_effect",
 			"settings.spells_mode.always_dot",
+			"settings.spells_mode.always_debuff",
 		].indexOf(full_key) !== -1
 	) {
 		let reset = false;
 
-		if (full_key === "internal.current_zone_id") {
+		if (
+			(full_key === "internal.character_level" && state.internal.character_level !== new_state.internal.character_level) ||
+			(full_key === "internal.character_job" && state.internal.character_job !== new_state.internal.character_job)
+		) {
+			reset = true;
+		}
+
+		if (full_key === "internal.current_zone_id" && !reset) {
 			let old_is_pvp = (PVPZoneData.Zones.indexOf(state.internal.current_zone_id) !== -1);
 			let new_is_pvp = (PVPZoneData.Zones.indexOf(new_state.internal.current_zone_id) !== -1);
 
@@ -572,15 +620,7 @@ function createNewState(state, full_key, action) {
 			reset = true;
 		}
 
-		if (reset || (full_key === "internal.character_job" && state.internal.character_job !== new_state.internal.character_job)) {
-			SpellService.resetAllSpells();
-
-			new_state.internal.spells.defaulted = {};
-			new_state.internal.spells.in_use    = {};
-		}
-
-		SpellService.updateValidNames(new_state);
-		SpellService.injectDefaults(new_state);
+		updateSpells(new_state, reset);
 	}
 
 	if (full_key === "internal.character_id") {
@@ -588,6 +628,18 @@ function createNewState(state, full_key, action) {
 	}
 
 	return new_state;
+}
+
+function updateSpells(state, reset) {
+	if (reset) {
+		SpellService.resetAllSpells();
+
+		state.internal.spells.defaulted = {};
+		state.internal.spells.in_use    = {};
+	}
+
+	SpellService.updateValidNames(state);
+	SpellService.injectDefaults(state);
 }
 
 export default rootReducer;

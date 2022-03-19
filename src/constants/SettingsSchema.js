@@ -9,42 +9,47 @@ const language_options = [
 	{
 		key   : "cn",
 		value : "cn",
-		text  : "中文"
-	},
-	{
-		key   : "de",
-		value : "de",
-		text  : "Deutsch"
+		text  : "中文 (Chinese)"
 	},
 	{
 		key   : "fr",
 		value : "fr",
-		text  : "Français"
+		text  : "Français (French)"
+	},
+	{
+		key   : "de",
+		value : "de",
+		text  : "Deutsch (German)"
 	},
 	{
 		key   : "jp",
 		value : "jp",
-		text  : "日本語"
+		text  : "日本語 (Japanese)"
 	},
 	{
 		key   : "kr",
 		value : "kr",
-		text  : "한국어"
+		text  : "한국어 (Korean)"
 	},
 	{
 		key   : "pt",
 		value : "pt",
-		text  : "Português"
+		text  : "Português (Portuguese)"
+	},
+	{
+		key   : "ru",
+		value : "ru",
+		text  : "Русский язык (Russian)"
 	},
 	{
 		key   : "es",
 		value : "es",
-		text  : "Español"
+		text  : "Español (Spanish)"
 	},
 	{
 		key   : "ua",
 		value : "ua",
-		text  : "Українська"
+		text  : "Українська (Ukrainian)"
 	}
 ];
 const theme_options = [
@@ -130,7 +135,14 @@ const SettingsSchema = {
 								range   : "min",
 								minimum : 0,
 								maximum : 600
-							}
+							},
+							{
+								key_path      : "interface.display_job_names",
+								type          : "checkbox",
+								exclude_modes : [
+									"spells"
+								]
+							},
 						]
 					},
 					{
@@ -176,6 +188,13 @@ const SettingsSchema = {
 								maximum  : 500
 							},
 							{
+								key_path : "interface.text_scale",
+								type     : "slider",
+								range    : "min",
+								minimum  : 1,
+								maximum  : 500
+							},
+							{
 								key_path : "interface.theme",
 								type     : "select",
 								options  : theme_options
@@ -186,6 +205,26 @@ const SettingsSchema = {
 								exclude_modes : [
 									"spells"
 								]
+							}
+						]
+					},
+					{
+						exclude_modes : [
+							"spells"
+						],
+						settings : [
+							{
+								key_path : "interface.horizontal",
+								type     : "checkbox"
+							},
+							{
+								key_path : "interface.horizontal_shrink",
+								type     : "checkbox"
+							},
+							{
+								key_path : "interface.horizontal_alignment",
+								type     : "select",
+								options  : () => LocalizationService.getAlignmentOptions()
 							}
 						]
 					}
@@ -547,6 +586,33 @@ const SettingsSchema = {
 					{
 						settings : [
 							{
+								key_path : "spells_mode.debuffs",
+								locale   : "spells_mode.debuffs",
+								type     : "select",
+								multiple : true,
+								search   : true,
+								options  : () => LocalizationService.getEffectOptions("debuff")
+							},
+							{
+								key_path : "spells_mode.reverse_debuff",
+								locale   : "spells_mode.reverse_debuff",
+								type     : "checkbox"
+							},
+							{
+								key_path : "spells_mode.always_debuff",
+								locale   : "spells_mode.always_skill",
+								type     : "checkbox"
+							},
+							{
+								key_path : "spells_mode.always_debuff_static",
+								locale   : "spells_mode.always_skill_static",
+								type     : "checkbox"
+							}
+						]
+					},
+					{
+						settings : [
+							{
 								key_path : "spells_mode.show_icon",
 								type     : "checkbox"
 							},
@@ -658,6 +724,23 @@ const SettingsSchema = {
 					{
 						settings : [
 							{
+								key_path : "spells_mode.party_debuffs",
+								locale   : "spells_mode.debuffs",
+								type     : "select",
+								multiple : true,
+								search   : true,
+								options  : () => LocalizationService.getEffectOptions("debuff", true)
+							},
+							{
+								key_path : "spells_mode.party_reverse_debuff",
+								locale   : "spells_mode.reverse_debuff",
+								type     : "checkbox"
+							}
+						]
+					},
+					{
+						settings : [
+							{
 								key_path : "spells_mode.party_use_tts",
 								locale   : "spells_mode.use_tts",
 								type     : "checkbox"
@@ -740,6 +823,31 @@ const SettingsSchema = {
 							},
 							{
 								key_path : "spells_mode.designer.dot.indicator",
+								locale   : "spells_mode.designer.skill.indicator",
+								type     : "select",
+								options  : () => LocalizationService.getSpellDesignerIndicatorOptions()
+							}
+						]
+					},
+					{
+						settings : [
+							{
+								key_path : "spells_mode.designer.debuff.warning",
+								locale   : "spells_mode.designer.skill.warning",
+								type     : "checkbox"
+							},
+							{
+								key_path : "spells_mode.designer.debuff.border",
+								locale   : "spells_mode.designer.effect.border",
+								type     : "checkbox"
+							},
+							{
+								key_path : "spells_mode.designer.debuff.cooldown_bottom_left",
+								locale   : "spells_mode.designer.skill.cooldown_bottom_left",
+								type     : "checkbox"
+							},
+							{
+								key_path : "spells_mode.designer.debuff.indicator",
 								locale   : "spells_mode.designer.skill.indicator",
 								type     : "select",
 								options  : () => LocalizationService.getSpellDesignerIndicatorOptions()

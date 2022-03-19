@@ -18,11 +18,15 @@ const default_settings = {
 		player_name           : "YOU",
 		opacity               : 100,
 		zoom                  : 100,
+		text_scale            : 100,
 		top_right_rank        : false,
 		blur_job_icons        : false,
 		collapse_down         : false,
 		theme                 : "ffxiv-dark",
 		minimal_theme         : false,
+		horizontal            : false,
+		horizontal_shrink     : false,
+		horizontal_alignment  : "left",
 		footer_when_collapsed : false,
 		footer_dps            : false,
 		hide_top_bar          : false,
@@ -30,7 +34,8 @@ const default_settings = {
 		shorten_thousands     : false,
 		language              : "cn",
 		auto_hide             : false,
-		auto_hide_delay       : 0
+		auto_hide_delay       : 0,
+		display_job_names     : false
 	},
 	custom : {
 		css          : "",
@@ -39,7 +44,13 @@ const default_settings = {
 	tts : {
 		language : "en",
 		rules    : {
-			critical  : {
+			critical_hp : {
+				tank : 0,
+				heal : 0,
+				dps  : 0,
+				all  : 0
+			},
+			critical_mp : {
 				tank : 0,
 				heal : 0,
 				dps  : 0,
@@ -163,18 +174,23 @@ const default_settings = {
 		spells               : [],
 		effects              : [],
 		dots                 : [],
+		debuffs              : [],
 		party_spells         : [],
 		party_effects        : [],
 		party_dots           : [],
+		party_debuffs        : [],
 		reverse_skill        : false,
 		reverse_effect       : false,
 		reverse_dot          : false,
+		reverse_debuff       : false,
 		party_reverse_skill  : false,
 		party_reverse_effect : false,
 		party_reverse_dot    : false,
+		party_reverse_debuff : false,
 		always_skill         : false,
 		always_effect        : false,
 		always_dot           : false,
+		always_debuff        : false,
 		warning_threshold    : 0,
 		spells_per_row       : 1,
 		show_icon            : true,
@@ -201,6 +217,12 @@ const default_settings = {
 				cooldown_bottom_left : false
 			},
 			dot : {
+				border               : false,
+				warning              : true,
+				indicator            : "ticking",
+				cooldown_bottom_left : false
+			},
+			debuff : {
 				border               : false,
 				warning              : true,
 				indicator            : "ticking",

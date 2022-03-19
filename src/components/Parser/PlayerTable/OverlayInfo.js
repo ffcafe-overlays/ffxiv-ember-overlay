@@ -1,6 +1,7 @@
 import React from "react";
 
 import DonationService from "../../../services/DonationService";
+import LocalizationService from "../../../services/LocalizationService";
 import VersionService from "../../../services/VersionService";
 
 class OverlayInfo extends React.Component {
@@ -83,7 +84,32 @@ class OverlayInfo extends React.Component {
 	}
 
 	getFundingText() {
-		return ""
+		const type = (["hibiya", "actws"].indexOf(this.state.chrome) === -1 || window.obsstudio) ? "new" : "old";
+
+		switch (type) {
+			case "old":
+				return (
+					<React.Fragment>
+						<span onClick={this.openFundingLink.bind(this, "cash")} ref="cash"><img src="img/buttons/funding/cash.svg" alt="Donate on Cash App" height="20"/></span>
+						<span onClick={this.openFundingLink.bind(this, "paypal")} ref="paypal"><img src="img/buttons/funding/paypal-resized.png" alt="Donate at PayPal" height="20"/></span>
+						<span onClick={this.openFundingLink.bind(this, "paypay")} ref="paypay"><img src="img/buttons/funding/paypay.svg" alt="ペイペイで施してください" height="20"/></span>
+						<span onClick={this.openFundingLink.bind(this, "kofi")} ref="kofi"><img src="img/buttons/funding/kofi.svg" alt="Donate at Ko-fi" height="20"/></span>
+						<span onClick={this.openFundingLink.bind(this, "patreon")} ref="patreon"><img src="img/buttons/funding/patreon.png" alt="Donate at Patreon" height="20"/></span>
+						<span onClick={this.openFundingLink.bind(this, "streamlabs")} ref="streamlabs"><img src="img/buttons/funding/streamlabs.svg" alt="Donate at Streamlabs" height="20"/></span>
+					</React.Fragment>
+				);
+
+			case "new":
+			default:
+				const lang = (LocalizationService.getLanguage() === "jp") ? "jp" : "en";
+
+				return (
+					<React.Fragment>
+						<span onClick={this.openAdLink.bind(this)} ref="ad"><img className="ad-cta" src={"img/buttons/funding/chesshq-" + lang + ".png"} alt="Support Ember by clicking here to view an ad"/></span>
+						<p>Support my other projects!</p>
+					</React.Fragment>
+				);
+		}
 	}
 
 	openFundingLink(rel) {
@@ -124,10 +150,9 @@ class OverlayInfo extends React.Component {
 	}
 
 	openAdLink() {
-		let direct = window.ad_urls;
-		let url    = direct[Math.floor(Math.random() * direct.length)];
+		let url = "https://chesshq.com/";
 
-		window.open(url, "", "width=600,height=530,location=no,menubar=no");
+		window.open(url, "", "width=1200,height=830,location=no,menubar=no");
 	}
 }
 

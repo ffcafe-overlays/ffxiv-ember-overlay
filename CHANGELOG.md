@@ -1,25 +1,170 @@
 # Changelog
 
-## 0.32.0-alpha
+## 1.0.2
 
-**Released: [in development]**
+**Released: 2022-02-18**
 
 ### Bug Fixes
-- ?
+- Resolved typo in job names
 
 ### Features
-- Add setting to display job name instead of player name
-- Add TTS alert for low MP
-- Add debuffs
+- N/A
 
 ### UI Changes
-- ?
+- N/A
 
 ### Code Changes
-- ?
+- N/A
 
 ### Miscellaneous
-- ?
+- N/A
+
+## 1.0.0
+
+**Released: 2022-01-17**
+
+### Bug Fixes
+- Resolved issue where spell timers do not reset on party wipe
+
+### Features
+- Added horizontal overlay
+    - Added setting at Interface > Horizontal > "Use Horizontal Overlay" to enable overlay
+    - Added setting at Interface > Horizontal > "Shrink Width" to only use as much horizontal space as necessary to display game data
+    - Added setting at Interface > Horizontal > "Alignment" to choose if the overlay should be left, right, or center aligned
+        - Choosing "Right" also makes the overlay display from right to left
+    - Metrics displayed in the overlay are controlled by the column settings at Player Table
+    - Metrics displayed in the player tooltips are controlled by the metric settings at Player Detail
+- Added setting at Interface > Theme > "Text Scale" to adjust the text zoom without affecting most of the UI elements
+
+### UI Changes
+- N/A
+
+### Code Changes
+- Updated most pixel-based font sizes to `rem` sizes
+- Changed performance bars from using `background-size` to using `width` to determine the size of the bar
+
+### Miscellaneous
+- Updated donor credits
+
+## 0.33.1-alpha
+
+**Released: 2022-01-04**
+
+### Bug Fixes
+- Fixed cooldown calculation for spells with charges
+
+### Features
+- N/A
+
+### UI Changes
+- Made spell timer glow more noticeable
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- Updated donor credits
+- Updated effect and instance data for FFXIV patch 6.05
+
+## 0.33.0-alpha
+
+**Released: 2021-12-06**
+
+### Bug Fixes
+- N/A
+
+### Features
+- Added ability to track debuffs
+- Added Endwalker actions (spells), statuses (effects), and zones
+
+### UI Changes
+- Updated action and effect icons
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 0.32.3-alpha
+
+**Released: 2021-12-04**
+
+### Bug Fixes
+- N/A
+
+### Features
+- N/A
+
+### UI Changes
+- Added Russian translations
+- Updated French translations
+- Updated Reaper and Sage job icons
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 0.32.2-alpha
+
+**Released: 2021-12-02**
+
+### Bug Fixes
+- N/A
+
+### Features
+- N/A
+
+### UI Changes
+- Updated Chinese, Portuguese, German, Korean, and Ukrainian translations
+
+### Code Changes
+- Added Reaper and Sage job icons
+
+### Miscellaneous
+- N/A
+
+## 0.32.1-alpha
+
+**Released: 2021-11-15**
+
+### Bug Fixes
+- Fixed Lightspeed cooldown for characters with Hyper Lightspeed
+- Fixed issue with overlay crashing in certain scenarios when job name display is enabled
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 0.32.0-alpha
+
+**Released: 2021-10-08**
+
+### Bug Fixes
+- N/A
+
+### Features
+- Added setting at Settings > Interface > "Use Job Names Instead of Player Names" to display job name instead of player name
+- Added TTS alert for low mana
+
+### UI Changes
+- N/A
+
+### Code Changes
+- Added debuff data
+
+### Miscellaneous
+- N/A
 
 ## 0.31.0-alpha
 

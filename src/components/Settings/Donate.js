@@ -14,10 +14,10 @@ class Donate extends React.Component {
 					</p>
 
 					<h2>Featured Donors</h2>
-					<p>Pimpy Shortstocking, FortiusTTV <SocialLink name="fortiusttv" type="twitch"/></p>
+					<p>Pimpy Shortstocking, FortiusTTV <SocialLink name="fortiusttv" type="twitch"/>, loski3, Vale Alania</p>
 
 					<h2>Donors</h2>
-					<p>Amneamnius, Vulasuw, Jessica, mehdont</p>
+					<p>Amneamnius, Vulasuw, Jessica, mehdont, tomo</p>
 				</Container>
 			</React.Fragment>
 		);
