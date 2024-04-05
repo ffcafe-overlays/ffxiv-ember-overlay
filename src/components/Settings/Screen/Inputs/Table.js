@@ -1,6 +1,6 @@
 import React from "react";
 import clone from "lodash.clonedeep";
-import $ from "jquery";
+import jquery from "jquery";
 
 import LocalizationService from "../../../../services/LocalizationService";
 
@@ -23,8 +23,8 @@ class Table extends React.Component {
 	}
 
 	handleSelectChange(e, data) {
-		const $row    = $(document).find("#insert-row");
-		const $target = (e.currentTarget.tagName === "DIV") ? $(e.currentTarget) : $row.find(".active.selected.item");
+		const $row    = jquery(document).find("#insert-row");
+		const $target = (e.currentTarget.tagName === "DIV") ? jquery(e.currentTarget) : $row.find(".active.selected.item");
 		const $select = $target.closest(".ui.dropdown");
 		const type    = data.value.split(".")[0];
 
@@ -50,7 +50,7 @@ class Table extends React.Component {
 	}
 
 	handleInputChange(e) {
-		const $this = $(e.currentTarget);
+		const $this = jquery(e.currentTarget);
 		const $row  = $this.closest("tr[data-key]");
 
 		if (!$row.length) {
@@ -99,7 +99,7 @@ class Table extends React.Component {
 	}
 
 	getDeleteKey(e) {
-		return $(e.currentTarget).closest("tr").attr("data-select-value");
+		return jquery(e.currentTarget).closest("tr").attr("data-select-value");
 	}
 
 	syncData() {

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Container, Form, TextArea, Button } from "semantic-ui-react";
-import $ from "jquery";
+import jquery from "jquery";
 
 import LocalizationService from "../../services/LocalizationService";
 
@@ -26,7 +26,7 @@ class Export extends React.Component {
 	}
 
 	handleCopy(e) {
-		const $button = $(e.target);
+		const $button = jquery(e.target);
 		const text    = $button.closest(".field").find("textarea")[0];
 
 		text.focus();

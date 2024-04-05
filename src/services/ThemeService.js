@@ -1,4 +1,4 @@
-import $ from "jquery";
+import jquery from "jquery";
 
 class ThemeService {
 	mode_classes = [
@@ -7,20 +7,20 @@ class ThemeService {
 	];
 
 	setTheme(theme) {
-		$("body").attr("theme", theme);
+		jquery("body").attr("theme", theme);
 	}
 
 	toggleHorizontal(active) {
-		$("body").toggleClass("horizontal", active);
+		jquery("body").toggleClass("horizontal", active);
 	}
 
 	toggleMinimal(active) {
-		$("body").toggleClass("minimal", active);
+		jquery("body").toggleClass("minimal", active);
 	}
 
 	setMode(new_mode) {
 		for (const mode of this.mode_classes) {
-			$("body").toggleClass(`mode-${mode}`, (mode === new_mode));
+			jquery("body").toggleClass(`mode-${mode}`, (mode === new_mode));
 		}
 	}
 }

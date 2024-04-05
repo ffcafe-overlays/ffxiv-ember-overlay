@@ -1,5 +1,5 @@
 import store from "../redux/store";
-import $ from "jquery";
+import jquery from "jquery";
 
 class DiscordService {
 	postToWebhook() {
@@ -75,7 +75,7 @@ class DiscordService {
 			(Number(state.internal.game.Encounter.encdps)).toLocaleString(undefined, { minimumFractionDigits : 0, maximumFractionDigits : 0 }),
 		);
 
-		$.ajax({
+		jquery.ajax({
 			contentType : "application/json",
 			data        : JSON.stringify(data),
 			method      : "POST",

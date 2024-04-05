@@ -1,13 +1,13 @@
 import React from "react";
-import $ from "jquery";
+import jquery from "jquery";
 
 class Placeholder extends React.Component {
 	togglePlaceholders() {
-		const $container = $(document).find("#container");
+		const $container = jquery(document).find("#container");
 		const active     = $container.hasClass("hidden");
 
-		$(document).find(".placeholder").each(function() {
-			$(this).toggleClass("hidden", active);
+		jquery(document).find(".placeholder").each(function() {
+			jquery(this).toggleClass("hidden", active);
 		});
 
 		$container.toggleClass("hidden", !active);

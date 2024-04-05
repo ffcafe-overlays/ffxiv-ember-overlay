@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { updateSetting } from "../../redux/actions/index";
 import { Container, Form, Button } from "semantic-ui-react";
-import $ from "jquery";
+import jquery from "jquery";
 
 import LocalizationService from "../../services/LocalizationService";
 
@@ -51,7 +51,7 @@ class Screen extends React.Component {
 					const new_value = [];
 
 					Array.prototype.forEach.call(document.getElementById(key_path).getElementsByTagName("a"), el => {
-						new_value.push($(el).attr("value"));
+						new_value.push(jquery(el).attr("value"));
 					});
 
 					this.props.new_settings[key_path] = new_value;

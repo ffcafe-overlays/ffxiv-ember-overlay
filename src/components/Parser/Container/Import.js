@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Form, Input, Button } from "semantic-ui-react";
-import $ from "jquery";
+import jquery from "jquery";
 
 import LocalizationService from "../../../services/LocalizationService";
 
@@ -47,11 +47,11 @@ class Import extends React.Component {
 	}
 
 	getButtons() {
-		return $(document).find("button.import");
+		return jquery(document).find("button.import");
 	}
 
 	getButton(e) {
-		return $(e.target);
+		return jquery(e.target);
 	}
 
 	getInput(e, button) {

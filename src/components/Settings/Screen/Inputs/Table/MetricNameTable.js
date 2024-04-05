@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Select, Input } from "semantic-ui-react";
-import $ from "jquery";
+import jquery from "jquery";
 
 import LocalizationService from "../../../../../services/LocalizationService";
 import Table from "../Table";
@@ -86,7 +86,7 @@ class MetricNameTable extends Table {
 	}
 
 	handleAdd(e) {
-		const $target = $(e.currentTarget);
+		const $target = jquery(e.currentTarget);
 		const $row    = $target.closest("tr");
 		const $select = $row.find(".ui.dropdown");
 		const options = {
@@ -111,7 +111,7 @@ class MetricNameTable extends Table {
 	}
 
 	getDeleteKey(e) {
-		return $(e.currentTarget).closest("tr").attr("data-key");
+		return jquery(e.currentTarget).closest("tr").attr("data-key");
 	}
 }
 

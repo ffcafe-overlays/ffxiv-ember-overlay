@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Select } from "semantic-ui-react";
 import clone from "lodash.clonedeep";
-import $ from "jquery";
+import jquery from "jquery";
 import Sortable from "sortablejs/modular/sortable.core.esm.js";
 
 import LocalizationService from "../../../../../services/LocalizationService";
@@ -211,7 +211,7 @@ class SpellsUITable extends Table {
 	}
 
 	getDeleteKey(e) {
-		return $(e.currentTarget || e.target).closest("tr").attr("data-key");
+		return jquery(e.currentTarget || e.target).closest("tr").attr("data-key");
 	}
 
 	processSortable() {
@@ -235,7 +235,7 @@ class SpellsUITable extends Table {
 						const uuid  = evt.target.getAttribute("data-uuid");
 
 						Array.prototype.forEach.call(evt.target.getElementsByTagName("a"), el => {
-							value.push($(el).attr("value"));
+							value.push(jquery(el).attr("value"));
 						});
 
 						this.type_sort_data[uuid] = {};

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import $ from "jquery";
+import jquery from "jquery";
 import { changeViewing, changeDetailPlayer, updateState } from "../../redux/actions/index";
 
 import GameDataProcessor from "../../processors/GameDataProcessor";
@@ -242,11 +242,11 @@ class PlayerTable extends React.Component {
 	}
 
 	updateBackgrounds() {
-		const $table  = $(this.refs.player_table);
+		const $table  = jquery(this.refs.player_table);
 		const is_grid = $table.hasClass("grid");
 
 		$table.find(".row").each(function() {
-			const $row = $(this);
+			const $row = jquery(this);
 			const $bar = $row.find(".percent-bar");
 
 			if (!$bar.length) {
