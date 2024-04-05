@@ -9,37 +9,10 @@ import SocialLink from "./About/SocialLink";
 const reactStringReplace = require("react-string-replace");
 
 class About extends React.Component {
-	UNSAFE_componentWillMount() {
-		this.setState({
-			changelog : <p>Loading changelog...</p>,
-		});
-
-		VersionService.getChangelogForUser()
-			.then(data => {
-				const changelog = VersionService.formatChangelog(data);
-
-				this.setState({
-					changelog,
-				});
-			})
-			.catch(e => {
-				console.error(JSON.stringify(e));
-			});
-	}
-
 	render() {
-		const github_url    = process.env.REACT_APP_GITHUB_URL;
-		const author_url    = process.env.REACT_APP_AUTHOR_URL;
-		const changelog_url = process.env.REACT_APP_CHANGELOG_URL;
-
-		const state                = this.state || {};
-		const author_link          = <a href={author_url} target='_blank' rel='noopener noreferrer'>GoldenChrysus</a>;
-		const changelog_cta        = LocalizationService.getMisc("changelog_cta");
-		const changelog_link_match = changelog_cta.match(/{{changelog_link_open}}.+{{changelog_link_close}}/g)[0];
-		const changelog_link_text  = changelog_link_match
-			.replace("{{changelog_link_open}}", "")
-			.replace("{{changelog_link_close}}", "");
-		const changelog_link       = <a href={changelog_url} target='_blank' rel='noopener noreferrer'>{changelog_link_text}</a>;
+		const github_url  = process.env.REACT_APP_GITHUB_URL;
+		const author_url  = process.env.REACT_APP_AUTHOR_URL;
+		const author_link = <a href={author_url} target='_blank' rel='noopener noreferrer'>GoldenChrysus</a>;
 
 		return (
 			<React.Fragment>
@@ -84,14 +57,6 @@ class About extends React.Component {
 							<li><strong>Tomo</strong> - Donor</li>
 						</ul>
 					</p>
-				</Container>
-				<Container fluid className='section-container'>
-					<h2>{LocalizationService.getMisc("changelog")}</h2>
-					<p>{LocalizationService.getMisc("changelog_info")}</p>
-					<p>{reactStringReplace(changelog_cta, changelog_link_match, () => changelog_link)}</p>
-
-					<h3>{LocalizationService.getMisc("latest_changes")}</h3>
-					{state.changelog}
 				</Container>
 			</React.Fragment>
 		);

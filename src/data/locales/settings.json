@@ -2130,18 +2130,6 @@
 			"ua" : "Розроблено {{developer}}.",
 			"ru" : "Разработан {{developer}}."
 		},
-		"changelog"          : {
-			"en" : "Changelog",
-			"pt" : "Registro de Alterações",
-			"cn" : "更新日志",
-			"jp" : "変更履歴",
-			"de" : "Änderungsprotokoll",
-			"es" : "Historial de Cambios",
-			"fr" : "Historique des Données",
-			"kr" : "패치 내역",
-			"ua" : "Список змін",
-			"ru" : "Журнал изменений"
-		},
 		"discord_cta"        : {
 			"en" : "Join the Discord to receive live updates from the developer, submit feature suggestions, get help with a bug or issue, or discuss FFXIV in general with other users.",
 			"pt" : "Junte-se ao servidor do Discord para receber atualizações ao vivo pelo desenvolvedor, enviar sugestões, pedir ajuda com bugs ou problemas, ou discutir FFXIV no geral com outros jogadores.",

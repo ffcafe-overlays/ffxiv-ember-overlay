@@ -1,7 +1,6 @@
 import React from "react";
 
 import DonationService from "../../../services/DonationService";
-import VersionService from "../../../services/VersionService";
 
 class OverlayInfo extends React.Component {
 	UNSAFE_componentWillMount() {
@@ -25,21 +24,8 @@ class OverlayInfo extends React.Component {
 		}
 
 		this.setState({
-			changelog : <p>Loading changelog...</p>,
-			chrome    : browser_version,
+			chrome : browser_version,
 		});
-
-		VersionService.getLatestChangelogs(5)
-			.then(data => {
-				const changelog = VersionService.formatChangelog(data);
-
-				this.setState({
-					changelog,
-				});
-			})
-			.catch(e => {
-				console.error(JSON.stringify(e));
-			});
 	}
 
 	render() {
@@ -51,9 +37,6 @@ class OverlayInfo extends React.Component {
 				<div id='funding'>
 					{this.getFundingText()}
 				</div>
-
-				<h3>Latest Changes</h3>
-				{this.state.changelog}
 			</div>
 		);
 	}
