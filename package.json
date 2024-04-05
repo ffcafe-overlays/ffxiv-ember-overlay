@@ -19,13 +19,12 @@
 		"compare-versions": "^3.5.0",
 		"env-cmd": "^9.0.3",
 		"jquery": "^3.4.1",
-		"jquery-ui": "^1.12.1",
 		"localforage": "^1.7.3",
 		"lodash.clonedeep": "^4.5.0",
 		"lodash.isequal": "^4.5.0",
 		"lodash.mergewith": "^4.6.2",
 		"lodash.shuffle": "^4.2.0",
-    "rc-slider": "^10.5.0",
+		"rc-slider": "^10.5.0",
 		"react": "^16.8.6",
 		"react-chartjs-2": "^2.7.6",
 		"react-contextmenu": "^2.11.0",
@@ -39,7 +38,7 @@
 		"react-tooltip": "^4.2.7",
 		"redux": "^4.0.4",
 		"redux-promise-middleware": "^6.1.1",
-		"semantic-ui-react": "^0.87.3",
+		"semantic-ui-react": "^2.1.5",
 		"sortablejs": "^1.10.2"
 	},
 	"scripts": {
@@ -80,7 +79,6 @@
 		"eslint-plugin-align-assignments": "^1.1.2",
 		"eslint-plugin-react": "^7.31.10",
 		"husky": "^8.0.1",
-		"os-browserify": "^0.3.0",
 		"pre-commit": "^1.2.2",
 		"prop-types": "^15.8.1",
 		"semantic-ui-less": "^2.5.0"
