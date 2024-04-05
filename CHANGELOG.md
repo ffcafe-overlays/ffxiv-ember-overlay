@@ -1,5 +1,271 @@
 # Changelog
 
+## 1.5.3
+
+**Released: 2023-09-13**
+
+### Bug Fixes
+- Fixed broken Discord URL
+
+### Features
+- Updated max spell warning threshold to 30 seconds
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.5.2
+
+**Released: 2023-08-18**
+
+### Bug Fixes
+- N/A
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- Updated game data through FFXIV patch 6.48
+
+## 1.5.1
+
+**Released: 2023-06-25**
+
+### Bug Fixes
+- Resolved invalid state fetch error
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.5.0
+
+**Released: 2023-06-03**
+
+### Bug Fixes
+- N/A
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- Updated game data through FFXIV patch 6.4
+
+## 1.4.1
+
+**Released: 2023-03-07**
+
+### Bug Fixes
+- Resolved issue where player charts would disappear when an encounter ended
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.4.0
+
+**Released: 2023-01-16**
+
+### Bug Fixes
+- N/A
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- Updated game data through FFXIV patch 6.3
+
+## 1.3.0
+
+**Released: 2022-12-18**
+
+### Bug Fixes
+- N/A
+
+### Features
+- Added "Job" as a selectable column/metric at Settings > Player Table and Settings > Player Detail
+
+### UI Changes
+- N/A
+
+### Code Changes
+- All code in `src/` is now linted with ESLint
+
+### Miscellaneous
+- N/A
+
+## 1.2.1
+
+**Released: 2022-09-04**
+
+### Bug Fixes
+- Resolved issue with some oGCD actions causing other actions to start their cooldown timers (via action indirections)
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.2.0
+
+**Released: 2022-08-26**
+
+### Bug Fixes
+- N/A
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- Updated game data through FFXIV patch 6.2
+
+## 1.1.1
+
+**Released: 2022-08-13**
+
+### Bug Fixes
+- Resolved issue with inactive encounter replacing sample game data due to ACT plugin constantly sending inactive encounter data
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.1.0
+
+**Released: 2022-05-31**
+
+### Bug Fixes
+- N/A
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- Updated game data through FFXIV patch 6.11a
+
+## 1.0.5
+
+**Released: 2022-05-16**
+
+### Bug Fixes
+- Resolved issue where performance bars were overlapping in raid view
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.0.4
+
+**Released: 2022-04-28**
+
+### Bug Fixes
+- Resolved issue where overlay does not auto hide due to ACT plugin constantly sending inactive encounter data
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.0.3
+
+**Released: 2022-03-22**
+
+### Bug Fixes
+- Resolved misaligned rank in overlay header
+
+### Features
+- N/A
+
+### UI Changes
+- Updated Chinese translations
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
 ## 1.0.2
 
 **Released: 2022-02-18**

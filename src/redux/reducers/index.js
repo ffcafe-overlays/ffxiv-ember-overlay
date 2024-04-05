@@ -18,9 +18,9 @@ import PVPZoneData from "../../constants/PVPZoneData";
 
 const querystring = require("querystring");
 
-let params                = new querystring.parse(String(window.location.search).substring(1));
-let overlayplugin_service = new OverlayPluginService();
-let uuid                  = (window.OverlayPluginApi) ? window.OverlayPluginApi.overlayUuid : "browser";
+const params                = new querystring.parse(String(window.location.search).substring(1));
+const overlayplugin_service = new OverlayPluginService();
+const uuid                  = (window.OverlayPluginApi) ? window.OverlayPluginApi.overlayUuid : "browser";
 
 if (typeof params.mode === "object") {
 	params.mode = params.mode[0];
@@ -53,8 +53,8 @@ const initial_state = {
 				skill  : {},
 				effect : {},
 				dot    : {},
-				debuff : {}
-			}
+				debuff : {},
+			},
 		},
 		viewing_history      : false,
 		overlayplugin        : overlayplugin_service.isOverlayPlugin(),
@@ -63,7 +63,7 @@ const initial_state = {
 		mode                 : params.mode || localStorage.getItem(`${uuid}-mode`) || "stats",
 		ui_builder           : false,
 	},
-	settings : {}
+	settings : {},
 };
 
 function rootReducer(state, action) {
@@ -87,7 +87,7 @@ function rootReducer(state, action) {
 				new_state   = createNewState(state, full_key, action);
 				set_setting = true;
 			} else {
-				for (let i in action.key) {
+				for (const i in action.key) {
 					set_setting = true;
 					full_key    = `settings.${action.key[i]}`;
 					new_state   = createNewState(
@@ -96,8 +96,8 @@ function rootReducer(state, action) {
 						{
 							type    : action.type,
 							key     : full_key,
-							payload : action.payload[i]
-						}
+							payload : action.payload[i],
+						},
 					);
 
 					new_state.settings_data.setSetting(action.key[i], action.payload[i], true);
@@ -117,7 +117,7 @@ function rootReducer(state, action) {
 		case "setSettings":
 			new_state = clone(state);
 
-			for (let setting of action.data) {
+			for (const setting of action.data) {
 				new_state.settings_data.setSetting(setting.key, setting.payload, true);
 
 				full_key  = `settings.${setting.key}`;
@@ -135,11 +135,23 @@ function rootReducer(state, action) {
 			break;
 
 		case "parseGameData":
-			let new_history = (
+			// When the encounter is inactive and the new data is also inactive, do nothing
+			if (
+				state.internal.game &&
+				state.internal.game.isActive === action.payload.isActive &&
+				(action.payload.isActive === false || action.payload.isActive === "false")
+			) {
+				break;
+			}
+
+			const new_history = (
 				!action.payload.Encounter ||
 				!state.internal.encounter_history.length ||
 				!state.internal.encounter_history[0].game.Encounter ||
-				+action.payload.Encounter.DURATION < +state.internal.encounter_history[0].game.Encounter.DURATION
+				(
+					Number(action.payload.Encounter.DURATION) < Number(state.internal.encounter_history[0].game.Encounter.DURATION) &&
+					Number(action.payload.Encounter.DURATION) === 0
+				)
 			);
 
 			if (state.internal.mode === "stats") {
@@ -158,7 +170,7 @@ function rootReducer(state, action) {
 					game         : {},
 					aggro        : [],
 					enmity       : {},
-					data_history : {}
+					data_history : {},
 				});
 			}
 
@@ -180,7 +192,7 @@ function rootReducer(state, action) {
 			switch (state.internal.mode) {
 				case "stats":
 					tmp_action = {
-						type : "loadSampleData"
+						type : "loadSampleData",
 					};
 
 					state.internal.data_history = SampleHistoryData;
@@ -189,16 +201,17 @@ function rootReducer(state, action) {
 
 					new_state  = createNewState(state, "internal.game", tmp_action);
 					tmp_action = {
-						payload : GameDataProcessor.normalizeAggroList(SampleAggroData)
+						payload : GameDataProcessor.normalizeAggroList(SampleAggroData),
 					};
-					new_state  = createNewState(new_state, "internal.aggro", tmp_action);
+
+					new_state = createNewState(new_state, "internal.aggro", tmp_action);
 
 					break;
 
 				case "spells":
 					tmp_action = {
 						payload : {
-							"skill-7499"  : {
+							"skill-7499" : {
 								type     : "skill",
 								subtype  : "skill",
 								id       : 7499,
@@ -206,7 +219,7 @@ function rootReducer(state, action) {
 								log_type : "you-skill",
 								party    : false,
 							},
-							"skill-16481" :  {
+							"skill-16481" : {
 								type     : "skill",
 								subtype  : "skill",
 								id       : 16481,
@@ -345,9 +358,10 @@ function rootReducer(state, action) {
 								log_type : "tank-dot",
 								party    : true,
 							},
-						}
+						},
 					};
-					new_state  = createNewState(state, "internal.spells.in_use", tmp_action);
+
+					new_state = createNewState(state, "internal.spells.in_use", tmp_action);
 
 					break;
 
@@ -358,13 +372,13 @@ function rootReducer(state, action) {
 			break;
 
 		case "loadHistoryEntry":
-			let index = action.payload;
+			const index = action.payload;
 
 			new_state = clone(state);
 
 			new_state.internal.viewing_history = (index !== 0);
 
-			for (let key in new_state.internal.encounter_history[index]) {
+			for (const key in new_state.internal.encounter_history[index]) {
 				new_state.internal[key] = new_state.internal.encounter_history[index][key];
 			}
 
@@ -410,7 +424,7 @@ function rootReducer(state, action) {
 
 		case "parseParty":
 			new_state = clone(state);
-			
+
 			new_state.internal.party = GameDataProcessor.processParty(action.payload);
 
 			break;
@@ -430,15 +444,15 @@ function rootReducer(state, action) {
 					break;
 
 				case "spells":
-					let state_data = GameDataProcessor.parseSpellLogLine(action.payload, state);
+					const state_data = GameDataProcessor.parseSpellLogLine(action.payload, state);
 
 					if (state_data.char_job || state_data.char_job === null) {
 						new_state = createNewState(
 							state,
 							"internal.character_job",
 							{
-								payload : (state_data.char_job) ? state_data.char_job.abbreviation : state_data.char_job
-							}
+								payload : (state_data.char_job) ? state_data.char_job.abbreviation : state_data.char_job,
+							},
 						);
 
 						new_state.internal.character_level = state_data.char_level;
@@ -454,7 +468,7 @@ function rootReducer(state, action) {
 					}
 
 					break;
-				
+
 				default:
 					break;
 			}
@@ -463,11 +477,11 @@ function rootReducer(state, action) {
 
 		case "changeUIBuilder":
 			if (state.internal.ui_builder) {
-				for (let uuid in action.payload) {
-					for (let dimension of ["x", "y"]) {
-						let dim_key = `_${dimension}`;
+				for (const uuid in action.payload) {
+					for (const dimension of ["x", "y"]) {
+						const dim_key = `_${dimension}`;
 
-						if (action.payload[uuid].layout.hasOwnProperty(dim_key)) {
+						if (dim_key in action.payload[uuid].layout) {
 							action.payload[uuid].layout[dimension] = action.payload[uuid].layout[dim_key];
 
 							delete action.payload[uuid].layout[dim_key];
@@ -489,15 +503,15 @@ function rootReducer(state, action) {
 			if (!Array.isArray(full_key)) {
 				new_state = createNewState(state, full_key, action);
 			} else {
-				for (let i in full_key) {
+				for (const i in full_key) {
 					new_state = createNewState(
 						new_state || state,
 						full_key[i],
 						{
 							type    : action.type,
 							key     : full_key[i],
-							payload : action.payload[i]
-						}
+							payload : action.payload[i],
+						},
 					);
 				}
 			}
@@ -505,23 +519,25 @@ function rootReducer(state, action) {
 			break;
 	}
 
-	return Object.assign(
-		{},
-		new_state || state
-	);
-};
+	return {
+
+		...new_state || state,
+	};
+}
 
 function createNewState(state, full_key, action) {
 	if (!full_key) {
 		return false;
 	}
 
-	let new_state = clone(state);
+	const new_state = clone(state);
 
 	new_state.plugin_service = state.plugin_service;
 
 	if (["parseGameData", "loadSampleData"].indexOf(action.type) !== -1) {
-		new_state.last_activity = (new Date()).getTime() / 1000;
+		if (action.payload.isActive === "true" || action.payload.isActive === true) {
+			new_state.last_activity = (new Date()).getTime() / 1000;
+		}
 
 		if (action.type === "parseGameData") {
 			return new_state;
@@ -531,7 +547,7 @@ function createNewState(state, full_key, action) {
 	ObjectService.setByKeyPath(new_state, full_key, action.payload);
 
 	if (["settings", "settings.interface.theme"].indexOf(full_key) !== -1) {
-		let theme = (full_key === "settings") ? action.payload.interface.theme : action.payload;
+		const theme = (full_key === "settings") ? action.payload.interface.theme : action.payload;
 
 		ThemeService.setTheme(theme);
 	}
@@ -565,7 +581,7 @@ function createNewState(state, full_key, action) {
 	}
 
 	if (["settings", "settings.tts.rules"].indexOf(full_key) !== -1) {
-		let rules = (full_key === "settings") ? action.payload.tts.rules : action.payload;
+		const rules = (full_key === "settings") ? action.payload.tts.rules : action.payload;
 
 		TTSService.updateRules(rules);
 	}
@@ -610,8 +626,8 @@ function createNewState(state, full_key, action) {
 		}
 
 		if (full_key === "internal.current_zone_id" && !reset) {
-			let old_is_pvp = (PVPZoneData.Zones.indexOf(state.internal.current_zone_id) !== -1);
-			let new_is_pvp = (PVPZoneData.Zones.indexOf(new_state.internal.current_zone_id) !== -1);
+			const old_is_pvp = (PVPZoneData.Zones.indexOf(state.internal.current_zone_id) !== -1);
+			const new_is_pvp = (PVPZoneData.Zones.indexOf(new_state.internal.current_zone_id) !== -1);
 
 			if (old_is_pvp === new_is_pvp) {
 				return new_state;

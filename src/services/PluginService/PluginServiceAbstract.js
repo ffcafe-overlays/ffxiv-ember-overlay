@@ -15,7 +15,7 @@ class PluginServiceAbstract {
 	}
 
 	subscribe(events) {
-		let callback = MessageProcessor.processMessage;
+		const callback = MessageProcessor.processMessage;
 
 		if (!this.is_overlayplugin || !this.is_ngld) {
 			if (this.subscribed) {
@@ -46,8 +46,8 @@ class PluginServiceAbstract {
 	}
 
 	createMessage(type, key, data) {
-		let call = {
-			call : type
+		const call = {
+			call : type,
 		};
 
 		if (key) {
@@ -63,7 +63,7 @@ class PluginServiceAbstract {
 	callHandler(message, callback) {
 		window.OverlayPluginApi.callHandler(
 			message,
-			callback
+			callback,
 		);
 	}
 

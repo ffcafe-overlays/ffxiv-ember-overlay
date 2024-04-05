@@ -1,6 +1,6 @@
 {
 	"1" : {
-		"zone_id" : 169,
+		"zone_id" : 1039,
 		"locales" : {
 			"name" : {
 				"en" : "the Thousand Maws of Toto–Rak",
@@ -11,7 +11,7 @@
 		}
 	},
 	"2" : {
-		"zone_id" : 164,
+		"zone_id" : 1037,
 		"locales" : {
 			"name" : {
 				"en" : "the Tam–Tara Deepcroft",
@@ -22,7 +22,7 @@
 		}
 	},
 	"3" : {
-		"zone_id" : 161,
+		"zone_id" : 1038,
 		"locales" : {
 			"name" : {
 				"en" : "Copperbell Mines",
@@ -33,7 +33,7 @@
 		}
 	},
 	"4" : {
-		"zone_id" : 157,
+		"zone_id" : 1036,
 		"locales" : {
 			"name" : {
 				"en" : "Sastasha",
@@ -55,7 +55,7 @@
 		}
 	},
 	"6" : {
-		"zone_id" : 166,
+		"zone_id" : 1040,
 		"locales" : {
 			"name" : {
 				"en" : "Haukke Manor",
@@ -77,7 +77,7 @@
 		}
 	},
 	"8" : {
-		"zone_id" : 158,
+		"zone_id" : 1041,
 		"locales" : {
 			"name" : {
 				"en" : "Brayflox's Longstop",
@@ -110,7 +110,7 @@
 		}
 	},
 	"11" : {
-		"zone_id" : 168,
+		"zone_id" : 1042,
 		"locales" : {
 			"name" : {
 				"en" : "the Stone Vigil",
@@ -154,7 +154,7 @@
 		}
 	},
 	"15" : {
-		"zone_id" : 217,
+		"zone_id" : 1043,
 		"locales" : {
 			"name" : {
 				"en" : "Castrum Meridianum",
@@ -164,8 +164,8 @@
 			}
 		}
 	},
-	"16" : {
-		"zone_id" : 224,
+	"86" : {
+		"zone_id" : 1044,
 		"locales" : {
 			"name" : {
 				"en" : "the Praetorium",
@@ -286,7 +286,7 @@
 		}
 	},
 	"27" : {
-		"zone_id" : 371,
+		"zone_id" : 1062,
 		"locales" : {
 			"name" : {
 				"en" : "Snowcloak",
@@ -330,7 +330,7 @@
 		}
 	},
 	"31" : {
-		"zone_id" : 416,
+		"zone_id" : 1109,
 		"locales" : {
 			"name" : {
 				"en" : "the Great Gubal Library",
@@ -341,7 +341,7 @@
 		}
 	},
 	"32" : {
-		"zone_id" : 150,
+		"zone_id" : 1063,
 		"locales" : {
 			"name" : {
 				"en" : "the Keeper of the Lake",
@@ -363,7 +363,7 @@
 		}
 	},
 	"34" : {
-		"zone_id" : 421,
+		"zone_id" : 1066,
 		"locales" : {
 			"name" : {
 				"en" : "the Vault",
@@ -396,7 +396,7 @@
 		}
 	},
 	"37" : {
-		"zone_id" : 441,
+		"zone_id" : 1064,
 		"locales" : {
 			"name" : {
 				"en" : "Sohm Al",
@@ -407,7 +407,7 @@
 		}
 	},
 	"38" : {
-		"zone_id" : 438,
+		"zone_id" : 1110,
 		"locales" : {
 			"name" : {
 				"en" : "the Aetherochemical Research Facility",
@@ -418,7 +418,7 @@
 		}
 	},
 	"39" : {
-		"zone_id" : 435,
+		"zone_id" : 1065,
 		"locales" : {
 			"name" : {
 				"en" : "the Aery",
@@ -605,7 +605,7 @@
 		}
 	},
 	"20001" : {
-		"zone_id" : 202,
+		"zone_id" : 1045,
 		"locales" : {
 			"name" : {
 				"en" : "the Bowl of Embers",
@@ -616,7 +616,7 @@
 		}
 	},
 	"20002" : {
-		"zone_id" : 206,
+		"zone_id" : 1046,
 		"locales" : {
 			"name" : {
 				"en" : "the Navel",
@@ -627,7 +627,7 @@
 		}
 	},
 	"20003" : {
-		"zone_id" : 208,
+		"zone_id" : 1047,
 		"locales" : {
 			"name" : {
 				"en" : "the Howling Eye",
@@ -670,17 +670,6 @@
 			}
 		}
 	},
-	"20007" : {
-		"zone_id" : 332,
-		"locales" : {
-			"name" : {
-				"en" : "Cape Westwind",
-				"de" : "Kap Westwind",
-				"fr" : "le Cap Vendouest",
-				"jp" : "リットアティン強襲戦"
-			}
-		}
-	},
 	"20008" : {
 		"zone_id" : 295,
 		"locales" : {
@@ -715,7 +704,7 @@
 		}
 	},
 	"20011" : {
-		"zone_id" : 207,
+		"zone_id" : 1067,
 		"locales" : {
 			"name" : {
 				"en" : "Thornmarch (Hard)",
@@ -751,10 +740,10 @@
 		"zone_id" : 509,
 		"locales" : {
 			"name" : {
-				"en" : "Special Event III",
-				"de" : "Event-Inhalt 3",
-				"fr" : "Défi spécial III",
-				"jp" : "イベント用コンテンツ：3"
+				"en" : "The Gilded Araya",
+				"de" : "Arayas Palast",
+				"fr" : "Le temple doré d'Araya",
+				"jp" : "アスラ討滅戦"
 			}
 		}
 	},
@@ -898,17 +887,6 @@
 				"de" : "Jenseits Urths Quelle",
 				"fr" : "la Fontaine d'Urth",
 				"jp" : "闘神オーディン討滅戦"
-			}
-		}
-	},
-	"20028" : {
-		"zone_id" : 143,
-		"locales" : {
-			"name" : {
-				"en" : "the Steps of Faith",
-				"de" : "Der Schicksalsweg",
-				"fr" : "le Siège de la sainte Cité d'Ishgard",
-				"jp" : "皇都イシュガルド防衛戦"
 			}
 		}
 	},
@@ -1419,35 +1397,13 @@
 		}
 	},
 	"43" : {
-		"zone_id" : 516,
+		"zone_id" : 1111,
 		"locales" : {
 			"name" : {
 				"en" : "the Antitower",
 				"de" : "Antiturm",
 				"fr" : "L'Antitour",
-				"jp" : "星海観測 逆さの塔 "
-			}
-		}
-	},
-	"40008" : {
-		"zone_id" : 525,
-		"locales" : {
-			"name" : {
-				"en" : "the Feast (4 on 4 - Training)",
-				"de" : "The Feast (4 gegen 4, Übungskampf)",
-				"fr" : "The Feast (4x4/entraînement)",
-				"jp" : "ザ・フィースト (4対4 / カジュアルマッチ)"
-			}
-		}
-	},
-	"40010" : {
-		"zone_id" : 527,
-		"locales" : {
-			"name" : {
-				"en" : "the Feast (4 on 4 - Ranked)",
-				"de" : "The Feast (4 gegen 4, gewertet)",
-				"fr" : "The Feast (4x4/classé)",
-				"jp" : "ザ・フィースト (4対4 / ランクマッチ)"
+				"jp" : "星海観測 逆さの塔"
 			}
 		}
 	},
@@ -1716,7 +1672,7 @@
 		}
 	},
 	"44" : {
-		"zone_id" : 555,
+		"zone_id" : 1112,
 		"locales" : {
 			"name" : {
 				"en" : "Sohr Khai",
@@ -1837,7 +1793,7 @@
 		}
 	},
 	"46" : {
-		"zone_id" : 572,
+		"zone_id" : 1113,
 		"locales" : {
 			"name" : {
 				"en" : "Xelphatol",
@@ -1976,17 +1932,6 @@
 				"de" : "Große Gubal-Bibliothek (schwer)",
 				"fr" : "la Grande bibliothèque de Gubal (brutal)",
 				"jp" : "稀書回収 グブラ幻想図書館 (Hard)"
-			}
-		}
-	},
-	"40014" : {
-		"zone_id" : 619,
-		"locales" : {
-			"name" : {
-				"en" : "the Feast (Custom Match - Feasting Grounds)",
-				"de" : "The Feast (Wolfshöhle: Schaukampf)",
-				"fr" : "The Feast (personnalisé/Festin des loups)",
-				"jp" : "ザ・フィースト (ウルヴズジェイル演習場：カスタムマッチ）"
 			}
 		}
 	},
@@ -2156,7 +2101,7 @@
 		}
 	},
 	"48" : {
-		"zone_id" : 615,
+		"zone_id" : 1114,
 		"locales" : {
 			"name" : {
 				"en" : "Baelsar's Wall",
@@ -2221,39 +2166,6 @@
 			}
 		}
 	},
-	"40016" : {
-		"zone_id" : 632,
-		"locales" : {
-			"name" : {
-				"en" : "the Feast (4 on 4 - Training)",
-				"de" : "The Feast (4 gegen 4, Übungskampf)",
-				"fr" : "The Feast (4x4/entraînement)",
-				"jp" : "ザ・フィースト (4対4 / カジュアルマッチ)"
-			}
-		}
-	},
-	"40018" : {
-		"zone_id" : 644,
-		"locales" : {
-			"name" : {
-				"en" : "the Feast (4 on 4 - Ranked)",
-				"de" : "The Feast (4 gegen 4, gewertet)",
-				"fr" : "The Feast (4x4/classé)",
-				"jp" : "ザ・フィースト (4対4 / ランクマッチ)"
-			}
-		}
-	},
-	"40021" : {
-		"zone_id" : 646,
-		"locales" : {
-			"name" : {
-				"en" : "the Feast (Custom Match - Lichenweed)",
-				"de" : "The Feast (Flechtenhain: Schaukampf)",
-				"fr" : "The Feast (personnalisé/Pré-de-lichen)",
-				"jp" : "ザ・フィースト (ライケンウィード演習場：カスタムマッチ）"
-			}
-		}
-	},
 	"50" : {
 		"zone_id" : 616,
 		"locales" : {
@@ -2288,10 +2200,10 @@
 		}
 	},
 	"52" : {
-		"zone_id" : 626,
+		"zone_id" : 1142,
 		"locales" : {
 			"name" : {
-				"en" : "The Sirensong Sea",
+				"en" : "the Sirensong Sea",
 				"de" : "Sirenen-See",
 				"fr" : "la Mer du Chant des sirènes",
 				"jp" : "漂流海域 セイレーン海"
@@ -2310,7 +2222,7 @@
 		}
 	},
 	"53" : {
-		"zone_id" : 623,
+		"zone_id" : 1143,
 		"locales" : {
 			"name" : {
 				"en" : "Bardam's Mettle",
@@ -2321,7 +2233,7 @@
 		}
 	},
 	"54" : {
-		"zone_id" : 660,
+		"zone_id" : 1144,
 		"locales" : {
 			"name" : {
 				"en" : "Doma Castle",
@@ -2332,7 +2244,7 @@
 		}
 	},
 	"55" : {
-		"zone_id" : 661,
+		"zone_id" : 1145,
 		"locales" : {
 			"name" : {
 				"en" : "Castrum Abania",
@@ -2387,7 +2299,7 @@
 		}
 	},
 	"56" : {
-		"zone_id" : 689,
+		"zone_id" : 1146,
 		"locales" : {
 			"name" : {
 				"en" : "Ala Mhigo",
@@ -2947,50 +2859,6 @@
 			}
 		}
 	},
-	"40022" : {
-		"zone_id" : 745,
-		"locales" : {
-			"name" : {
-				"en" : "the Feast (Team Ranked)",
-				"de" : "The Feast (Team, gewertet)",
-				"fr" : "The Feast (classé/équipe JcJ)",
-				"jp" : "ザ・フィースト (チーム用ランクマッチ)"
-			}
-		}
-	},
-	"40023" : {
-		"zone_id" : 765,
-		"locales" : {
-			"name" : {
-				"en" : "the Feast (Ranked)",
-				"de" : "The Feast (gewertet)",
-				"fr" : "The Feast (classé)",
-				"jp" : "ザ・フィースト (ランクマッチ)"
-			}
-		}
-	},
-	"40024" : {
-		"zone_id" : 766,
-		"locales" : {
-			"name" : {
-				"en" : "the Feast (Training)",
-				"de" : "The Feast (Übungskampf)",
-				"fr" : "The Feast (entraînement)",
-				"jp" : "ザ・フィースト (カジュアルマッチ)"
-			}
-		}
-	},
-	"40025" : {
-		"zone_id" : 767,
-		"locales" : {
-			"name" : {
-				"en" : "the Feast (Custom Match - Crystal Tower)",
-				"de" : "The Feast (Kristallturm-Arena: Schaukampf)",
-				"fr" : "The Feast (personnalisé/Tour de Cristal)",
-				"jp" : "ザ・フィースト (クリスタルタワー演習場：カスタムマッチ）"
-			}
-		}
-	},
 	"61" : {
 		"zone_id" : 768,
 		"locales" : {
@@ -3153,17 +3021,6 @@
 				"de" : "Richtfeuer von Ridorana",
 				"fr" : "le Phare de Ridorana",
 				"jp" : "封じられた聖塔 リドルアナ"
-			}
-		}
-	},
-	"40026" : {
-		"zone_id" : 767,
-		"locales" : {
-			"name" : {
-				"en" : "the Feast (Team Custom Match - Crystal Tower)",
-				"de" : "The Feast (Kristallturm-Arena: Team-Schaukampf) ",
-				"fr" : "The Feast (personnalisé/équipe JcJ/Tour de Cristal)",
-				"jp" : "ザ・フィースト (クリスタルタワー演習場：チーム用カスタムマッチ)"
 			}
 		}
 	},
@@ -4876,7 +4733,7 @@
 		"zone_id" : 986,
 		"locales" : {
 			"name" : {
-				"en" : "The Stigma Dreamscape",
+				"en" : "the Stigma Dreamscape",
 				"de" : "Stigma-Holometrie",
 				"fr" : "Rêve électrique de Stigma-4",
 				"jp" : "電脳夢想 スティグマ・フォー"
@@ -4913,6 +4770,17 @@
 				"de" : "Ktisis Hyperboreia",
 				"fr" : "l'Hyperborée",
 				"jp" : "創造環境 ヒュペルボレア造物院"
+			}
+		}
+	},
+	"30106" : {
+		"zone_id" : 968,
+		"locales" : {
+			"name" : {
+				"en" : "Dragonsong's Reprise (Ultimate)",
+				"de" : "Drachenkrieg (fatal)",
+				"fr" : "la Guerre du chant des dragons (fatal)",
+				"jp" : "絶竜詩戦争"
 			}
 		}
 	},
@@ -5265,6 +5133,831 @@
 				"de" : "Trauer und Hoffnung",
 				"fr" : "Acceptation",
 				"jp" : "僕たちは還り、君を見送ろう"
+			}
+		}
+	},
+	"90" : {
+		"zone_id" : 1126,
+		"locales" : {
+			"name" : {
+				"en" : "the Aetherfont",
+				"de" : "Ätherborn",
+				"fr" : "L'île de Haam",
+				"jp" : "星霊間欠 ハーム島"
+			}
+		}
+	},
+	"20082" : {
+		"zone_id" : 1048,
+		"locales" : {
+			"name" : {
+				"en" : "the Porta Decumana",
+				"de" : "Porta Decumana",
+				"fr" : "Porta Decumana",
+				"jp" : "アルテマウェポン破壊作戦"
+			}
+		}
+	},
+	"40027" : {
+		"zone_id" : 1032,
+		"locales" : {
+			"name" : {
+				"en" : "The Palaistra",
+				"de" : "Die Palästra",
+				"fr" : "Le Palestre",
+				"jp" : "パライストラ"
+			}
+		}
+	},
+	"40028" : {
+		"zone_id" : 1033,
+		"locales" : {
+			"name" : {
+				"en" : "The Volcanic Heart",
+				"de" : "Das Herz des Vulkans",
+				"fr" : "Le Cœur volcanique",
+				"jp" : "ヴォルカニック・ハート"
+			}
+		}
+	},
+	"40029" : {
+		"zone_id" : 1034,
+		"locales" : {
+			"name" : {
+				"en" : "Cloud Nine",
+				"de" : "Wolke Sieben",
+				"fr" : "Le Petit Nuage",
+				"jp" : "クラウドナイン"
+			}
+		}
+	},
+	"87" : {
+		"zone_id" : 1050,
+		"locales" : {
+			"name" : {
+				"en" : "Alzadaal's Legacy",
+				"de" : "Alzadaals Vermächtnis",
+				"fr" : "Le legs d'Alzadaal",
+				"jp" : "近東秘宝 アルザダール海底遺跡群"
+			}
+		}
+	},
+	"5059" : {
+		"zone_id" : 1051,
+		"locales" : {
+			"name" : {
+				"en" : "Forlorn Glory",
+				"de" : "Nervas Reich",
+				"fr" : "Nerva, le patriote",
+				"jp" : "ネルウァの帝国"
+			}
+		}
+	},
+	"20083" : {
+		"zone_id" : 998,
+		"locales" : {
+			"name" : {
+				"en" : "The Minstrel's Ballad: Endsinger's Aria",
+				"de" : "Eschatos - Endsängerin",
+				"fr" : "le Répons final (extrême)",
+				"jp" : "終極の戦い"
+			}
+		}
+	},
+	"40030" : {
+		"zone_id" : 1032,
+		"locales" : {
+			"name" : {
+				"en" : "The Palaistra",
+				"de" : "Die Palästra",
+				"fr" : "Le Palestre",
+				"jp" : "パライストラ"
+			}
+		}
+	},
+	"40031" : {
+		"zone_id" : 1033,
+		"locales" : {
+			"name" : {
+				"en" : "The Volcanic Heart",
+				"de" : "Das Herz des Vulkans",
+				"fr" : "Le Cœur volcanique",
+				"jp" : "ヴォルカニック・ハート"
+			}
+		}
+	},
+	"40032" : {
+		"zone_id" : 1034,
+		"locales" : {
+			"name" : {
+				"en" : "Cloud Nine",
+				"de" : "Wolke Sieben",
+				"fr" : "Le Petit Nuage",
+				"jp" : "クラウドナイン"
+			}
+		}
+	},
+	"40033" : {
+		"zone_id" : 1058,
+		"locales" : {
+			"name" : {
+				"en" : "Crystalline Conflict (Custom Match - The Palaistra)",
+				"de" : "Crystalline Conflict: Die Palästra (Schaukampf)",
+				"fr" : "Crystalline Conflict (partie personnalisée - Le Palestre)",
+				"jp" : "クリスタルコンフリクト(パライストラ：カスタムマッチ)"
+			}
+		}
+	},
+	"40034" : {
+		"zone_id" : 1059,
+		"locales" : {
+			"name" : {
+				"en" : "Crystalline Conflict (Custom Match - The Volcanic Heart)",
+				"de" : "Crystalline Conflict: Das Herz des Vulkans (Schaukampf)",
+				"fr" : "Crystalline Conflict (partie personnalisée - Le Cœur volcanique)",
+				"jp" : "クリスタルコンフリクト(ヴォルカニック・ハート：カスタムマッチ)"
+			}
+		}
+	},
+	"40035" : {
+		"zone_id" : 1060,
+		"locales" : {
+			"name" : {
+				"en" : "Crystalline Conflict (Custom Match - Cloud Nine)",
+				"de" : "Crystalline Conflict: Wolke Sieben (Schaukampf)",
+				"fr" : "Crystalline Conflict (partie personnalisée - Le Petit Nuage)",
+				"jp" : "クリスタルコンフリクト(クラウドナイン：カスタムマッチ)"
+			}
+		}
+	},
+	"5060" : {
+		"zone_id" : 1049,
+		"locales" : {
+			"name" : {
+				"en" : "Cape Westwind",
+				"de" : "Kap Westwind",
+				"fr" : "le Cap Vendouest",
+				"jp" : "リットアティン強襲戦"
+			}
+		}
+	},
+	"30115" : {
+		"zone_id" : 1054,
+		"locales" : {
+			"name" : {
+				"en" : "Aglaia",
+				"de" : "Aglaia",
+				"fr" : "Domaine divin - Aglaé",
+				"jp" : "輝ける神域 アグライア"
+			}
+		}
+	},
+	"5061" : {
+		"zone_id" : 1052,
+		"locales" : {
+			"name" : {
+				"en" : "Devastation",
+				"de" : "Das Antlitz der Kaltblütigkeit",
+				"fr" : "le Praetorium en flammes",
+				"jp" : "アシエン・ラハブレア討伐戦"
+			}
+		}
+	},
+	"36001" : {
+		"zone_id" : 1069,
+		"locales" : {
+			"name" : {
+				"en" : "The Sil'dihn Subterrane",
+				"de" : "Die Unterstadt von Sil'dih",
+				"fr" : "Les canalisations sildiennes - Donjon à embranchements",
+				"jp" : "ヴァリアントダンジョン シラディハ水道"
+			}
+		}
+	},
+	"88" : {
+		"zone_id" : 1070,
+		"locales" : {
+			"name" : {
+				"en" : "the Fell Court of Troia",
+				"de" : "Der Schwarze Hof von Troia",
+				"fr" : "Le Château de Troïa",
+				"jp" : "異界孤城 トロイアコート"
+			}
+		}
+	},
+	"20084" : {
+		"zone_id" : 1071,
+		"locales" : {
+			"name" : {
+				"en" : "Storm's Crown",
+				"de" : "Prophetie - Barbarizia",
+				"fr" : "La Toison des tempêtes",
+				"jp" : "バルバリシア討滅戦"
+			}
+		}
+	},
+	"20085" : {
+		"zone_id" : 1072,
+		"locales" : {
+			"name" : {
+				"en" : "Storm's Crown (Extreme)",
+				"de" : "Eschatos - Barbarizia",
+				"fr" : "La Toison des tempêtes (extrême)",
+				"jp" : "極バルバリシア討滅戦"
+			}
+		}
+	},
+	"30116" : {
+		"zone_id" : 1081,
+		"locales" : {
+			"name" : {
+				"en" : "Abyssos: The Fifth Circle",
+				"de" : "Abyssos - Fünfter Kreis",
+				"fr" : "Le Purgatoire du Pandæmonium - Cages",
+				"jp" : "万魔殿パンデモニウム：煉獄編1"
+			}
+		}
+	},
+	"30117" : {
+		"zone_id" : 1082,
+		"locales" : {
+			"name" : {
+				"en" : "Abyssos: The Fifth Circle (Savage)",
+				"de" : "Abyssos - Fünfter Kreis (episch)",
+				"fr" : "Le Purgatoire du Pandæmonium - Cages (sadique)",
+				"jp" : "万魔殿パンデモニウム零式：煉獄編1"
+			}
+		}
+	},
+	"5062" : {
+		"zone_id" : 1091,
+		"locales" : {
+			"name" : {
+				"en" : "Where Everything Begins",
+				"de" : "Wo alles seinen Anfang nimmt",
+				"fr" : "Au commencement était Zero",
+				"jp" : "失われた力"
+			}
+		}
+	},
+	"30118" : {
+		"zone_id" : 1085,
+		"locales" : {
+			"name" : {
+				"en" : "Abyssos: The Seventh Circle",
+				"de" : "Abyssos - Siebter Kreis",
+				"fr" : "Le Purgatoire du Pandæmonium - Racines",
+				"jp" : "万魔殿パンデモニウム：煉獄編3"
+			}
+		}
+	},
+	"30119" : {
+		"zone_id" : 1086,
+		"locales" : {
+			"name" : {
+				"en" : "Abyssos: The Seventh Circle (Savage)",
+				"de" : "Abyssos - Siebter Kreis (episch)",
+				"fr" : "Le Purgatoire du Pandæmonium - Racines (sadique)",
+				"jp" : "万魔殿パンデモニウム零式：煉獄編3"
+			}
+		}
+	},
+	"37001" : {
+		"zone_id" : 1075,
+		"locales" : {
+			"name" : {
+				"en" : "Another Sil'dihn Subterrane",
+				"de" : "Die kuriose Unterstadt von Sil'dih",
+				"fr" : "Les canalisations sildiennes annexes - Donjon alternatif",
+				"jp" : "アナザーダンジョン 異聞シラディハ水道"
+			}
+		}
+	},
+	"37002" : {
+		"zone_id" : 1076,
+		"locales" : {
+			"name" : {
+				"en" : "Another Sil'dihn Subterrane (Savage)",
+				"de" : "Die kuriose Unterstadt von Sil'dih (episch)",
+				"fr" : "Les canalisations sildiennes annexes - Donjon alternatif (sadique)",
+				"jp" : "アナザーダンジョン 異聞シラディハ水道 零式"
+			}
+		}
+	},
+	"30120" : {
+		"zone_id" : 1083,
+		"locales" : {
+			"name" : {
+				"en" : "Abyssos: The Sixth Circle",
+				"de" : "Abyssos - Sechster Kreis",
+				"fr" : "Le Purgatoire du Pandæmonium - Croisements",
+				"jp" : "万魔殿パンデモニウム：煉獄編2"
+			}
+		}
+	},
+	"30121" : {
+		"zone_id" : 1084,
+		"locales" : {
+			"name" : {
+				"en" : "Abyssos: The Sixth Circle (Savage)",
+				"de" : "Abyssos - Sechster Kreis (episch)",
+				"fr" : "Le Purgatoire du Pandæmonium - Croisements (sadique)",
+				"jp" : "万魔殿パンデモニウム零式：煉獄編2"
+			}
+		}
+	},
+	"30122" : {
+		"zone_id" : 1087,
+		"locales" : {
+			"name" : {
+				"en" : "Abyssos: The Eighth Circle",
+				"de" : "Abyssos - Achter Kreis",
+				"fr" : "Le Purgatoire du Pandæmonium - Hérédité",
+				"jp" : "万魔殿パンデモニウム：煉獄編4"
+			}
+		}
+	},
+	"30123" : {
+		"zone_id" : 1088,
+		"locales" : {
+			"name" : {
+				"en" : "Abyssos: The Eighth Circle (Savage)",
+				"de" : "Abyssos - Achter Kreis (episch)",
+				"fr" : "Le Purgatoire du Pandæmonium - Hérédité (sadique)",
+				"jp" : "万魔殿パンデモニウム零式：煉獄編4"
+			}
+		}
+	},
+	"5063" : {
+		"zone_id" : 1068,
+		"locales" : {
+			"name" : {
+				"en" : "the Steps of Faith",
+				"de" : "Der Schicksalsweg",
+				"fr" : "Le Siège de la sainte Cité d'Ishgard",
+				"jp" : "皇都イシュガルド防衛戦"
+			}
+		}
+	},
+	"20086" : {
+		"zone_id" : 1095,
+		"locales" : {
+			"name" : {
+				"en" : "Mount Ordeals",
+				"de" : "Prophetie - Rubicante",
+				"fr" : "Le Mont du Supplice",
+				"jp" : "ルビカンテ討滅戦"
+			}
+		}
+	},
+	"89" : {
+		"zone_id" : 1097,
+		"locales" : {
+			"name" : {
+				"en" : "Lapis Manalis",
+				"de" : "Lapis Manalis",
+				"fr" : "Lapis Manalis",
+				"jp" : "雪山冥洞 ラピス・マナリス"
+			}
+		}
+	},
+	"60031" : {
+		"zone_id" : 1099,
+		"locales" : {
+			"name" : {
+				"en" : "Eureka Orthos (Floors 1-10)",
+				"de" : "Eureka Orthos (Ebenen 1-10)",
+				"fr" : "Eurêka Orthos (sous-sols 1-10)",
+				"jp" : "オルト・エウレカ B1～B10"
+			}
+		}
+	},
+	"60032" : {
+		"zone_id" : 1100,
+		"locales" : {
+			"name" : {
+				"en" : "Eureka Orthos (Floors 11-20)",
+				"de" : "Eureka Orthos (Ebenen 11-20)",
+				"fr" : "Eurêka Orthos (sous-sols 11-20)",
+				"jp" : "オルト・エウレカ B11～B20"
+			}
+		}
+	},
+	"60033" : {
+		"zone_id" : 1101,
+		"locales" : {
+			"name" : {
+				"en" : "Eureka Orthos (Floors 21-30)",
+				"de" : "Eureka Orthos (Ebenen 21-30)",
+				"fr" : "Eurêka Orthos (sous-sols 21-30)",
+				"jp" : "オルト・エウレカ B21～B30"
+			}
+		}
+	},
+	"60034" : {
+		"zone_id" : 1102,
+		"locales" : {
+			"name" : {
+				"en" : "Eureka Orthos (Floors 31-40)",
+				"de" : "Eureka Orthos (Ebenen 31-40)",
+				"fr" : "Eurêka Orthos (sous-sols 31-40)",
+				"jp" : "オルト・エウレカ B31～B40"
+			}
+		}
+	},
+	"60035" : {
+		"zone_id" : 1103,
+		"locales" : {
+			"name" : {
+				"en" : "Eureka Orthos (Floors 41-50)",
+				"de" : "Eureka Orthos (Ebenen 41-50)",
+				"fr" : "Eurêka Orthos (sous-sols 41-50)",
+				"jp" : "オルト・エウレカ B41～B50"
+			}
+		}
+	},
+	"60036" : {
+		"zone_id" : 1104,
+		"locales" : {
+			"name" : {
+				"en" : "Eureka Orthos (Floors 51-60)",
+				"de" : "Eureka Orthos (Ebenen 51-60)",
+				"fr" : "Eurêka Orthos (sous-sols 51-60)",
+				"jp" : "オルト・エウレカ B51～B60"
+			}
+		}
+	},
+	"60037" : {
+		"zone_id" : 1105,
+		"locales" : {
+			"name" : {
+				"en" : "Eureka Orthos (Floors 61-70)",
+				"de" : "Eureka Orthos (Ebenen 61-70)",
+				"fr" : "Eurêka Orthos (sous-sols 61-70)",
+				"jp" : "オルト・エウレカ B61～B70"
+			}
+		}
+	},
+	"60038" : {
+		"zone_id" : 1106,
+		"locales" : {
+			"name" : {
+				"en" : "Eureka Orthos (Floors 71-80)",
+				"de" : "Eureka Orthos (Ebenen 71-80)",
+				"fr" : "Eurêka Orthos (sous-sols 71-80)",
+				"jp" : "オルト・エウレカ B71～B80"
+			}
+		}
+	},
+	"60039" : {
+		"zone_id" : 1107,
+		"locales" : {
+			"name" : {
+				"en" : "Eureka Orthos (Floors 81-90)",
+				"de" : "Eureka Orthos (Ebenen 81-90)",
+				"fr" : "Eurêka Orthos (sous-sols 81-90)",
+				"jp" : "オルト・エウレカ B81～B90"
+			}
+		}
+	},
+	"60040" : {
+		"zone_id" : 1108,
+		"locales" : {
+			"name" : {
+				"en" : "Eureka Orthos (Floors 91-100)",
+				"de" : "Eureka Orthos (Ebenen 91-100)",
+				"fr" : "Eurêka Orthos (sous-sols 91-100)",
+				"jp" : "オルト・エウレカ B91～B100"
+			}
+		}
+	},
+	"5064" : {
+		"zone_id" : 1115,
+		"locales" : {
+			"name" : {
+				"en" : "Generational Bonding",
+				"de" : "Väterliche Liebe",
+				"fr" : "Tel gentilhomme, tel gentilhomme",
+				"jp" : "はつらつとした親子"
+			}
+		}
+	},
+	"30124" : {
+		"zone_id" : 1122,
+		"locales" : {
+			"name" : {
+				"en" : "The Omega Protocol (Ultimate)",
+				"de" : "Omega (fatal)",
+				"fr" : "le Protocole Oméga (fatal)",
+				"jp" : "絶オメガ検証戦"
+			}
+		}
+	},
+	"55011" : {
+		"zone_id" : 1123,
+		"locales" : {
+			"name" : {
+				"en" : "The Shifting Gymnasion Agonon",
+				"de" : "Gymnasion Agonon",
+				"fr" : "Elpis Gymnasion",
+				"jp" : "宝物庫 エルピス・ギュムナシオン祭殿"
+			}
+		}
+	},
+	"5065" : {
+		"zone_id" : 1120,
+		"locales" : {
+			"name" : {
+				"en" : "An Unforeseen Bargain",
+				"de" : "Der Wert einer Buuds",
+				"fr" : "Pour une bouchée de pain",
+				"jp" : "パンひとつと引き換えに"
+			}
+		}
+	},
+	"30125" : {
+		"zone_id" : 1118,
+		"locales" : {
+			"name" : {
+				"en" : "Euphrosyne",
+				"de" : "Euphrosyne",
+				"fr" : "Domaine divin - Euphrosyne",
+				"jp" : "喜びの神域 エウプロシュネ"
+			}
+		}
+	},
+	"40036" : {
+		"zone_id" : 1116,
+		"locales" : {
+			"name" : {
+				"en" : "The Clockwork Castletown",
+				"de" : "Die Mechanische Menagerie",
+				"fr" : "Le Traquenard oriental",
+				"jp" : "東方絡繰御殿"
+			}
+		}
+	},
+	"40037" : {
+		"zone_id" : 1116,
+		"locales" : {
+			"name" : {
+				"en" : "The Clockwork Castletown",
+				"de" : "Die Mechanische Menagerie",
+				"fr" : "Le Traquenard oriental",
+				"jp" : "東方絡繰御殿"
+			}
+		}
+	},
+	"40038" : {
+		"zone_id" : 1117,
+		"locales" : {
+			"name" : {
+				"en" : "Crystalline Conflict (Custom Match - The Clockwork Castletown)",
+				"de" : "Crystalline Conflict: Die Mechanische Menagerie (Schaukampf)",
+				"fr" : "Crystalline Conflict (partie personnalisée - Le Traquenard oriental)",
+				"jp" : "クリスタルコンフリクト(東方絡繰御殿：カスタムマッチ)"
+			}
+		}
+	},
+	"20087" : {
+		"zone_id" : 1096,
+		"locales" : {
+			"name" : {
+				"en" : "Mount Ordeals (Extreme)",
+				"de" : "Eschatos - Rubicante",
+				"fr" : "Le Mont du Supplice (extrême)",
+				"jp" : "極ルビカンテ討滅戦"
+			}
+		}
+	},
+	"30126" : {
+		"zone_id" : 1147,
+		"locales" : {
+			"name" : {
+				"en" : "Anabaseios: The Ninth Circle",
+				"de" : "Anabaseios - Neunter Kreis",
+				"fr" : "Le Paradis du Pandæmonium - Métempsycose",
+				"jp" : "万魔殿パンデモニウム：天獄編1"
+			}
+		}
+	},
+	"30127" : {
+		"zone_id" : 1148,
+		"locales" : {
+			"name" : {
+				"en" : "Anabaseios: The Ninth Circle (Savage)",
+				"de" : "Anabaseios - Neunter Kreis (episch)",
+				"fr" : "Le Paradis du Pandæmonium - Métempsycose (sadique)",
+				"jp" : "万魔殿パンデモニウム零式：天獄編1"
+			}
+		}
+	},
+	"30128" : {
+		"zone_id" : 1149,
+		"locales" : {
+			"name" : {
+				"en" : "Anabaseios: The Tenth Circle",
+				"de" : "Anabaseios - Zehnter Kreis",
+				"fr" : "Le Paradis du Pandæmonium - Monochrome",
+				"jp" : "万魔殿パンデモニウム：天獄編2"
+			}
+		}
+	},
+	"30129" : {
+		"zone_id" : 1150,
+		"locales" : {
+			"name" : {
+				"en" : "Anabaseios: The Tenth Circle (Savage)",
+				"de" : "Anabaseios - Zehnter Kreis (episch)",
+				"fr" : "Le Paradis du Pandæmonium - Monochrome (sadique)",
+				"jp" : "万魔殿パンデモニウム零式：天獄編2"
+			}
+		}
+	},
+	"30130" : {
+		"zone_id" : 1151,
+		"locales" : {
+			"name" : {
+				"en" : "Anabaseios: The Eleventh Circle",
+				"de" : "Anabaseios - Elfter Kreis",
+				"fr" : "Le Paradis du Pandæmonium - Tribunal",
+				"jp" : "万魔殿パンデモニウム：天獄編3"
+			}
+		}
+	},
+	"30131" : {
+		"zone_id" : 1152,
+		"locales" : {
+			"name" : {
+				"en" : "Anabaseios: The Eleventh Circle (Savage)",
+				"de" : "Anabaseios - Elfter Kreis (episch)",
+				"fr" : "Le Paradis du Pandæmonium - Tribunal (sadique)",
+				"jp" : "万魔殿パンデモニウム零式：天獄編3"
+			}
+		}
+	},
+	"30132" : {
+		"zone_id" : 1153,
+		"locales" : {
+			"name" : {
+				"en" : "Anabaseios: The Twelfth Circle",
+				"de" : "Anabaseios - Zwölfter Kreis",
+				"fr" : "Le Paradis du Pandæmonium - Apothéose",
+				"jp" : "万魔殿パンデモニウム：天獄編4"
+			}
+		}
+	},
+	"30133" : {
+		"zone_id" : 1154,
+		"locales" : {
+			"name" : {
+				"en" : "Anabaseios: The Twelfth Circle (Savage)",
+				"de" : "Anabaseios - Zwölfter Kreis (episch)",
+				"fr" : "Le Paradis du Pandæmonium - Apothéose (sadique)",
+				"jp" : "万魔殿パンデモニウム零式：天獄編4"
+			}
+		}
+	},
+	"36002" : {
+		"zone_id" : 1137,
+		"locales" : {
+			"name" : {
+				"en" : "Mount Rokkon",
+				"de" : "Der Rokkon",
+				"fr" : "Le mont Rokkon - Donjon à embranchements",
+				"jp" : "ヴァリアントダンジョン 六根山"
+			}
+		}
+	},
+	"37003" : {
+		"zone_id" : 1155,
+		"locales" : {
+			"name" : {
+				"en" : "Another Mount Rokkon",
+				"de" : "Der kuriose Rokkon",
+				"fr" : "Le mont Rokkon annexe - Donjon alternatif",
+				"jp" : "アナザーダンジョン 異聞六根山"
+			}
+		}
+	},
+	"37004" : {
+		"zone_id" : 1156,
+		"locales" : {
+			"name" : {
+				"en" : "Another Mount Rokkon (Savage)",
+				"de" : "Der kuriose Rokkon (episch)",
+				"fr" : "Le mont Rokkon annexe - Donjon alternatif (sadique)",
+				"jp" : "アナザーダンジョン 異聞六根山 零式"
+			}
+		}
+	},
+	"35032" : {
+		"zone_id" : 796,
+		"locales" : {
+			"name" : {
+				"en" : "A Golden Opportunity",
+				"de" : "Goldor der Güldene",
+				"fr" : "Goldor, le mage doré",
+				"jp" : "黄金闘士「ゴールドル」"
+			}
+		}
+	},
+	"20089" : {
+		"zone_id" : 1140,
+		"locales" : {
+			"name" : {
+				"en" : "The Voidcast Dais",
+				"de" : "Prophetie - Golbez",
+				"fr" : "La Chaire de l'Exilée",
+				"jp" : "ゴルベーザ討滅戦"
+			}
+		}
+	},
+	"20090" : {
+		"zone_id" : 1141,
+		"locales" : {
+			"name" : {
+				"en" : "The Voidcast Dais (Extreme)",
+				"de" : "Eschatos - Golbez",
+				"fr" : "La Chaire de l'Exilée (extrême)",
+				"jp" : "極ゴルベーザ討滅戦"
+			}
+		}
+	},
+	"64007" : {
+		"zone_id" : 1157,
+		"locales" : {
+			"name" : {
+				"en" : "Containment Bay Z1T9 (Unreal)",
+				"de" : "Traumprüfung - Zurvan",
+				"fr" : "Unité de contention Z1P9 (irréel)",
+				"jp" : "幻鬼神ズルワーン討滅戦"
+			}
+		}
+	},
+	"63012" : {
+		"zone_id" : 1163,
+		"locales" : {
+			"name" : {
+				"en" : "Ocean Fishing",
+				"de" : "Auf großer Fahrt",
+				"fr" : "Pêche en mer",
+				"jp" : "オーシャンフィッシング"
+			}
+		}
+	},
+	"63013" : {
+		"zone_id" : 1163,
+		"locales" : {
+			"name" : {
+				"en" : "Ocean Fishing",
+				"de" : "Auf großer Fahrt",
+				"fr" : "Pêche en mer",
+				"jp" : "オーシャンフィッシング"
+			}
+		}
+	},
+	"63014" : {
+		"zone_id" : 1163,
+		"locales" : {
+			"name" : {
+				"en" : "Ocean Fishing",
+				"de" : "Auf großer Fahrt",
+				"fr" : "Pêche en mer",
+				"jp" : "オーシャンフィッシング"
+			}
+		}
+	},
+	"63015" : {
+		"zone_id" : 1163,
+		"locales" : {
+			"name" : {
+				"en" : "Ocean Fishing",
+				"de" : "Auf großer Fahrt",
+				"fr" : "Pêche en mer",
+				"jp" : "オーシャンフィッシング"
+			}
+		}
+	},
+	"63016" : {
+		"zone_id" : 1163,
+		"locales" : {
+			"name" : {
+				"en" : "Ocean Fishing",
+				"de" : "Auf großer Fahrt",
+				"fr" : "Pêche en mer",
+				"jp" : "オーシャンフィッシング"
+			}
+		}
+	},
+	"63017" : {
+		"zone_id" : 1163,
+		"locales" : {
+			"name" : {
+				"en" : "Ocean Fishing",
+				"de" : "Auf großer Fahrt",
+				"fr" : "Pêche en mer",
+				"jp" : "オーシャンフィッシング"
 			}
 		}
 	}

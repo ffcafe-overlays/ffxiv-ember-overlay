@@ -18,14 +18,14 @@ class SocketService {
 	}
 
 	processUri() {
-		let params = new querystring.parse(String(window.location.search).substring(1));
-		let uri    = params["HOST_PORT"] || params["OVERLAY_WS"];
+		const params = new querystring.parse(String(window.location.search).substring(1));
+		let uri      = params.HOST_PORT || params.OVERLAY_WS;
 
 		if (!uri) {
 			return false;
 		}
 
-		let original_uri = uri;
+		const original_uri = uri;
 
 		uri = uri.replace(/\/$/, "");
 
@@ -37,9 +37,9 @@ class SocketService {
 		}
 
 		if (this.try_for_ngld && uri.indexOf("/ws") === -1) {
-			uri = uri + "/ws";
+			uri += "/ws";
 		} else if (uri.indexOf("MiniParse") === -1 && uri.indexOf("/ws") === -1) {
-			uri = uri + "/MiniParse";
+			uri += "/MiniParse";
 		}
 
 		return uri;
@@ -54,8 +54,11 @@ class SocketService {
 
 		this.resetCallback();
 
-		this.socket.onclose = () => { setTimeout(this.reconnect.bind(this), this.reconnect_delay); }
-		this.socket.onopen  = this.connected.bind(this);
+		this.socket.onclose = () => {
+			setTimeout(this.reconnect.bind(this), this.reconnect_delay);
+		};
+
+		this.socket.onopen = this.connected.bind(this);
 	}
 
 	reconnect() {
@@ -77,7 +80,7 @@ class SocketService {
 
 			store.dispatch(updateState({
 				key   : "internal.overlayplugin_author",
-				value : "ngld"
+				value : "ngld",
 			}));
 		}
 
@@ -90,7 +93,7 @@ class SocketService {
 	}
 
 	setId() {
-		let id = Math.random().toString(36).substring(7);
+		const id = Math.random().toString(36).substring(7);
 
 		this.id = id;
 
@@ -109,7 +112,7 @@ class SocketService {
 
 	establishSubscriptions() {
 		this.callHandler(
-			this.createMessage("subscribe", "events", this.new_events)
+			this.createMessage("subscribe", "events", this.new_events),
 		);
 	}
 
@@ -123,7 +126,7 @@ class SocketService {
 
 	removeSubscriptions(events) {
 		this.callHandler(
-			this.createMessage("unsubscribe", "events", events)
+			this.createMessage("unsubscribe", "events", events),
 		);
 	}
 
@@ -156,19 +159,19 @@ class SocketService {
 			return;
 		}
 
-		let data = {
-			type    : type,
-			to      : to,
+		const data = {
+			type,
+			to,
 			msgtype : message_type,
 			msg     : message,
-			id      : id
+			id,
 		};
 
 		this.socket.send(JSON.stringify(data));
 	}
 
 	isSocketRequested() {
-		return (!!this.uri);
+		return (Boolean(this.uri));
 	}
 
 	isNgld() {
