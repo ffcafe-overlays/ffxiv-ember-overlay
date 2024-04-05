@@ -3,8 +3,6 @@ import MessageProcessor from "../../processors/MessageProcessor";
 import store from "../../redux/store/index";
 import { updateState } from "../../redux/actions/index";
 
-const querystring = require("querystring");
-
 const BASE_RECONNECT_DELAY = 300;
 
 class SocketService {
@@ -18,8 +16,8 @@ class SocketService {
 	}
 
 	processUri() {
-		const params = new querystring.parse(String(window.location.search).substring(1));
-		let uri      = params.HOST_PORT || params.OVERLAY_WS;
+		const params = new URLSearchParams(String(window.location.search).substring(1));
+		let uri      = params.get("HOST_PORT") || params.get("OVERLAY_WS");
 
 		if (!uri) {
 			return false;

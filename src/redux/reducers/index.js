@@ -16,15 +16,9 @@ import SpellService from "../../services/SpellService";
 
 import PVPZoneData from "../../constants/PVPZoneData";
 
-const querystring = require("querystring");
-
-const params                = new querystring.parse(String(window.location.search).substring(1));
+const params                = new URLSearchParams(String(window.location.search).substring(1));
 const overlayplugin_service = new OverlayPluginService();
 const uuid                  = (window.OverlayPluginApi) ? window.OverlayPluginApi.overlayUuid : "browser";
-
-if (typeof params.mode === "object") {
-	params.mode = params.mode[0];
-}
 
 const initial_state = {
 	plugin_service : new PluginService(),
@@ -60,7 +54,7 @@ const initial_state = {
 		overlayplugin        : overlayplugin_service.isOverlayPlugin(),
 		overlayplugin_author : overlayplugin_service.getAuthor(),
 		new_version          : false,
-		mode                 : params.mode || localStorage.getItem(`${uuid}-mode`) || "stats",
+		mode                 : params.get('mode') || localStorage.getItem(`${uuid}-mode`) || "stats",
 		ui_builder           : false,
 	},
 	settings : {},

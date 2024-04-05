@@ -2,8 +2,6 @@ import React from "react";
 import store from "../redux/store/index";
 import { updateSetting, updateState } from "../redux/actions/index";
 import { Container } from "semantic-ui-react";
-import $ from "jquery";
-import Parser from "changelog-parser";
 import compareVersions from "compare-versions";
 
 import LocalizationService from "./LocalizationService";
@@ -189,21 +187,7 @@ class VersionService {
 	}
 
 	parseChangelog() {
-		return new Promise((resolve, reject) => {
-			$.get("logs/CHANGELOG.md")
-				.done(data => {
-					Parser({
-						text : data,
-					})
-						.then(result => {
-							resolve(result);
-						})
-						.catch(e => {
-							console.error(JSON.stringify(e));
-							reject(e);
-						});
-				});
-		});
+		return null;
 	}
 }
 
