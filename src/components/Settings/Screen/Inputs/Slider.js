@@ -1,51 +1,49 @@
-import React from "react";
-import $ from "jquery";
+import React, { useState } from "react";
+import RCSlider from "rc-slider";
+import "rc-slider/assets/index.css";
 
-// eslint-disable-next-line
-import UISlider from "jquery-ui/ui/widgets/slider";
+export default function Slider(props) {
+	const { label, minimum, maximum, key_path, onChange } = props;
+	const [value, setValue]                               = useState(props.value);
 
-import "jquery-ui/themes/base/theme.css";
-import "jquery-ui/themes/base/slider.css";
+	let reverse = false;
+	let range   = false;
 
-class Slider extends React.Component {
-	componentDidMount() {
-		this.$elem = $(this.refs.slider);
-
-		const $elem = this.$elem;
-
-		this.$elem.slider({
-			range : this.props.range,
-			min   : this.props.minimum,
-			max   : this.props.maximum,
-			value : this.props.value,
-			slide : (e, ui) => {
-				const change_data = {
-					key_path : this.props.key_path,
-					value    : ui.value,
-				};
-
-				this.props.onChange(e, change_data);
-				$elem
-					.closest("div.field")
-					.find(".value")
-					.text(ui.value);
-			},
-		});
+	switch (props.range) {
+		case "max":
+			reverse = true;
+			break;
+		case true:
+			range = true;
+			break;
+		default:
+			break;
 	}
 
-	componentWillUnmount() {
-		this.$elem.slider("destroy");
-	}
-
-	shouldComponentUpdate() {
-		return false;
-	}
-
-	render() {
-		return (
-			<div ref='slider'></div>
-		);
-	}
+	return (
+		<>
+			<label>{label}: <span className='value'>{value}</span></label>
+			<RCSlider
+				range={range}
+				reverse={reverse}
+				min={minimum}
+				max={maximum}
+				value={value}
+				onChange={value => {
+					setValue(value);
+					onChange(null, { key_path, value });
+				}}
+				styles={{
+					rail   : { height : 10 },
+					track  : { height : 10 },
+					handle : {
+						height     : 16,
+						width      : 16,
+						marginLeft : -3,
+						marginTop  : -3,
+					},
+				}}
+			/>
+		</>
+	);
 }
-
-export default Slider;

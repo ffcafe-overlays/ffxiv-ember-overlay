@@ -335,51 +335,63 @@ body #settings-container p * {
 	);
 }
 
-#settings-container #settings-screen .section-container .field > .ui-slider {
-	border: 0;
+#settings-container #settings-screen .section-container .field > .rc-slider {
+	.rc-slider-rail {
+		.setThemeStyle(
+			{
+				background: @dark_footerActiveLinkBackground;
+			},
+			{
+				background: @light_footerActiveLinkBackground;
+			},
+			@classicTheme: {
+				background: @classic_footerActiveLinkBackground;
+			}
+		);
+	}
 
-	.setThemeStyle(
-		{
-			background: @dark_footerActiveLinkBackground;
-		},
-		{
-			background: @light_footerActiveLinkBackground;
-		},
-		@classicTheme: {
-			background: @classic_footerActiveLinkBackground;
-		}
-	);
-}
+	.rc-slider-track {
+		.setThemeStyle(
+			{
+				background: @dark_borderOuter;
+			},
+			{
+				background: @light_borderOuter;
+			},
+			@classicTheme: {
+				background: @classic_borderOuter;
+			}
+		);
+	}
 
-#settings-container #settings-screen .section-container .field > .ui-slider > .ui-widget-header {
-	.setThemeStyle(
-		{
-			background: @dark_borderOuterShadow;
-		},
-		{
-			background: @light_borderOuterShadow;
-		},
-		@classicTheme: {
-			background: @classic_borderOuterShadow;
-		}
-	);
-}
-#settings-container #settings-screen .section-container .field > .ui-slider > .ui-slider-handle {
-	border-radius: 50%;
-}
+	.rc-slider-handle {
+		opacity: 1;
+		.setThemeStyle(
+			{
+				border-color: @dark_borderOuterShadow;
+			},
+			{
+				border-color: @light_borderOuterShadow;
+			},
+			@classicTheme: {
+				border-color: @classic_borderOuterShadow;
+			}
+		);
+	}
 
-#settings-container #settings-screen .section-container .field > .ui-slider > .ui-slider-handle.ui-state-active {
-	.setThemeStyle(
-		{
-			background: @dark_borderOuter;
-		},
-		{
-			background: @light_borderOuter;
-		},
-		@classicTheme: {
-			background: @classic_borderOuter;
-		}
-	);
+	.rc-slider-handle:active {
+		.setThemeStyle(
+			{
+				box-shadow: 0 0 0 5px @dark_borderOuterShadow;
+			},
+			{
+				box-shadow: 0 0 0 5px @light_borderOuterShadow;
+			},
+			@classicTheme: {
+				box-shadow: 0 0 0 5px @classic_borderOuterShadow;
+			}
+		);
+	}
 }
 
 #settings-container #settings-screen .section-container .field > .ui.table {

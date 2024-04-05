@@ -127,9 +127,9 @@ class Section extends React.Component {
 					const min   = setting_data.minimum || 0;
 					const max   = setting_data.maximum || 100;
 
-					label = <label>{label_text}: <span className='value'>{value}</span></label>;
+					label = null;
 
-					setting = <Slider range={range} minimum={min} maximum ={max} key_path={setting_data.key_path} value={value} onChange={this.props.changeCallback}/>;
+					setting = <Slider label={label_text} range={range} minimum={min} maximum ={max} key_path={setting_data.key_path} value={value} onChange={this.props.changeCallback}/>;
 
 					break;
 
