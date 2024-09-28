@@ -310,17 +310,31 @@ const GameJobs = {
 	},
 	RPR : {
 		role    : "dps",
-		Name_de : "Reaper",
+		Name_de : "Schnitter",
 		Name_en : "Reaper",
-		Name_fr : "Reaper",
+		Name_fr : "Faucheur",
 		Name_jp : "リーパー",
 	},
 	SGE : {
 		role    : "heal",
-		Name_de : "Sage",
+		Name_de : "Weiser",
 		Name_en : "Sage",
 		Name_fr : "Sage",
 		Name_jp : "賢者",
+	},
+	VPR : {
+		role    : "dps",
+		Name_de : "Viper",
+		Name_en : "Viper",
+		Name_fr : "Viper",
+		Name_jp : "ヴァイパー",
+	},
+	PCT : {
+		role    : "dps",
+		Name_de : "Pictomancer",
+		Name_en : "Pictomancer",
+		Name_fr : "Pictomancer",
+		Name_jp : "ピクトマンサー",
 	},
 };
 
@@ -410,6 +424,15 @@ const TTSRules = [
 	"encounter.end",
 ];
 
+const AutoHideOptions = [
+	"disabled",
+	"hide",
+	"minimize_top_left",
+	"minimize_top_right",
+	"minimize_bottom_left",
+	"minimize_bottom_right",
+];
+
 export default {
 	GameJobs,
 	GameJobsID,
@@ -421,4 +444,5 @@ export default {
 	MonsterDataCustomDataValues,
 	MonsterDataTitles,
 	TTSRules,
+	AutoHideOptions,
 };

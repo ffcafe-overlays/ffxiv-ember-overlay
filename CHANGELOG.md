@@ -1,5 +1,235 @@
 # Changelog
 
+## 1.9.5
+
+**Released: 2024-08-29**
+
+### Bug Fixes
+- N/A
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- Updated game data through FFXIV patch 7.05
+
+## 1.9.4
+
+**Released: 2024-08-01**
+
+### Bug Fixes
+- Resolved issue where some SAM and BLM actions did not use post-trait cooldowns
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.9.3
+
+**Released: 2024-07-13**
+
+### Bug Fixes
+- Resolved issue where some buffs, debuffs, and DOTs were not attributed to their relevant classes/jobs
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.9.2
+
+**Released: 2024-07-10**
+
+### Bug Fixes
+- Resolved issue with deprecated skills/effects causing spell timer overlay to fail
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.9.1
+
+**Released: 2024-07-01**
+
+### Bug Fixes
+- N/A
+
+### Features
+- Detect when overlay is being previewed in order to show sample spell timers
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.9.0
+
+**Released: 2024-06-27**
+
+### Bug Fixes
+- Resolved issue where overlay became unusable when enabling horizontal mode while viewing the raid or aggro tabs
+
+### Features
+- Added Dawntrail actions (spells), statuses (effects), and zones
+- Added footer button to toggle the horizontal overlay mode
+
+### UI Changes
+- Improved spell timer image and countdown positioning
+- Improved appearance of encounter timer in right-aligned horizontal overlay
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.8.1
+
+**Released: 2024-06-13**
+
+### Bug Fixes
+- N/A
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- Added Pictomancer and Viper jobs
+
+## 1.8.0
+
+**Released: 2024-06-13**
+
+### Bug Fixes
+- N/A
+
+### Features
+- Added options to specify metrics and sort order at Settings > Discord Webhook
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.7.1
+
+**Released: 2024-06-11**
+
+### Bug Fixes
+- Resolved issue where overlay did not unhide after auto-hiding and resuming combat
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.7.0
+
+**Released: 2024-06-09**
+
+### Bug Fixes
+- N/A
+
+### Features
+- Added options to minimize overlay instead of fully hiding when inactive at Settings > Interface > "Auto-Hide Overlay After Inactivity"
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.6.1
+
+**Released: 2024-05-09**
+
+### Bug Fixes
+- Fixed missing image issue in FFXIV Clear Blue theme minimized placeholder
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.6.0
+
+**Released: 2024-05-01**
+
+### Bug Fixes
+- N/A
+
+### Features
+- Added FFXIV Clear Blue theme
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- Updated game data through FFXIV patch 6.58
+
 ## 1.5.3
 
 **Released: 2023-09-13**
@@ -417,7 +647,7 @@
 **Released: 2021-10-08**
 
 ### Bug Fixes
-- N/A
+- ?
 
 ### Features
 - Added setting at Settings > Interface > "Use Job Names Instead of Player Names" to display job name instead of player name

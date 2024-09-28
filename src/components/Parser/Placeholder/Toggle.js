@@ -1,25 +1,26 @@
 import React from "react";
-import jquery from "jquery";
+import { connect } from "react-redux";
+import { updateToggle } from "../../../redux/actions";
 
 class Toggle extends React.Component {
-	togglePlaceholders() {
-		const $container = jquery(document).find("#container");
-		const self       = this;
-
-		jquery(document).find(".placeholder").each(function() {
-			const hidden = (!jquery(this).hasClass(self.props.type));
-
-			jquery(this).toggleClass("hidden", hidden);
-		});
-
-		$container.toggleClass("hidden", true);
-	}
-
 	render() {
 		return (
-			<div className={"toggle " + this.props.type} onClick={this.togglePlaceholders.bind(this)}></div>
+			<div
+				className={"toggle " + this.props.location.replace("_", " ")}
+				onClick={() => this.props.toggle(this.props.location)}>
+			</div>
 		);
 	}
 }
 
-export default Toggle;
+const mapDispatchToProps = dispatch => ({
+	toggle(location) {
+		dispatch(updateToggle({ location, enabled : true }));
+	},
+});
+
+const mapStateToProps = state => ({
+	toggles : state.internal.toggles,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Toggle);

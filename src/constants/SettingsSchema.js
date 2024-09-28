@@ -68,6 +68,11 @@ const theme_options    = [
 		value : "ffxiv-classic",
 		text  : "FFXIV Classic",
 	},
+	{
+		key   : "ffxiv-clear-blue",
+		value : "ffxiv-clear-blue",
+		text  : "FFXIV Clear Blue",
+	},
 ];
 
 const SettingsSchema = {
@@ -121,7 +126,8 @@ const SettingsSchema = {
 							},
 							{
 								key_path      : "interface.auto_hide",
-								type          : "checkbox",
+								type          : "select",
+								options       : () => LocalizationService.getAutoHideOptions(),
 								exclude_modes : [
 									"spells",
 								],
@@ -485,6 +491,22 @@ const SettingsSchema = {
 								key_path : "discord.url",
 								type     : "textbox",
 								fluid    : true,
+							},
+							{
+								key_path : "discord.metrics",
+								locale   : "discord.metrics",
+								type     : "select",
+								multiple : true,
+								search   : true,
+								options  : () => LocalizationService.getPlayerDataTitles(),
+							},
+							{
+								key_path : "discord.sort",
+								locale   : "discord.sort",
+								type     : "select",
+								multiple : false,
+								search   : true,
+								options  : () => LocalizationService.getPlayerDataTitles(),
 							},
 						],
 					},

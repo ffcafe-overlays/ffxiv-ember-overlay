@@ -1126,6 +1126,30 @@
 			"ua" : "Webhook URL",
 			"ru" : "Webhook URL"
 		},
+		"discord.metrics" : {
+			"en" : "Player Metrics",
+			"pt" : "Métricas do Jogador",
+			"cn" : "玩家数据元素",
+			"jp" : "プレイヤーメトリック",
+			"de" : "Spieler Metriken",
+			"es" : "Métricas del Jugador",
+			"fr" : "Les Mesures du Joueur",
+			"kr" : "플레이어 스탯",
+			"ua" : "Метрики гравця",
+			"ru" : "Метрики Игрока"
+		},
+		"discord.sort" : {
+			"en" : "Default Sort Metric",
+			"pt" : "Organizar métricas (padrão)",
+			"cn" : "默认排序",
+			"jp" : "既定な並べ替え",
+			"de" : "Metrik nach Standard sortieren",
+			"es" : "Organizar Métricas por Defecto",
+			"fr" : "Mesures de Tri par Défault",
+			"kr" : "스탯 기본 정렬",
+			"ua" : "Сортування метрик по замовчуванню",
+			"ru" : "Метрика для сортировки по умолчанию"
+		},
 		"custom.css" : {
 			"en" : "User-provided CSS is at your own risk.",
 			"pt" : "Usar CSS de outros usuários é de responsabilidade própria.",
@@ -1536,6 +1560,88 @@
 				"short_first" : "И. Фамилия",
 				"short_last"  : "Имя Ф.",
 				"short_both"  : "И. Ф."
+			}
+		},
+		"auto_hide_options" : {
+			"en" : {
+				"disabled"              : "Disabled",
+				"hide"                  : "Hide",
+				"minimize_top_left"     : "Minimize to Top Left",
+				"minimize_top_right"    : "Minimize to Top Right",
+				"minimize_bottom_left"  : "Minimize to Bottom Left",
+				"minimize_bottom_right" : "Minimize to Bottom Right"
+			},
+			"pt" : {
+				"disabled"              : "Disabled",
+				"hide"                  : "Hide",
+				"minimize_top_left"     : "Minimize to Top Left",
+				"minimize_top_right"    : "Minimize to Top Right",
+				"minimize_bottom_left"  : "Minimize to Bottom Left",
+				"minimize_bottom_right" : "Minimize to Bottom Right"
+			},
+			"cn" : {
+				"disabled"              : "Disabled",
+				"hide"                  : "Hide",
+				"minimize_top_left"     : "Minimize to Top Left",
+				"minimize_top_right"    : "Minimize to Top Right",
+				"minimize_bottom_left"  : "Minimize to Bottom Left",
+				"minimize_bottom_right" : "Minimize to Bottom Right"
+			},
+			"jp" : {
+				"disabled"              : "Disabled",
+				"hide"                  : "Hide",
+				"minimize_top_left"     : "Minimize to Top Left",
+				"minimize_top_right"    : "Minimize to Top Right",
+				"minimize_bottom_left"  : "Minimize to Bottom Left",
+				"minimize_bottom_right" : "Minimize to Bottom Right"
+			},
+			"de" : {
+				"disabled"              : "Disabled",
+				"hide"                  : "Hide",
+				"minimize_top_left"     : "Minimize to Top Left",
+				"minimize_top_right"    : "Minimize to Top Right",
+				"minimize_bottom_left"  : "Minimize to Bottom Left",
+				"minimize_bottom_right" : "Minimize to Bottom Right"
+			},
+			"es" : {
+				"disabled"              : "Disabled",
+				"hide"                  : "Hide",
+				"minimize_top_left"     : "Minimize to Top Left",
+				"minimize_top_right"    : "Minimize to Top Right",
+				"minimize_bottom_left"  : "Minimize to Bottom Left",
+				"minimize_bottom_right" : "Minimize to Bottom Right"
+			},
+			"fr" : {
+				"disabled"              : "Disabled",
+				"hide"                  : "Hide",
+				"minimize_top_left"     : "Minimize to Top Left",
+				"minimize_top_right"    : "Minimize to Top Right",
+				"minimize_bottom_left"  : "Minimize to Bottom Left",
+				"minimize_bottom_right" : "Minimize to Bottom Right"
+			},
+			"kr" : {
+				"disabled"              : "Disabled",
+				"hide"                  : "Hide",
+				"minimize_top_left"     : "Minimize to Top Left",
+				"minimize_top_right"    : "Minimize to Top Right",
+				"minimize_bottom_left"  : "Minimize to Bottom Left",
+				"minimize_bottom_right" : "Minimize to Bottom Right"
+			},
+			"ua" : {
+				"disabled"              : "Disabled",
+				"hide"                  : "Hide",
+				"minimize_top_left"     : "Minimize to Top Left",
+				"minimize_top_right"    : "Minimize to Top Right",
+				"minimize_bottom_left"  : "Minimize to Bottom Left",
+				"minimize_bottom_right" : "Minimize to Bottom Right"
+			},
+			"ru" : {
+				"disabled"              : "Disabled",
+				"hide"                  : "Hide",
+				"minimize_top_left"     : "Minimize to Top Left",
+				"minimize_top_right"    : "Minimize to Top Right",
+				"minimize_bottom_left"  : "Minimize to Bottom Left",
+				"minimize_bottom_right" : "Minimize to Bottom Right"
 			}
 		},
 		"alignment_options" : {

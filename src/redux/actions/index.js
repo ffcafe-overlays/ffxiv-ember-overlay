@@ -116,6 +116,15 @@ export function changePlayerBlur(payload) {
 	};
 }
 
+export function changeHorizontal(payload) {
+	return {
+		type   : "setSetting",
+		key    : "interface.horizontal",
+		source : "parser",
+		payload,
+	};
+}
+
 export function changeViewing(payload) {
 	return {
 		type   : "changeViewing",
@@ -138,5 +147,13 @@ export function updateState(payload) {
 		type    : "updateState",
 		key     : payload.key,
 		payload : payload.value,
+	};
+}
+
+export function updateToggle(payload) {
+	return {
+		type : "updateToggle",
+		key  : "internal.toggles",
+		payload,
 	};
 }
