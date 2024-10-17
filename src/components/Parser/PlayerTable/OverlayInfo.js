@@ -1,7 +1,5 @@
 import React from "react";
 
-import DonationService from "../../../services/DonationService";
-
 class OverlayInfo extends React.Component {
 	UNSAFE_componentWillMount() {
 		// Hibiya OverlayPlugin: 45.0.2454.85
