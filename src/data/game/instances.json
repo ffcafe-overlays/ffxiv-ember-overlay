@@ -66,7 +66,7 @@
 		}
 	},
 	"7" : {
-		"zone_id" : 162,
+		"zone_id" : 1245,
 		"locales" : {
 			"name" : {
 				"en" : "Halatali",
@@ -88,7 +88,7 @@
 		}
 	},
 	"9" : {
-		"zone_id" : 163,
+		"zone_id" : 1267,
 		"locales" : {
 			"name" : {
 				"en" : "the Sunken Temple of Qarn",
@@ -1298,7 +1298,7 @@
 		}
 	},
 	"50001" : {
-		"zone_id" : 376,
+		"zone_id" : 1273,
 		"locales" : {
 			"name" : {
 				"en" : "the Borderland Ruins (Secure)",
@@ -5217,7 +5217,7 @@
 		"zone_id" : 1194,
 		"locales" : {
 			"name" : {
-				"en" : "The Skydeep Cenote",
+				"en" : "the Skydeep Cenote",
 				"de" : "Himmelstiefer Cenote",
 				"fr" : "Le cénote des Cieux infinis",
 				"jp" : "遺産踏査 天深きセノーテ"
@@ -6475,6 +6475,248 @@
 				"de" : "Neue Bande der Freundschaft",
 				"fr" : "Rêves éveillés",
 				"jp" : "寝ても覚めても"
+			}
+		}
+	},
+	"30143" : {
+		"zone_id" : 1238,
+		"locales" : {
+			"name" : {
+				"en" : "Futures Rewritten (Ultimate)",
+				"de" : "Eine zweite Zukunft (fatal)",
+				"fr" : "Avenirs réécrits (fatal)",
+				"jp" : "絶もうひとつの未来"
+			}
+		}
+	},
+	"100" : {
+		"zone_id" : 1242,
+		"locales" : {
+			"name" : {
+				"en" : "Yuweyawata Field Station",
+				"de" : "Forschungsstation Yuweyawata",
+				"fr" : "Le centre de recherche de Yuweyawata",
+				"jp" : "廃地討究 ユウェヤーワータ"
+			}
+		}
+	},
+	"5081" : {
+		"zone_id" : 1244,
+		"locales" : {
+			"name" : {
+				"en" : "The Warmth of Family",
+				"de" : "Ein Land, eine Familie",
+				"fr" : "La famille de l'Aurarque",
+				"jp" : "王の家族"
+			}
+		}
+	},
+	"20098" : {
+		"zone_id" : 1241,
+		"locales" : {
+			"name" : {
+				"en" : "The Cloud of Darkness (Chaotic)",
+				"de" : "Die Wolke der Dunkelheit (chaotisch)",
+				"fr" : "La Tour de Ténèbres (chaotique)",
+				"jp" : "滅暗闇の雲激闘戦"
+			}
+		}
+	},
+	"15017" : {
+		"zone_id" : 1127,
+		"locales" : {
+			"name" : {
+				"en" : "React to Attack Markers",
+				"de" : "Achte auf Attackenmarkierungen!",
+				"fr" : "Réagir à des marquages",
+				"jp" : "マーカーが出る攻撃に対処しよう！"
+			}
+		}
+	},
+	"15018" : {
+		"zone_id" : 1128,
+		"locales" : {
+			"name" : {
+				"en" : "React to Floor Markers",
+				"de" : "Achte auf Geländemarkierungen!",
+				"fr" : "Réagir à des indications au sol",
+				"jp" : "地面に予兆が出る攻撃に対処しよう！"
+			}
+		}
+	},
+	"15019" : {
+		"zone_id" : 1129,
+		"locales" : {
+			"name" : {
+				"en" : "React to Advanced Visual Indicators",
+				"de" : "Stelle dich allerlei Angriffsmanövern!",
+				"fr" : "Réagir à des mécaniques variées",
+				"jp" : "さまざまな攻撃に対処しよう！"
+			}
+		}
+	},
+	"30144" : {
+		"zone_id" : 1248,
+		"locales" : {
+			"name" : {
+				"en" : "Jeuno: The First Walk",
+				"de" : "Jeuno: Die erste Etappe",
+				"fr" : "Jeuno - La première perambulation",
+				"jp" : "ジュノ：ザ・ファーストウォーク"
+			}
+		}
+	},
+	"5082" : {
+		"zone_id" : 1246,
+		"locales" : {
+			"name" : {
+				"en" : "Bar the Passage",
+				"de" : "Kampf an Zorgor der Weiten",
+				"fr" : "Pour s'affranchir de la tyrannie, tout s'appelle vertu",
+				"jp" : "決戦、ゾーゴー永結橋"
+			}
+		}
+	},
+	"20099" : {
+		"zone_id" : 1243,
+		"locales" : {
+			"name" : {
+				"en" : "The Minstrel's Ballad: Sphene's Burden",
+				"de" : "Gok Tajaal - Ewige Königin",
+				"fr" : "Interphos (extrême)",
+				"jp" : "極エターナルクイーン討滅戦"
+			}
+		}
+	},
+	"30145" : {
+		"zone_id" : 1256,
+		"locales" : {
+			"name" : {
+				"en" : "AAC Cruiserweight M1",
+				"de" : "Arkadion - Schwergewicht R1",
+				"fr" : "Poids lourds-légers CCA - match 1",
+				"jp" : "至天の座アルカディア：クルーザー級1"
+			}
+		}
+	},
+	"30146" : {
+		"zone_id" : 1257,
+		"locales" : {
+			"name" : {
+				"en" : "AAC Cruiserweight M1 (Savage)",
+				"de" : "Arkadion - Schwergewicht R1 (episch)",
+				"fr" : "Poids lourds-légers CCA - match 1 (sadique)",
+				"jp" : "至天の座アルカディア零式：クルーザー級1"
+			}
+		}
+	},
+	"30147" : {
+		"zone_id" : 1258,
+		"locales" : {
+			"name" : {
+				"en" : "AAC Cruiserweight M2",
+				"de" : "Arkadion - Schwergewicht R2",
+				"fr" : "Poids lourds-légers CCA - match 2",
+				"jp" : "至天の座アルカディア：クルーザー級2"
+			}
+		}
+	},
+	"30148" : {
+		"zone_id" : 1259,
+		"locales" : {
+			"name" : {
+				"en" : "AAC Cruiserweight M2 (Savage)",
+				"de" : "Arkadion - Schwergewicht R2 (episch)",
+				"fr" : "Poids lourds-légers CCA - match 2 (sadique)",
+				"jp" : "至天の座アルカディア零式：クルーザー級2"
+			}
+		}
+	},
+	"30149" : {
+		"zone_id" : 1260,
+		"locales" : {
+			"name" : {
+				"en" : "AAC Cruiserweight M3",
+				"de" : "Arkadion - Schwergewicht R3",
+				"fr" : "Poids lourds-légers CCA - match 3",
+				"jp" : "至天の座アルカディア：クルーザー級3"
+			}
+		}
+	},
+	"30150" : {
+		"zone_id" : 1261,
+		"locales" : {
+			"name" : {
+				"en" : "AAC Cruiserweight M3 (Savage)",
+				"de" : "Arkadion - Schwergewicht R3 (episch)",
+				"fr" : "Poids lourds-légers CCA - match 3 (sadique)",
+				"jp" : "至天の座アルカディア零式：クルーザー級3"
+			}
+		}
+	},
+	"30151" : {
+		"zone_id" : 1262,
+		"locales" : {
+			"name" : {
+				"en" : "AAC Cruiserweight M4",
+				"de" : "Arkadion - Schwergewicht R4",
+				"fr" : "Poids lourds-légers CCA - match 4",
+				"jp" : "至天の座アルカディア：クルーザー級4"
+			}
+		}
+	},
+	"30152" : {
+		"zone_id" : 1263,
+		"locales" : {
+			"name" : {
+				"en" : "AAC Cruiserweight M4 (Savage)",
+				"de" : "Arkadion - Schwergewicht R4 (episch)",
+				"fr" : "Poids lourds-légers CCA - match 4 (sadique)",
+				"jp" : "至天の座アルカディア零式：クルーザー級4"
+			}
+		}
+	},
+	"101" : {
+		"zone_id" : 1266,
+		"locales" : {
+			"name" : {
+				"en" : "the Underkeep",
+				"de" : "Unterfried-Ruinen",
+				"fr" : "La Gardienne de l'Immémorial",
+				"jp" : "王城旧跡 アンダーキープ"
+			}
+		}
+	},
+	"64010" : {
+		"zone_id" : 1272,
+		"locales" : {
+			"name" : {
+				"en" : "Hells' Kier (Unreal)",
+				"de" : "Traumprüfung - Suzaku",
+				"fr" : "Le Nid des Lamentations (irréel)",
+				"jp" : "幻朱雀征魂戦"
+			}
+		}
+	},
+	"20100" : {
+		"zone_id" : 1270,
+		"locales" : {
+			"name" : {
+				"en" : "Recollection",
+				"de" : "Zel Tajaal - Zelenia",
+				"fr" : "Le Sanctuaire du Serment",
+				"jp" : "ゼレニア討滅戦"
+			}
+		}
+	},
+	"20101" : {
+		"zone_id" : 1271,
+		"locales" : {
+			"name" : {
+				"en" : "Recollection (Extreme)",
+				"de" : "Gok Tajaal - Zelenia",
+				"fr" : "Le Sanctuaire du Serment (extrême)",
+				"jp" : "極ゼレニア討滅戦"
 			}
 		}
 	}
