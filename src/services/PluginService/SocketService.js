@@ -16,6 +16,10 @@ class SocketService {
 	}
 
 	processUri() {
+		if (window.OverlayPluginApi) {
+			return false;
+		}
+
 		const params = new URLSearchParams(String(window.location.search).substring(1));
 		let uri      = params.get("HOST_PORT") || params.get("OVERLAY_WS");
 
@@ -23,13 +27,11 @@ class SocketService {
 			return false;
 		}
 
-		const original_uri = uri;
-
 		uri = uri.replace(/\/$/, "");
 
 		// Redirect to non-SSL host if on SSL and using an insecure socket
 		if (window.location.protocol === "https:" && uri.split(":")[0] === "ws" && uri.substring(uri.length - 4) !== "fake") {
-			window.location.replace(`${process.env.REACT_APP_REDIRECT_URL}${process.env.REACT_APP_HTTP_BASE}/` + window.location.search.replace(original_uri, uri));
+			window.location.replace(`${process.env.REACT_APP_REDIRECT_URL}${process.env.REACT_APP_HTTP_BASE}/${window.location.search}${window.location.hash}`);
 
 			return false;
 		}
