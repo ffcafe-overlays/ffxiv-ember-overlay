@@ -1,4 +1,5 @@
 import React from "react";
+import LocalizationService from "../../../services/LocalizationService";
 
 class OverlayInfo extends React.Component {
 	UNSAFE_componentWillMount() {
@@ -39,12 +40,12 @@ class OverlayInfo extends React.Component {
 		switch (this.props.mode) {
 			case "spells":
 				const configure_text = (!this.props.settings.spells.length && !this.props.settings.effects.length)
-					? <p>You are not tracking any spells or effects. Please add some at Settings &gt; Spell Timers.</p>
+					? <p>{LocalizationService.getOverlayText("spell_timers_configure")}</p>
 					: "";
 				return (
 					<React.Fragment>
 						{configure_text}
-						<p>This section will disappear when a tracked spell/effect is used.</p>
+						<p>{LocalizationService.getOverlayText("spell_timers_disappear")}</p>
 					</React.Fragment>
 				);
 
