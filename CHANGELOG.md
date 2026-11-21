@@ -1,5 +1,43 @@
 # Changelog
 
+## 1.10.1
+
+**Released: 2026-09-28**
+
+### Bug Fixes
+- Resolved issue where spell timer cooldowns were 10x longer than expected
+
+### Features
+- N/A
+
+### UI Changes
+- N/A
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- N/A
+
+## 1.10.0
+
+**Released: 2026-09-26**
+
+### Bug Fixes
+- N/A
+
+### Features
+- Added Beastmaster (BST) job support
+
+### UI Changes
+- Updated Chinese translations
+
+### Code Changes
+- N/A
+
+### Miscellaneous
+- Updated game data through FFXIV patch 7.56
+
 ## 1.9.7
 
 **Released: 2025-04-03**

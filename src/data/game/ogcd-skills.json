@@ -2554,14 +2554,9 @@
 		}
 	},
 	"7521" : {
-		"recast" : 120.0,
+		"recast" : 110.0,
 		"charges" : 0,
-		"level_recasts" : [
-			{
-				"level" : 78,
-				"recast" : 110.0
-			}
-		],
+		"level_recasts" : null,
 		"level_charges" : null,
 		"jobs" : [
 			"RDM"
@@ -4601,7 +4596,7 @@
 	},
 	"16146" : {
 		"recast" : 30.0,
-		"charges" : 0,
+		"charges" : 2,
 		"level_recasts" : null,
 		"level_charges" : null,
 		"jobs" : [
@@ -4731,7 +4726,7 @@
 		}
 	},
 	"16164" : {
-		"recast" : 120.0,
+		"recast" : 60.0,
 		"charges" : 0,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -7717,24 +7712,6 @@
 			}
 		}
 	},
-	"24394" : {
-		"recast" : 15.0,
-		"charges" : 0,
-		"level_recasts" : null,
-		"level_charges" : null,
-		"jobs" : [
-			"RPR"
-		],
-		"pvp" : false,
-		"locales" : {
-			"name" : {
-				"en" : "Enshroud",
-				"de" : "Lemurenschleier",
-				"fr" : "Linceul du lémure",
-				"jp" : "レムールシュラウド"
-			}
-		}
-	},
 	"24401" : {
 		"recast" : 20.0,
 		"charges" : 0,
@@ -8605,34 +8582,9 @@
 			}
 		}
 	},
-	"29056" : {
-		"recast" : 24.0,
-		"charges" : 0,
-		"level_recasts" : null,
-		"level_charges" : null,
-		"jobs" : [
-			"Jobs",
-			"of",
-			"the",
-			"Disciples",
-			"of",
-			"War",
-			"or",
-			"Magic"
-		],
-		"pvp" : true,
-		"locales" : {
-			"name" : {
-				"en" : "Purify (PVP)",
-				"de" : "Purifikation (PVP)",
-				"fr" : "Dépuration (PVP)",
-				"jp" : "浄化 (PVP)"
-			}
-		}
-	},
 	"29062" : {
 		"recast" : 12.0,
-		"charges" : 0,
+		"charges" : 2,
 		"level_recasts" : null,
 		"level_charges" : null,
 		"jobs" : [
@@ -8943,7 +8895,7 @@
 	},
 	"29123" : {
 		"recast" : 14.0,
-		"charges" : 2,
+		"charges" : 3,
 		"level_recasts" : null,
 		"level_charges" : null,
 		"jobs" : [
@@ -9032,7 +8984,7 @@
 		}
 	},
 	"29227" : {
-		"recast" : 20.0,
+		"recast" : 18.0,
 		"charges" : 0,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -9235,7 +9187,7 @@
 		}
 	},
 	"29244" : {
-		"recast" : 20.0,
+		"recast" : 16.0,
 		"charges" : 0,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -9397,7 +9349,7 @@
 		}
 	},
 	"29260" : {
-		"recast" : 30.0,
+		"recast" : 28.0,
 		"charges" : 0,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -9539,7 +9491,7 @@
 		}
 	},
 	"29399" : {
-		"recast" : 12.0,
+		"recast" : 10.0,
 		"charges" : 0,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -9872,7 +9824,7 @@
 		}
 	},
 	"29481" : {
-		"recast" : 16.0,
+		"recast" : 12.0,
 		"charges" : 2,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -9904,29 +9856,6 @@
 				"de" : "Steinernes Enigma (PVP)",
 				"fr" : "Énigme de la terre (PVP)",
 				"jp" : "金剛の極意 (PVP)"
-			}
-		}
-	},
-	"29484" : {
-		"recast" : 10.0,
-		"charges" : 2,
-		"level_recasts" : null,
-		"level_charges" : [
-			{
-				"level" : 84,
-				"charges" : 3
-			}
-		],
-		"jobs" : [
-			"MNK"
-		],
-		"pvp" : true,
-		"locales" : {
-			"name" : {
-				"en" : "Thunderclap (PVP)",
-				"de" : "Donnersprung (PVP)",
-				"fr" : "Élan fulgurant (PVP)",
-				"jp" : "抜重歩法 (PVP)"
 			}
 		}
 	},
@@ -10021,7 +9950,7 @@
 		}
 	},
 	"29496" : {
-		"recast" : 24.0,
+		"recast" : 20.0,
 		"charges" : 0,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -10075,7 +10004,7 @@
 		}
 	},
 	"29507" : {
-		"recast" : 16.0,
+		"recast" : 15.0,
 		"charges" : 2,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -10427,7 +10356,7 @@
 		}
 	},
 	"29658" : {
-		"recast" : 16.0,
+		"recast" : 15.0,
 		"charges" : 2,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -11871,7 +11800,7 @@
 		}
 	},
 	"39166" : {
-		"recast" : 12.0,
+		"recast" : 10.0,
 		"charges" : 0,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -11979,7 +11908,7 @@
 		}
 	},
 	"39198" : {
-		"recast" : 16.0,
+		"recast" : 15.0,
 		"charges" : 2,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -11997,7 +11926,7 @@
 		}
 	},
 	"39199" : {
-		"recast" : 16.0,
+		"recast" : 15.0,
 		"charges" : 2,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -12015,7 +11944,7 @@
 		}
 	},
 	"39205" : {
-		"recast" : 16.0,
+		"recast" : 15.0,
 		"charges" : 2,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -12033,7 +11962,7 @@
 		}
 	},
 	"39206" : {
-		"recast" : 16.0,
+		"recast" : 15.0,
 		"charges" : 2,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -12051,7 +11980,7 @@
 		}
 	},
 	"39207" : {
-		"recast" : 16.0,
+		"recast" : 15.0,
 		"charges" : 2,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -12069,7 +11998,7 @@
 		}
 	},
 	"39208" : {
-		"recast" : 16.0,
+		"recast" : 15.0,
 		"charges" : 2,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -12087,7 +12016,7 @@
 		}
 	},
 	"39209" : {
-		"recast" : 16.0,
+		"recast" : 15.0,
 		"charges" : 2,
 		"level_recasts" : null,
 		"level_charges" : [
@@ -12110,7 +12039,7 @@
 		}
 	},
 	"39210" : {
-		"recast" : 12.0,
+		"recast" : 15.0,
 		"charges" : 0,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -12163,6 +12092,24 @@
 			}
 		}
 	},
+	"41278" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"FSH"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Stellar Hookset",
+				"de" : "Prachtvoller Anschlag",
+				"fr" : "Ferrage admirable",
+				"jp" : "ビューティフルフッキング"
+			}
+		}
+	},
 	"41430" : {
 		"recast" : 24.0,
 		"charges" : 0,
@@ -12200,7 +12147,7 @@
 		}
 	},
 	"41438" : {
-		"recast" : 16.0,
+		"recast" : 14.0,
 		"charges" : 0,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -12235,8 +12182,8 @@
 			}
 		}
 	},
-	"41447" : {
-		"recast" : 12.0,
+	"41448" : {
+		"recast" : 16.0,
 		"charges" : 2,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -12246,10 +12193,10 @@
 		"pvp" : true,
 		"locales" : {
 			"name" : {
-				"en" : "Flint's Reply (PVP)",
-				"de" : "Rose der Überzeugung (PVP)",
-				"fr" : "Rose de la conviction (PVP)",
-				"jp" : "闘気弾 (PVP)"
+				"en" : "Fire's Reply (PVP)",
+				"de" : "Himmel und Erde (PVP)",
+				"fr" : "Réaction du feu (PVP)",
+				"jp" : "乾坤闘気弾 (PVP)"
 			}
 		}
 	},
@@ -12272,7 +12219,7 @@
 		}
 	},
 	"41464" : {
-		"recast" : 15.0,
+		"recast" : 12.0,
 		"charges" : 4,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -12290,7 +12237,7 @@
 		}
 	},
 	"41465" : {
-		"recast" : 15.0,
+		"recast" : 12.0,
 		"charges" : 4,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -12308,7 +12255,7 @@
 		}
 	},
 	"41466" : {
-		"recast" : 15.0,
+		"recast" : 12.0,
 		"charges" : 4,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -12667,8 +12614,1178 @@
 			}
 		}
 	},
-	"41964" : {
+	"41588" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Phantom Guard",
+				"de" : "Phantom-Beschützen",
+				"fr" : "Défense",
+				"jp" : "まもり"
+			}
+		}
+	},
+	"41591" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Pledge",
+				"de" : "Geloben",
+				"fr" : "Promesse",
+				"jp" : "ちかい"
+			}
+		}
+	},
+	"41592" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Rage",
+				"de" : "Wüten",
+				"fr" : "Fureur",
+				"jp" : "あばれる"
+			}
+		}
+	},
+	"41594" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Deadly Blow",
+				"de" : "Todesstoß",
+				"fr" : "Frappes brutales",
+				"jp" : "いちげき"
+			}
+		}
+	},
+	"41595" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Phantom Kick",
+				"de" : "Treten",
+				"fr" : "Coups de pied",
+				"jp" : "けり"
+			}
+		}
+	},
+	"41596" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Counter",
+				"de" : "Kreszenter Konter",
+				"fr" : "Magi Contre",
+				"jp" : "マギ・カウンター"
+			}
+		}
+	},
+	"41598" : {
+		"recast" : 90.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Chakra",
+				"de" : "Kreszentes Chakra",
+				"fr" : "Magi Chakra",
+				"jp" : "マギ・チャクラ"
+			}
+		}
+	},
+	"41599" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Phantom Aim",
+				"de" : "Phantom-Zielen",
+				"fr" : "Ciblage",
+				"jp" : "ねらう"
+			}
+		}
+	},
+	"41600" : {
+		"recast" : 10.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Featherfoot",
+				"de" : "Kreszenter Schritt",
+				"fr" : "Magi Pas",
+				"jp" : "マギ・ステップ"
+			}
+		}
+	},
+	"41602" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Unicorn",
+				"de" : "Kreszentes Einhorn",
+				"fr" : "Magi Licorne",
+				"jp" : "マギ・ユニコーン"
+			}
+		}
+	},
+	"41603" : {
+		"recast" : 10.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Mineuchi",
+				"de" : "Mineuchi",
+				"fr" : "Mineuchi",
+				"jp" : "みねうち"
+			}
+		}
+	},
+	"41604" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Shirahadori",
+				"de" : "Shirahadori",
+				"fr" : "Shirahadori",
+				"jp" : "しらはどり"
+			}
+		}
+	},
+	"41605" : {
+		"recast" : 40.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Iainuki",
+				"de" : "Iainuki",
+				"fr" : "Iainuki",
+				"jp" : "いあいぬき"
+			}
+		}
+	},
+	"41606" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Zeninage",
+				"de" : "Zeninage",
+				"fr" : "Zeninage",
+				"jp" : "ぜになげ"
+			}
+		}
+	},
+	"41607" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Mighty March",
+				"de" : "Kraft-Choral",
+				"fr" : "Hymne militaire",
+				"jp" : "たいりょくのうた"
+			}
+		}
+	},
+	"41609" : {
 		"recast" : 15.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Romeo's Ballad",
+				"de" : "Liebliche Klänge",
+				"fr" : "Lied arrêté",
+				"jp" : "あいのうた"
+			}
+		}
+	},
+	"41610" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Hero's Rime",
+				"de" : "Helden-Hymnus",
+				"fr" : "Héroïque",
+				"jp" : "えいゆうのうた"
+			}
+		}
+	},
+	"41611" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Battle Bell",
+				"de" : "Kampfesglocke",
+				"fr" : "Cloche de combat",
+				"jp" : "たたかいのベル"
+			}
+		}
+	},
+	"41612" : {
+		"recast" : 40.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Weather",
+				"de" : "Wetter",
+				"fr" : "Météorologie",
+				"jp" : "てんき"
+			}
+		}
+	},
+	"41613" : {
+		"recast" : 40.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Sunbath",
+				"de" : "Sonnenbad",
+				"fr" : "Bain de soleil",
+				"jp" : "にっこうよく"
+			}
+		}
+	},
+	"41614" : {
+		"recast" : 40.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Cloudy Caress",
+				"de" : "Abendkühle",
+				"fr" : "Couchant nébuleux",
+				"jp" : "ゆうすずみ"
+			}
+		}
+	},
+	"41615" : {
+		"recast" : 40.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Blessed Rain",
+				"de" : "Segensschauer",
+				"fr" : "Pluie salvatrice",
+				"jp" : "めぐみのあめ"
+			}
+		}
+	},
+	"41616" : {
+		"recast" : 40.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Misty Mirage",
+				"de" : "Trugnebel",
+				"fr" : "Illusion fugace",
+				"jp" : "しんきろう"
+			}
+		}
+	},
+	"41617" : {
+		"recast" : 40.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Hasty Mirage",
+				"de" : "Trughast",
+				"fr" : "Apparition intense",
+				"jp" : "にげみず"
+			}
+		}
+	},
+	"41618" : {
+		"recast" : 40.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Aetherial Gain",
+				"de" : "Ätherernte",
+				"fr" : "Force éthérée",
+				"jp" : "エーテルよく"
+			}
+		}
+	},
+	"41619" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Ringing Respite",
+				"de" : "Ruheglocke",
+				"fr" : "Cloche de détente",
+				"jp" : "いこいのベル"
+			}
+		}
+	},
+	"41623" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Comet",
+				"de" : "Kreszenter Komet",
+				"fr" : "Magi Comètes",
+				"jp" : "マギ・コメット"
+			}
+		}
+	},
+	"41624" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Mage Masher",
+				"de" : "Kreszenter Stummdolch",
+				"fr" : "Magi Bâillonnement",
+				"jp" : "マギ・メイジマッシャー"
+			}
+		}
+	},
+	"41625" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Quick",
+				"de" : "Kreszentes Schnell",
+				"fr" : "Magi Accélération",
+				"jp" : "マギ・クイック"
+			}
+		}
+	},
+	"41626" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Phantom Fire",
+				"de" : "Bombardieren",
+				"fr" : "Tir",
+				"jp" : "ほうげき"
+			}
+		}
+	},
+	"41627" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Holy Cannon",
+				"de" : "Heilige Kanone",
+				"fr" : "Canon sacré",
+				"jp" : "ホーリーキャノン"
+			}
+		}
+	},
+	"41628" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Dark Cannon",
+				"de" : "Dunkle Kanone",
+				"fr" : "Canon obscur",
+				"jp" : "ダークキャノン"
+			}
+		}
+	},
+	"41629" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Shock Cannon",
+				"de" : "Schockkanone",
+				"fr" : "Canon foudroyant",
+				"jp" : "ショックキャノン"
+			}
+		}
+	},
+	"41630" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Silver Cannon",
+				"de" : "Silberkanone",
+				"fr" : "Canon affaiblissant",
+				"jp" : "オールドキャノン"
+			}
+		}
+	},
+	"41635" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Elixir",
+				"de" : "Kreszentes Elixier",
+				"fr" : "Magi Élixir",
+				"jp" : "マギ・エリクサー"
+			}
+		}
+	},
+	"41636" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Predict",
+				"de" : "Prophezeien",
+				"fr" : "Prédiction",
+				"jp" : "よげん"
+			}
+		}
+	},
+	"41641" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Recuperation",
+				"de" : "Gesundung",
+				"fr" : "Récupération",
+				"jp" : "ちゆのせんこく"
+			}
+		}
+	},
+	"41642" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Phantom Doom",
+				"de" : "Phantom-Todesurteil",
+				"fr" : "Châtiment",
+				"jp" : "しのせんこく"
+			}
+		}
+	},
+	"41643" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Phantom Rejuvenation",
+				"de" : "Phantom-Genesung",
+				"fr" : "Rajeunissement",
+				"jp" : "いやしのせんこく"
+			}
+		}
+	},
+	"41644" : {
+		"recast" : 180.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Invulnerability",
+				"de" : "Unverwundbarkeit",
+				"fr" : "Immortalité",
+				"jp" : "ふしのせんこく"
+			}
+		}
+	},
+	"41645" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Steal",
+				"de" : "Stehlen",
+				"fr" : "Vol",
+				"jp" : "ぬすむ"
+			}
+		}
+	},
+	"41646" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Sprint",
+				"de" : "Kreszenter Sprint",
+				"fr" : "Magi Élan",
+				"jp" : "マギ・ダッシュ"
+			}
+		}
+	},
+	"41647" : {
+		"recast" : 10.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Vigilance",
+				"de" : "Wachsamkeit",
+				"fr" : "Vigilance",
+				"jp" : "けいかい"
+			}
+		}
+	},
+	"41649" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Pilfer Weapon",
+				"de" : "Waffe stehlen",
+				"fr" : "Désarmement",
+				"jp" : "ぶきをぬすむ"
+			}
+		}
+	},
+	"41651" : {
+		"recast" : 10.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Treasuresight",
+				"de" : "Kreszente Schatzsuche",
+				"fr" : "Magi Chasse au trésor",
+				"jp" : "マギ・トレジャーサーチ"
+			}
+		}
+	},
+	"41964" : {
+		"recast" : 12.0,
 		"charges" : 4,
 		"level_recasts" : null,
 		"level_charges" : null,
@@ -12682,6 +13799,52 @@
 				"de" : "Harmonischer Pfeil (PVP)",
 				"fr" : "Flèche harmonique (PVP)",
 				"jp" : "ハーモニックアロー (PVP)"
+			}
+		}
+	},
+	"42062" : {
+		"recast" : 15.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Disciples",
+			"of",
+			"the",
+			"Land",
+			"or",
+			"Hand"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Nova Grenade",
+				"de" : "Kosmogranate",
+				"fr" : "Cosmogrenadage",
+				"jp" : "コスモグレネーダー"
+			}
+		}
+	},
+	"42261" : {
+		"recast" : 18.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Disciples",
+			"of",
+			"the",
+			"Land",
+			"or",
+			"Hand"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Aerogrinder",
+				"de" : "Aero-Schnetzler",
+				"fr" : "Aérobroyeur",
+				"jp" : "エアログラインダー"
 			}
 		}
 	},
@@ -12979,6 +14142,1903 @@
 				"de" : "Phantompfeil (PVP)",
 				"fr" : "Projectile fantôme (PVP)",
 				"jp" : "ファントムダート (PVP)"
+			}
+		}
+	},
+	"43336" : {
+		"recast" : 360.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : "*",
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Phoenix Down",
+				"de" : "Phönixfeder",
+				"fr" : "Queue de phénix",
+				"jp" : "フェニックスの尾"
+			}
+		}
+	},
+	"44039" : {
+		"recast" : 15.0,
+		"charges" : 3,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : "*",
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Bake: Off",
+				"de" : "Stoppsignal",
+				"fr" : "Signal d'arrêt",
+				"jp" : "停止信号"
+			}
+		}
+	},
+	"44890" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Tempered Release",
+				"de" : "Entfesseln",
+				"fr" : "Salve",
+				"jp" : "はなつ"
+			}
+		}
+	},
+	"44891" : {
+		"recast" : 10.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Parting Blow",
+				"de" : "Scheidender Schlag",
+				"fr" : "Va-tout",
+				"jp" : "さいごのいちげき"
+			}
+		}
+	},
+	"44893" : {
+		"recast" : 60.0,
+		"charges" : 1,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Shield Charge",
+				"de" : "Schildansturm",
+				"fr" : "Charge de bouclier",
+				"jp" : "シールドチャージ"
+			}
+		}
+	},
+	"44895" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Borrow",
+				"de" : "Borgen",
+				"fr" : "Assimilation",
+				"jp" : "かりる"
+			}
+		}
+	},
+	"44896" : {
+		"recast" : 90.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Beastskin",
+				"de" : "Biesthaut",
+				"fr" : "Cuir de thérien",
+				"jp" : "ビーストスキン"
+			}
+		}
+	},
+	"44897" : {
+		"recast" : 90.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Vileskin",
+				"de" : "Gezieferpanzer",
+				"fr" : "Carapace d'insectoïde",
+				"jp" : "ヴァイルスキン"
+			}
+		}
+	},
+	"44899" : {
+		"recast" : 90.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Seedsower",
+				"de" : "Saatsäher",
+				"fr" : "Plante-graines",
+				"jp" : "シードサワー"
+			}
+		}
+	},
+	"44901" : {
+		"recast" : 90.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Scaleskin",
+				"de" : "Schuppenpanzer",
+				"fr" : "Peau d'écailles",
+				"jp" : "スケイルスキン"
+			}
+		}
+	},
+	"44902" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Soul Crush",
+				"de" : "Seelenschmerz",
+				"fr" : "Sape psychique",
+				"jp" : "ソウルクラッシュ"
+			}
+		}
+	},
+	"44903" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Scouring Ash",
+				"de" : "Läuternde Asche",
+				"fr" : "Cendres purifiantes",
+				"jp" : "アッシュクレンズ"
+			}
+		}
+	},
+	"44904" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Rallying Cheer",
+				"de" : "Anfeuern",
+				"fr" : "Encouragements",
+				"jp" : "おうえん"
+			}
+		}
+	},
+	"44905" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Rally",
+				"de" : "Anspornen",
+				"fr" : "Poussée d'énergie",
+				"jp" : "きあい"
+			}
+		}
+	},
+	"44921" : {
+		"recast" : 10.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Disciples",
+			"of",
+			"the",
+			"Land",
+			"or",
+			"Hand"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Extractor Beam",
+				"de" : "Schleppstrahl",
+				"fr" : "Rayon extracteur",
+				"jp" : "トーウィングビーム"
+			}
+		}
+	},
+	"44922" : {
+		"recast" : 10.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Disciples",
+			"of",
+			"the",
+			"Land",
+			"or",
+			"Hand"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Extractor Beam",
+				"de" : "Schleppstrahl",
+				"fr" : "Rayon extracteur",
+				"jp" : "トーウィングビーム"
+			}
+		}
+	},
+	"46411" : {
+		"recast" : 10.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : "*",
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Night Stallion",
+				"de" : "Nachthengst",
+				"fr" : "Étalon nocturne",
+				"jp" : "ナイトスタリオン"
+			}
+		}
+	},
+	"46412" : {
+		"recast" : 15.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : "*",
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Thick Skin",
+				"de" : "Hartgesotten",
+				"fr" : "Coquille dure",
+				"jp" : "ハードボイルド"
+			}
+		}
+	},
+	"46590" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Magic Shell",
+				"de" : "Magie-Barriere",
+				"fr" : "Magi Blindage",
+				"jp" : "まほうバリア"
+			}
+		}
+	},
+	"46591" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Sundering Spellblade",
+				"de" : "Magieklingen-Versteinerung",
+				"fr" : "Magi Lame Mégalithe",
+				"jp" : "まほうけんブレイク"
+			}
+		}
+	},
+	"46592" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Holy Spellblade",
+				"de" : "Magieklingen-Sanctus",
+				"fr" : "Magi Lame Miracle",
+				"jp" : "まほうけんホーリー"
+			}
+		}
+	},
+	"46593" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Blazing Spellblade",
+				"de" : "Magieklingen-Flare",
+				"fr" : "Magi Lame Brasier",
+				"jp" : "まほうけんフレア"
+			}
+		}
+	},
+	"46594" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Finisher",
+				"de" : "Finaler Stoß",
+				"fr" : "Coup fatal",
+				"jp" : "ひっさつ"
+			}
+		}
+	},
+	"46595" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Defend",
+				"de" : "Abwehr",
+				"fr" : "Défense de fer",
+				"jp" : "ぼうぎょ"
+			}
+		}
+	},
+	"46596" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Long Reach",
+				"de" : "Große Reichweite",
+				"fr" : "Allonge",
+				"jp" : "こうれつぎり"
+			}
+		}
+	},
+	"46597" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Bladeblitz",
+				"de" : "Klingenblitz",
+				"fr" : "Combo",
+				"jp" : "ぜんぎり"
+			}
+		}
+	},
+	"46598" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Dance",
+				"de" : "Tanzen",
+				"fr" : "Danser",
+				"jp" : "おどる"
+			}
+		}
+	},
+	"46604" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Steadfast Stance",
+				"de" : "Halteposition",
+				"fr" : "Position fermée",
+				"jp" : "ホールドポジション"
+			}
+		}
+	},
+	"46605" : {
+		"recast" : 90.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Mesmerize",
+				"de" : "Betörung",
+				"fr" : "Envoûtement",
+				"jp" : "みりょう"
+			}
+		}
+	},
+	"46750" : {
+		"recast" : 15.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Challenge",
+				"de" : "Provozieren",
+				"fr" : "Provoquer",
+				"jp" : "ちょうはつ"
+			}
+		}
+	},
+	"46751" : {
+		"recast" : 15.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Snarl",
+				"de" : "Zähnefletschen",
+				"fr" : "Ordre de provocation",
+				"jp" : "ひきつけろ"
+			}
+		}
+	},
+	"46762" : {
+		"recast" : 20.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : "*",
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Aqua Vitae",
+				"de" : "Aqua Vitae",
+				"fr" : "Aqua Vitae",
+				"jp" : "アクアヴィッテ"
+			}
+		}
+	},
+	"46763" : {
+		"recast" : 25.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : "*",
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Butterfly Motif",
+				"de" : "Pikto-Schmetterling",
+				"fr" : "Picto Papillons",
+				"jp" : "ピクトバタフライ"
+			}
+		}
+	},
+	"46941" : {
+		"recast" : 15.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"PGL",
+			"LNC",
+			"ARC",
+			"ROG",
+			"CNJ",
+			"THM",
+			"ACN",
+			"MNK",
+			"DRG",
+			"BRD",
+			"WHM",
+			"BLM",
+			"SMN",
+			"SCH",
+			"NIN",
+			"MCH",
+			"AST",
+			"SAM",
+			"RDM",
+			"DNC",
+			"RPR",
+			"SGE",
+			"VPR",
+			"PCT"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Variant Rampart",
+				"de" : "Unsteter Schutzwall",
+				"fr" : "Rempart embranché",
+				"jp" : "ヴァリアント・ランパート"
+			}
+		}
+	},
+	"46942" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Variant Eagle Eye Shot",
+				"de" : "Unstetes Adlerauge",
+				"fr" : "Œil d'aigle embranché",
+				"jp" : "ヴァリアント・イーグルアイ"
+			}
+		}
+	},
+	"47092" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Tempered Release",
+				"de" : "Entfesseln",
+				"fr" : "Salve",
+				"jp" : "はなつ"
+			}
+		}
+	},
+	"47238" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Borrow",
+				"de" : "Borgen",
+				"fr" : "Assimilation",
+				"jp" : "かりる"
+			}
+		}
+	},
+	"47239" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Borrow",
+				"de" : "Borgen",
+				"fr" : "Assimilation",
+				"jp" : "かりる"
+			}
+		}
+	},
+	"47240" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Borrow",
+				"de" : "Borgen",
+				"fr" : "Assimilation",
+				"jp" : "かりる"
+			}
+		}
+	},
+	"47241" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Borrow",
+				"de" : "Borgen",
+				"fr" : "Assimilation",
+				"jp" : "かりる"
+			}
+		}
+	},
+	"47242" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Borrow",
+				"de" : "Borgen",
+				"fr" : "Assimilation",
+				"jp" : "かりる"
+			}
+		}
+	},
+	"47243" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Borrow",
+				"de" : "Borgen",
+				"fr" : "Assimilation",
+				"jp" : "かりる"
+			}
+		}
+	},
+	"47244" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Borrow",
+				"de" : "Borgen",
+				"fr" : "Assimilation",
+				"jp" : "かりる"
+			}
+		}
+	},
+	"47245" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"BST"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Borrow",
+				"de" : "Borgen",
+				"fr" : "Assimilation",
+				"jp" : "かりる"
+			}
+		}
+	},
+	"49062" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Fuma Shuriken",
+				"de" : "Fuma Shuriken",
+				"fr" : "Fûma Shuriken",
+				"jp" : "ふうましゅりけん"
+			}
+		}
+	},
+	"49064" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Lightning Scroll",
+				"de" : "Rolle des Blitzes",
+				"fr" : "Raijin",
+				"jp" : "らいじんのじゅつ"
+			}
+		}
+	},
+	"49065" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Flame Scroll",
+				"de" : "Rolle des Feuers",
+				"fr" : "Katon",
+				"jp" : "かとんのじゅつ"
+			}
+		}
+	},
+	"49066" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Image",
+				"de" : "Doppelgänger",
+				"fr" : "Bunshin",
+				"jp" : "ぶんしん"
+			}
+		}
+	},
+	"49069" : {
+		"recast" : 90.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Blink",
+				"de" : "Kreszentes Blink",
+				"fr" : "Magi Leurre",
+				"jp" : "マギ・ブリンク"
+			}
+		}
+	},
+	"49071" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Holy",
+				"de" : "Kreszentes Sanctus",
+				"fr" : "Magi Miracle",
+				"jp" : "マギ・ホーリー"
+			}
+		}
+	},
+	"49072" : {
+		"recast" : 40.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Fire III",
+				"de" : "Kreszentes Feuga",
+				"fr" : "Magi Méga Feu",
+				"jp" : "マギ・ファイガ"
+			}
+		}
+	},
+	"49073" : {
+		"recast" : 40.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Blizzard III",
+				"de" : "Kreszentes Eisga",
+				"fr" : "Magi Méga Glace",
+				"jp" : "マギ・ブリザガ"
+			}
+		}
+	},
+	"49074" : {
+		"recast" : 40.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Thunder III",
+				"de" : "Kreszentes Blitzga",
+				"fr" : "Magi Méga Foudre",
+				"jp" : "マギ・サンダガ"
+			}
+		}
+	},
+	"49076" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Flare",
+				"de" : "Kreszente Flare",
+				"fr" : "Magi Brasier",
+				"jp" : "マギ・フレア"
+			}
+		}
+	},
+	"49077" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Jump",
+				"de" : "Kreszenter Sprung",
+				"fr" : "Magi Saut",
+				"jp" : "マギ・ジャンプ"
+			}
+		}
+	},
+	"49078" : {
+		"recast" : 10.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Step Forth",
+				"de" : "Ausfallschritt",
+				"fr" : "Avancée",
+				"jp" : "ふみこみ"
+			}
+		}
+	},
+	"49079" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Lance",
+				"de" : "Lanze",
+				"fr" : "Ryûken",
+				"jp" : "りゅうけん"
+			}
+		}
+	},
+	"49080" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Hellfire",
+				"de" : "Höllenfeuer",
+				"fr" : "Divine comédie",
+				"jp" : "じごくのかえん"
+			}
+		}
+	},
+	"49081" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Judgment Bolt",
+				"de" : "Blitz des Urteils",
+				"fr" : "Fulguration",
+				"jp" : "さばきのいかづち"
+			}
+		}
+	},
+	"49082" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Earthen Wall",
+				"de" : "Irdener Wall",
+				"fr" : "Muraille",
+				"jp" : "アースウォール"
+			}
+		}
+	},
+	"49083" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Thunderstorm",
+				"de" : "Donnersturm",
+				"fr" : "Orage",
+				"jp" : "サンダーストーム"
+			}
+		}
+	},
+	"49084" : {
+		"recast" : 90.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Megaflare",
+				"de" : "Megaflare",
+				"fr" : "Méga Atomnium",
+				"jp" : "メガフレア"
+			}
+		}
+	},
+	"49085" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Aero",
+				"de" : "Kreszenter Wind",
+				"fr" : "Magi Vent",
+				"jp" : "マギ・エアロ"
+			}
+		}
+	},
+	"49086" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Missile",
+				"de" : "Kreszente Rakete",
+				"fr" : "Magi Missile",
+				"jp" : "マギ・ミサイル"
+			}
+		}
+	},
+	"49087" : {
+		"recast" : 60.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Aqua Breath",
+				"de" : "Kreszenter Aqua-Atem",
+				"fr" : "Magi Aquasouffle",
+				"jp" : "マギ・アクアブレス"
+			}
+		}
+	},
+	"49088" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Mighty Guard",
+				"de" : "Kreszente Totalabwehr",
+				"fr" : "Magi Garde puissante",
+				"jp" : "マギ・マイティガード"
+			}
+		}
+	},
+	"49089" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Aero II",
+				"de" : "Kreszentes Windra",
+				"fr" : "Magi Extra Vent",
+				"jp" : "マギ・エアロラ"
+			}
+		}
+	},
+	"49090" : {
+		"recast" : 150.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult White Wind",
+				"de" : "Kreszenter Weißer Wind",
+				"fr" : "Magi Vent blanc",
+				"jp" : "マギ・ホワイトウィンド"
+			}
+		}
+	},
+	"49091" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Aero III",
+				"de" : "Kreszentes Windga",
+				"fr" : "Magi Méga Vent",
+				"jp" : "マギ・エアロガ"
+			}
+		}
+	},
+	"49092" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Fire II",
+				"de" : "Kreszentes Feura",
+				"fr" : "Magi Extra Feu",
+				"jp" : "マギ・ファイラ"
+			}
+		}
+	},
+	"49095" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Blizzard II",
+				"de" : "Kreszentes Eisra",
+				"fr" : "Magi Extra Glace",
+				"jp" : "マギ・ブリザラ"
+			}
+		}
+	},
+	"49096" : {
+		"recast" : 30.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Occult Thunder II",
+				"de" : "Kreszentes Blitzra",
+				"fr" : "Magi Extra Foudre",
+				"jp" : "マギ・サンダラ"
+			}
+		}
+	},
+	"49097" : {
+		"recast" : 40.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Drain Touch",
+				"de" : "Saugtatscher",
+				"fr" : "Sangsue",
+				"jp" : "ドレインタッチ"
+			}
+		}
+	},
+	"49098" : {
+		"recast" : 40.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Deep Freeze",
+				"de" : "Schockfrost",
+				"fr" : "Congélation",
+				"jp" : "ディープフリーズ"
+			}
+		}
+	},
+	"49099" : {
+		"recast" : 40.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Hell Wind",
+				"de" : "Höllenwind",
+				"fr" : "Vent infernal",
+				"jp" : "ヘルウィンド"
+			}
+		}
+	},
+	"49100" : {
+		"recast" : 40.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Chaos Drive",
+				"de" : "Chaostrieb",
+				"fr" : "Onde chaotique",
+				"jp" : "カオスドライブ"
+			}
+		}
+	},
+	"49101" : {
+		"recast" : 120.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Doomsday",
+				"de" : "Panikstrahl",
+				"fr" : "Apocalypse",
+				"jp" : "パニッシュレイ"
+			}
+		}
+	},
+	"49102" : {
+		"recast" : 360.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Wisdom on the Winds",
+				"de" : "Reflexion des Windes",
+				"fr" : "Sagesse du vent",
+				"jp" : "風の叡智"
+			}
+		}
+	},
+	"50473" : {
+		"recast" : 10.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Step Forth",
+				"de" : "Ausfallschritt",
+				"fr" : "Avancée",
+				"jp" : "ふみこみ"
+			}
+		}
+	},
+	"50474" : {
+		"recast" : 10.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Step Forth",
+				"de" : "Ausfallschritt",
+				"fr" : "Avancée",
+				"jp" : "ふみこみ"
+			}
+		}
+	},
+	"50475" : {
+		"recast" : 10.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Step Forth",
+				"de" : "Ausfallschritt",
+				"fr" : "Avancée",
+				"jp" : "ふみこみ"
+			}
+		}
+	},
+	"50476" : {
+		"recast" : 10.0,
+		"charges" : 0,
+		"level_recasts" : null,
+		"level_charges" : null,
+		"jobs" : [
+			"Any",
+			"Disciple",
+			"of",
+			"War",
+			"or",
+			"Magic",
+			"(excluding",
+			"limited",
+			"jobs)"
+		],
+		"pvp" : false,
+		"locales" : {
+			"name" : {
+				"en" : "Step Forth",
+				"de" : "Ausfallschritt",
+				"fr" : "Avancée",
+				"jp" : "ふみこみ"
 			}
 		}
 	}
