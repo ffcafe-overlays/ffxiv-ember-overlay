@@ -324,8 +324,8 @@ class GameDataProcessor {
 	}
 
 	processSpellInput(input, state, processed_state) {
-		const { type, id, char_id, char_name, name, date, duration = 0, stacks, removed, status_key } = input;
-		const effect                                                                                  = SkillData.Effects[id];
+		const { type, id, char_id, char_name, name, date, duration = 0, ends_at, stacks, removed, status_key } = input;
+		const effect                                                                                           = SkillData.Effects[id];
 
 		if (type === "effect" ? !effect : !SpellService.skillExists(id)) {
 			return false;
@@ -456,10 +456,9 @@ class GameDataProcessor {
 				}
 			} else {
 				if (status_key && previous?.status_key) {
-					const deadline = date.getTime() + (duration * 1000);
-					const change   = deadline - (previous.time.getTime() + (previous.duration * 1000));
-
-					if (previous.status_key === status_key ? Math.abs(change) < 300 && previous.stacks === stacks : change <= 0) {
+					if (previous.status_key === status_key
+						? ends_at === previous.ends_at && previous.stacks === stacks
+						: ends_at <= previous.ends_at) {
 						continue;
 					}
 				} else if (previous && Number(previous.stacks) > stacks) {
@@ -478,7 +477,7 @@ class GameDataProcessor {
 					party         : log_data.party,
 					defaulted     : log_data.defaulted,
 					type_position : log_data.type_position,
-					...(status_key ? { status_key } : {}),
+					...(status_key ? { status_key, ends_at } : {}),
 				};
 			}
 		}

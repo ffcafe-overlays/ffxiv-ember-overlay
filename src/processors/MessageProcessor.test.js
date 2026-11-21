@@ -2,60 +2,92 @@
 import store from "../redux/store";
 import MessageProcessor from "./MessageProcessor";
 
-jest.mock("../redux/store", () => ({ dispatch : jest.fn(), getState : jest.fn() }));
+jest.mock("../redux/store", () => ({ dispatch : jest.fn(), getState : jest.fn(), subscribe : jest.fn() }));
 jest.mock("../services/SpellService", () => ({ getSkillRecast : id => id === "3" ? 60 : 0 }));
 jest.mock("../services/TTSService", () => ({ resetActivityResources : jest.fn() }));
 
-test("the first activity frame applies valid actions once and starts them at their reported age", () => {
-	jest.spyOn(Date, "now").mockReturnValue(10000);
-	store.getState.mockReturnValue({
-		settings : { spells_mode : {} },
-		internal : { character_id : 16, character_job : "WAR", character_level : 100, mode : "spells" },
-	});
-	const detail = {
-		epoch   : 1,
-		actors  : [{ id : 16, classJob : 21, level : 100 }],
-		actions : [
-			{ key : "16:0", actorId : 16, actionId : 3, ageMs : 1500 },
-			{ key : "16:1", actorId : 16, actionId : 3, ageMs : 10000 },
-		],
-		statuses : [],
-	};
-
-	MessageProcessor.processActivity({ detail });
-	MessageProcessor.processActivity({ detail });
-	expect(store.dispatch.mock.calls.map(([action]) => action.type)).toEqual(["resetActivity", "applyActivitySpell"]);
-	expect(store.dispatch.mock.calls.at(-1)[0].payload.date.getTime()).toBe(8500);
-
-	MessageProcessor.processActivity({ detail : { ...detail, epoch : 2 } });
-	expect(store.dispatch.mock.calls.map(([action]) => action.type)).toEqual([
-		"resetActivity", "applyActivitySpell", "resetActivity", "applyActivitySpell",
-	]);
-	jest.restoreAllMocks();
+const ready        = {
+	settings : { spells_mode : {} },
+	internal : { character_id : 16, character_job : "WAR", character_level : 100, mode : "spells" },
+};
+const timed_status = { slot : 3, statusId : 1177, sourceActorId : 16, param : 3 };
+const makeFrame    = (epoch, items) => ({
+	epoch,
+	publishedAt : 20000,
+	actors      : [{ id : 16, classJob : 21, level : 100 }],
+	actions     : [],
+	statuses    : [{ actorId : 16, items }],
 });
 
-test("a status with an unknown duration keeps its current countdown until removal", () => {
-	jest.clearAllMocks();
-	store.getState.mockReturnValue({
-		settings : { spells_mode : {} },
-		internal : { character_id : 16, character_job : "WAR", character_level : 100, mode : "spells" },
-	});
-	const status  = { slot : 3, statusId : 1177, sourceActorId : 16, param : 3 };
-	const detail  = {
-		epoch   : 3,
-		actors  : [{ id : 16, classJob : 21, level : 100 }],
-		actions : [],
-	};
-	const publish = items => MessageProcessor.processActivity({
-		detail : { ...detail, statuses : [{ actorId : 16, items }] },
-	});
+beforeEach(() => {
+	store.dispatch.mockClear();
+	store.getState.mockReturnValue(ready);
+});
+
+afterEach(() => jest.restoreAllMocks());
+
+test("a new document applies an older retained frame once its settings and character are ready", () => {
+	const clock = jest.spyOn(Date, "now").mockReturnValue(24300);
+	store.getState.mockReturnValue({ ...ready, settings : {}, internal : { ...ready.internal, character_id : null } });
+	const detail   = makeFrame(1, [{ ...timed_status, remainingMs : 12000 }]);
+	detail.actions = [
+		{ key : "16:0", actorId : 16, actionId : 3, ageMs : 1500 },
+		{ key : "16:1", actorId : 16, actionId : 3, ageMs : 6000 },
+	];
+
+	MessageProcessor.processActivity({ detail });
+	expect(store.dispatch).not.toHaveBeenCalled();
+
+	const update = store.subscribe.mock.calls[0][0];
+	store.getState.mockReturnValue({ ...ready, internal : { ...ready.internal, character_id : null } });
+	update();
+	expect(store.dispatch).not.toHaveBeenCalled();
+	store.getState.mockReturnValue(ready);
+	update();
+
+	const spells = store.dispatch.mock.calls.map(([action]) => action.payload).filter(Boolean);
+	expect(spells).toHaveLength(2);
+	expect(spells[0].date.getTime()).toBe(18500);
+	expect(spells[1]).toMatchObject({ id : "1177", ends_at : 32000 });
+
+	clock.mockReturnValue(28000);
+	MessageProcessor.processActivity({ detail });
+	expect(store.dispatch).toHaveBeenCalledTimes(3);
+});
+
+test("equivalent status deadlines leave the timer alone and a small refresh is applied", () => {
+	jest.spyOn(Date, "now").mockReturnValue(23000);
+	const detail = makeFrame(2, [{ ...timed_status, remainingMs : 15000 }]);
+
+	MessageProcessor.processActivity({ detail });
+	expect(store.dispatch).toHaveBeenCalledTimes(2);
+
+	const later = { ...detail, publishedAt : 22500 };
+	MessageProcessor.processActivity({ detail : { ...later, statuses : [{ actorId : 16, items   : [
+		{ ...timed_status, remainingMs : 12500 },
+	] }] } });
+	expect(store.dispatch).toHaveBeenCalledTimes(2);
+
+	MessageProcessor.processActivity({ detail : { ...later, statuses : [{ actorId : 16, items   : [
+		{ ...timed_status, remainingMs : 12600 },
+	] }] } });
+	expect(store.dispatch).toHaveBeenCalledTimes(3);
+	expect(store.dispatch.mock.calls.at(-1)[0].payload.ends_at).toBe(35100);
+});
+
+test("an unknown duration keeps the current countdown until removal and an expired status cannot restart it", () => {
+	const clock   = jest.spyOn(Date, "now").mockReturnValue(23000);
+	const publish = items => MessageProcessor.processActivity({ detail : makeFrame(3, items) });
 	const last    = () => store.dispatch.mock.calls.at(-1)[0].payload;
 
-	publish([{ ...status, remainingMs : 12500 }]);
+	publish([{ ...timed_status, remainingMs : 12500 }]);
 	const timed = last();
-	expect(timed).toMatchObject({ id : "1177", duration : 12.5, stacks : 3 });
-	publish([{ ...status, remainingMs : null }]);
+	expect(timed).toMatchObject({ id : "1177", duration : 12.5, stacks : 3, ends_at : 32500 });
+	publish([{ ...timed_status, remainingMs : null }]);
 	expect(last()).toBe(timed);
+	clock.mockReturnValue(32500);
 	publish([]);
 	expect(last()).toMatchObject({ id : "1177", removed : true });
+	publish([{ ...timed_status, remainingMs : 12500 }]);
+	expect(store.dispatch).toHaveBeenCalledTimes(3);
 });

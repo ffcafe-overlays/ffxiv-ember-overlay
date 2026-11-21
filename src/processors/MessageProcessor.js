@@ -9,15 +9,36 @@ class MessageProcessor {
 	activity_epoch = null;
 	activity_actions = new Set();
 	activity_statuses = new Map();
+	activity_snapshot = null;
+	activity_context = null;
 
 	processActivity = ({ detail }) => {
-		if (!detail || !Number.isSafeInteger(detail.epoch) || !Array.isArray(detail.actors) ||
+		if (!detail || !Number.isSafeInteger(detail.epoch) || !Number.isFinite(detail.publishedAt) || !Array.isArray(detail.actors) ||
 			!Array.isArray(detail.actions) || !Array.isArray(detail.statuses)) {
 			return;
 		}
 
-		const state = store.getState();
-		if (!state.settings.spells_mode) {
+		if (!this.activity_snapshot) {
+			store.subscribe(() => {
+				const state = store.getState();
+				if (this.activityContext(state) !== this.activity_context) {
+					this.applyActivity(state);
+				}
+			});
+		}
+
+		this.activity_snapshot = detail;
+		this.applyActivity(store.getState());
+	};
+
+	activityContext({ settings, internal }) {
+		return `${Boolean(settings.spells_mode)}:${internal.character_id}:${internal.mode}`;
+	}
+
+	applyActivity(state) {
+		const detail          = this.activity_snapshot;
+		this.activity_context = this.activityContext(state);
+		if (!state.settings.spells_mode || (state.internal.character_id === null && detail.actors.length)) {
 			return;
 		}
 
@@ -76,14 +97,15 @@ class MessageProcessor {
 		if (state.internal.mode === "spells" && self_id !== null) {
 			this.processActivitySpells(detail, actors, self_id, self?.level);
 		}
-	};
+	}
 
 	processActivitySpells(detail, actors, self_id, self_level) {
 		const now  = Date.now();
 		const seen = new Set();
 
 		for (const { key, actorId, actionId, ageMs } of detail.actions) {
-			if (!actors.has(actorId) || !Number.isFinite(ageMs) || ageMs < 0 || ageMs >= 10000) {
+			const age = now - detail.publishedAt + ageMs;
+			if (!actors.has(actorId) || !Number.isFinite(age) || ageMs < 0 || age < 0 || age >= 10000) {
 				continue;
 			}
 
@@ -92,7 +114,7 @@ class MessageProcessor {
 			const recast = Math.max(SpellService.getSkillRecast(id, level) || 0,
 				SpellService.getSkillRecast(SkillData.SkillIndirections[id], level) || 0);
 
-			if (!recast || ageMs >= recast * 1000) {
+			if (!recast || age >= recast * 1000) {
 				continue;
 			}
 
@@ -102,7 +124,7 @@ class MessageProcessor {
 					type    : "applyActivitySpell",
 					payload : {
 						id, type       : "skill", char_id    : actorId, class_job  : actors.get(actorId).classJob,
-						date       : new Date(now - ageMs), structured : true,
+						date       : new Date(now - age), structured : true,
 					},
 				});
 			}
@@ -114,7 +136,7 @@ class MessageProcessor {
 		for (const { actorId, items } of detail.statuses) {
 			if (items === null) {
 				for (const [key, status] of this.activity_statuses) {
-					if (status.actor_id === actorId) {
+					if (status.actor_id === actorId && status.ends_at > now) {
 						current.set(key, status);
 					}
 				}
@@ -134,14 +156,15 @@ class MessageProcessor {
 				const key = `${actorId}:${slot ?? "-"}:${id}:${sourceActorId}`;
 				if (remainingMs === null) {
 					const previous = this.activity_statuses.get(key);
-					if (previous) {
+					if (previous?.ends_at > now) {
 						current.set(key, previous);
 					}
 
 					continue;
 				}
 
-				if (!Number.isFinite(remainingMs) || remainingMs <= 0) {
+				const ends_at = detail.publishedAt + remainingMs;
+				if (!Number.isFinite(ends_at) || ends_at <= now) {
 					continue;
 				}
 
@@ -151,8 +174,9 @@ class MessageProcessor {
 					char_id,
 					actor_id   : actorId,
 					class_job  : actors.get(char_id).classJob,
-					date       : new Date(now),
+					date       : new Date(detail.publishedAt),
 					duration   : remainingMs / 1000,
+					ends_at,
 					stacks     : param % 256,
 					structured : true,
 					status_key : key,
@@ -160,14 +184,20 @@ class MessageProcessor {
 			}
 		}
 
+		let removed = false;
 		for (const [key, status] of this.activity_statuses) {
 			if (!current.has(key)) {
+				removed = true;
 				store.dispatch({ type : "applyActivitySpell", payload : { ...status, removed : true } });
 			}
 		}
 
-		for (const status of current.values()) {
-			store.dispatch({ type : "applyActivitySpell", payload : status });
+		for (const [key, status] of current) {
+			const previous = this.activity_statuses.get(key);
+			if (removed || previous?.ends_at !== status.ends_at || previous.stacks !== status.stacks ||
+				previous.class_job !== status.class_job) {
+				store.dispatch({ type : "applyActivitySpell", payload : status });
+			}
 		}
 
 		this.activity_statuses = current;
