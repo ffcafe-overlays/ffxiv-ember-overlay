@@ -1,4 +1,12 @@
 {
+	"spell_timers_configure" : {
+		"en" : "You are not tracking any spells or effects. Please add some at Settings > Spell Timers.",
+		"cn" : "尚未监控任何技能或效果，请在「设置 → 冷却监控」中添加。"
+	},
+	"spell_timers_disappear" : {
+		"en" : "This section will disappear when a tracked spell/effect is used.",
+		"cn" : "使用监控中的技能或效果后，本提示会自动隐藏。"
+	},
 	"collapse"            : {
 		"en" : "Collapse",
 		"pt" : "Diminuir",
