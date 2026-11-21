@@ -96,7 +96,7 @@ class SpellService {
 						break;
 				}
 
-				new_date.setSeconds(date.getSeconds() + recast);
+				new_date.setTime(used[i].ends_at ?? (date.getTime() + (recast * 1000)));
 			}
 
 			if (max_charges) {
@@ -107,7 +107,8 @@ class SpellService {
 				}
 			}
 
-			this.spells[i] = {
+			const remaining = used[i].ends_at === undefined ? recast : (new_date.getTime() - Date.now()) / 1000;
+			this.spells[i]  = {
 				type          : used[i].type,
 				subtype       : used[i].subtype,
 				log_type      : used[i].log_type,
@@ -118,8 +119,8 @@ class SpellService {
 				charges       : (defaulted) ? used[i].max_charges : max_charges - 1,
 				max_charges   : (defaulted) ? used[i].max_charges : max_charges,
 				recharging    : false,
-				remaining     : recast,
-				cooldown      : Math.max(0, recast),
+				remaining,
+				cooldown      : Math.max(0, remaining),
 				dot           : (used[i].subtype === "dot"),
 				debuff        : (used[i].subtype === "debuff"),
 				party         : used[i].party,

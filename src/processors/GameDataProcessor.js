@@ -283,95 +283,59 @@ class GameDataProcessor {
 		}
 	}
 
-	parseSpellLogLine(data, state, processed_state) {
-		data = data.line;
+	parseSpellLogLine({ line }, state) {
+		const code    = Number(line[0]);
+		const char_id = parseInt(line[2], 16);
+		const date    = new Date();
 
-		const date       = new Date();
-		const event_code = Number(data[0]);
-		const log_data   = {
-			suffix : "",
-		};
-
-		switch (event_code) {
+		switch (code) {
 			case 3:
-				log_data.char_id = parseInt(data[2], 16);
-
-				if (log_data.char_id !== state.internal.character_id) {
-					return false;
-				}
-
-				log_data.char_job   = Constants.GameJobsID[parseInt(data[4], 16)] || null;
-				log_data.char_level = parseInt(data[5], 16);
-
-				return log_data;
+				return char_id === state.internal.character_id && {
+					char_job   : Constants.GameJobsID[parseInt(line[4], 16)] || null,
+					char_level : parseInt(line[5], 16),
+				};
 
 			case 21:
 			case 22:
-				log_data.spell_index = 4;
-
-				const skill_id = String(parseInt(data[log_data.spell_index], 16));
-
-				if (!SpellService.skillExists(skill_id)) {
-					return false;
-				}
-
-				log_data.spell_id         = skill_id;
-				log_data.char_id_index    = 2;
-				log_data.spell_name_index = 5;
-				log_data.char_name_index  = log_data.char_id_index + 1;
-				log_data.type             = "skill";
-				log_data.subtype          = log_data.type;
-				log_data.lookup_key       = "spells";
-
-				break;
-
-			case 25:
-				log_data.char_id = parseInt(data[2], 16);
-
-				if (log_data.char_id !== state.internal.character_id) {
-					return false;
-				}
-
-				// Return "death";
-				return false;
+				return this.processSpellInput({
+					type      : "skill", id        : String(parseInt(line[4], 16)), char_id,
+					char_name : line[3], name      : line[5], date,
+				}, state);
 
 			case 26:
-			case 30:
-				log_data.spell_index = 2;
+			case 30: {
+				const id          = String(parseInt(line[2], 16));
+				const effect      = SkillData.Effects[id];
+				const actor_index = effect?.dot || effect?.debuff ? 5 : 7;
 
-				const effect_id = String(parseInt(data[log_data.spell_index], 16));
-
-				if (!SpellService.effectExists(effect_id)) {
-					return false;
-				}
-
-				log_data.spell_id = effect_id;
-				log_data.type     = "effect";
-				log_data.dot      = SkillData.Effects[effect_id].dot;
-				log_data.debuff   = SkillData.Effects[effect_id].debuff;
-				log_data.subtype  = (log_data.dot)
-					? "dot"
-					: ((log_data.debuff)
-						? "debuff"
-						: log_data.type);
-
-				log_data.lookup_key       = log_data.subtype + "s";
-				log_data.char_id_index    = (log_data.dot || log_data.debuff) ? 5 : 7;
-				log_data.char_name_index  = log_data.char_id_index + 1;
-				log_data.spell_name_index = 3;
-				log_data.duration_index   = 4;
-				log_data.stacks           = Number(data[9]);
-
-				break;
+				return this.processSpellInput({
+					type      : "effect", id, char_id   : parseInt(line[actor_index], 16),
+					char_name : line[actor_index + 1], name      : line[3], date,
+					duration  : Number(line[4]), stacks    : Number(line[9]), removed   : code === 30,
+				}, state);
+			}
 
 			case 33:
-				return (data[3] === "40000005") ? "wipe" : false;
+				return line[3] === "40000005" ? "wipe" : false;
 
 			default:
 				return false;
 		}
+	}
 
-		log_data.char_id   = parseInt(data[log_data.char_id_index], 16);
+	processSpellInput(input, state, processed_state) {
+		const { type, id, char_id, char_name, name, date, duration = 0, ends_at, stacks, removed, status_key } = input;
+		const effect                                                                                           = SkillData.Effects[id];
+
+		if (type === "effect" ? !effect : !SpellService.skillExists(id)) {
+			return false;
+		}
+
+		const subtype      = effect && type === "effect" ? (effect.dot ? "dot" : effect.debuff ? "debuff" : "effect") : "skill";
+		const log_data     = {
+			type, subtype, char_id, stacks, spell_id   : id,
+			lookup_key : subtype === "skill" ? "spells" : subtype + "s",
+		};
 		log_data.char_type = (state.internal.character_id === log_data.char_id) ? "you" : false;
 		log_data.party     = (log_data.char_type !== "you");
 
@@ -384,13 +348,11 @@ class GameDataProcessor {
 		}
 
 		if (!log_data.char_type) {
-			log_data.char_name = data[log_data.char_name_index];
+			const job = input.structured
+				? Constants.GameJobsID[input.class_job]?.abbreviation
+				: state.internal.game.Combatant?.[char_name]?.Job;
 
-			if (!state.internal.game.Combatant || !state.internal.game.Combatant[log_data.char_name]) {
-				return false;
-			}
-
-			log_data.job = (state.internal.game.Combatant[log_data.char_name].Job || "").toUpperCase();
+			log_data.job = (job || "").toUpperCase();
 
 			if (!Constants.GameJobs[log_data.job]) {
 				return false;
@@ -417,7 +379,7 @@ class GameDataProcessor {
 		} else {
 			if (state.settings.spells_mode[log_data.lookup_key].indexOf(log_data.spell_id) === -1) {
 				if (this.isValidIndirection(log_data)) {
-					return this.processIndirection(log_data, data, state);
+					return this.processIndirection(input, state);
 				}
 
 				return false;
@@ -449,11 +411,15 @@ class GameDataProcessor {
 		if (!log_data.party && state_data.defaulted[defaulted_key]) {
 			const defaulted = state_data.defaulted[defaulted_key];
 
+			if (removed && status_key && state_data.in_use[defaulted.key]?.status_key !== status_key) {
+				return false;
+			}
+
 			log_data.defaulted     = true;
 			log_data.type_position = defaulted.position;
 
 			if (defaulted.id !== log_data.spell_id) {
-				if (event_code === 30) {
+				if (removed) {
 					state_data.in_use[log_data.in_use_key] = clone(state_data.in_use[defaulted.key]);
 
 					state_data.in_use[log_data.in_use_key].spell_id = log_data.spell_id;
@@ -465,7 +431,7 @@ class GameDataProcessor {
 				state_data.defaulted[defaulted_key].id  = log_data.spell_id;
 				state_data.defaulted[defaulted_key].key = log_data.in_use_key;
 
-				if (event_code === 30) {
+				if (removed) {
 					return state_data;
 				}
 			}
@@ -482,10 +448,20 @@ class GameDataProcessor {
 				}
 			}
 
-			if (event_code === 30) {
-				delete state_data.in_use[log_data.current_in_use_key];
+			const previous = state_data.in_use[log_data.current_in_use_key];
+
+			if (removed) {
+				if (!status_key || previous?.status_key === status_key) {
+					delete state_data.in_use[log_data.current_in_use_key];
+				}
 			} else {
-				if (state_data.in_use[log_data.current_in_use_key] && Number(state_data.in_use[log_data.current_in_use_key].stacks) > log_data.stacks) {
+				if (status_key && previous?.status_key) {
+					if (previous.status_key === status_key
+						? ends_at === previous.ends_at && previous.stacks === stacks
+						: ends_at <= previous.ends_at) {
+						continue;
+					}
+				} else if (previous && Number(previous.stacks) > stacks) {
 					return false;
 				}
 
@@ -494,19 +470,21 @@ class GameDataProcessor {
 					subtype       : log_data.subtype,
 					id            : log_data.spell_id,
 					time          : date,
-					name          : data[log_data.spell_name_index],
-					duration      : (log_data.duration_index) ? Number(data[log_data.duration_index]) : 0,
+					name,
+					duration,
 					stacks        : log_data.stacks,
 					log_type      : log_data.char_type + "-" + log_data.subtype,
 					party         : log_data.party,
 					defaulted     : log_data.defaulted,
 					type_position : log_data.type_position,
+					...(status_key ? { status_key, ends_at } : {}),
 				};
 			}
 		}
 
 		if (this.isValidIndirection(log_data)) {
-			return this.processIndirection(log_data, data, state, state_data);
+			const result = this.processIndirection(input, state, state_data);
+			return result || (input.structured ? state_data : false);
 		}
 
 		return state_data;
@@ -516,13 +494,10 @@ class GameDataProcessor {
 		return (log_data.type === "skill" && SkillData.SkillIndirections[log_data.spell_id]);
 	}
 
-	processIndirection(log_data, data, state, processed_state) {
-		const indirect_id = SkillData.SkillIndirections[log_data.spell_id];
+	processIndirection(input, state, processed_state) {
+		const id = String(SkillData.SkillIndirections[input.id]);
 
-		data[log_data.spell_index]      = indirect_id.toString(16);
-		data[log_data.spell_name_index] = null;
-
-		return this.parseSpellLogLine({ line : data }, state, processed_state);
+		return this.processSpellInput({ ...input, id, name : null }, state, processed_state);
 	}
 
 	getAllowedSpellTypes(state) {
