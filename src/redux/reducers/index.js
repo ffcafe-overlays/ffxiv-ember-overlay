@@ -54,7 +54,7 @@ const initial_state = {
 		overlayplugin        : overlayplugin_service.isOverlayPlugin(),
 		overlayplugin_author : overlayplugin_service.getAuthor(),
 		new_version          : false,
-		mode                 : params.get('mode') || localStorage.getItem(`${uuid}-mode`) || "stats",
+		mode                 : params.get("mode") || localStorage.getItem(`${uuid}-mode`) || "stats",
 		ui_builder           : false,
 		toggles              : {
 			top_left     : false,
@@ -268,6 +268,22 @@ function rootReducer(state, action) {
 
 			localStorage.setItem(`${uuid}-mode`, new_state.internal.mode);
 			break;
+
+		case "resetActivity":
+			new_state                = clone(state);
+			new_state.internal.party = [];
+			updateSpells(new_state, true);
+			break;
+
+		case "applyActivitySpell": {
+			const spells = GameDataProcessor.processSpellInput(action.payload, state);
+
+			if (spells && !isEqual(state.internal.spells, spells)) {
+				new_state = { ...state, internal : { ...state.internal, spells } };
+			}
+
+			break;
+		}
 
 		case "parseLogLine":
 			switch (state.internal.mode) {

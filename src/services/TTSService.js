@@ -92,6 +92,41 @@ class TTSService {
 
 		player_data.job_type = (job_data) ? job_data.role : false;
 
+		this.processResourceThresholds(player_data);
+	}
+
+	processActivityResources(actor, is_self, current_state) {
+		if (!UsageService.usingLogTTS(current_state.settings_data)) {
+			return;
+		}
+
+		const { name, classJob, hpCur, hpMax, mpCur, mpMax } = actor;
+		const player_name                                    = is_self ? "YOU" : name;
+		const job                                            = Constants.GameJobsID[classJob]?.abbreviation;
+
+		if (player_name) {
+			this.processResourceThresholds({
+				name       : player_name,
+				job_type   : Constants.GameJobs[job]?.role,
+				hp_percent : hpMax > 0 ? hpCur / hpMax * 100 : NaN,
+				mp_percent : mpMax > 0 ? mpCur / mpMax * 100 : NaN,
+			});
+		}
+	}
+
+	resetActivityResources(active_names = []) {
+		for (const name of ["critical_hp", "critical_mp"]) {
+			this.state[name] = this.state[name].filter(player => active_names.includes(player));
+
+			for (const player of Object.keys(this.queue[name])) {
+				if (!active_names.includes(player)) {
+					delete this.queue[name][player];
+				}
+			}
+		}
+	}
+
+	processResourceThresholds(player_data) {
 		if (!player_data.job_type) {
 			return;
 		}

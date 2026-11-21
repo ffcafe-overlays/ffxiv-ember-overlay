@@ -22,6 +22,11 @@ class PluginService extends PluginServiceAbstract {
 
 		Object.assign(this, settings);
 
+		this.structured_activity = Boolean(window.__mojitoOverlayTransport);
+		if (this.structured_activity) {
+			document.addEventListener("mojitoOverlayCustomData", MessageProcessor.processActivity);
+		}
+
 		this.events         = [];
 		this.plugin_service = (this.is_websocket && !this.is_overlayplugin)
 			? socket_service
@@ -99,14 +104,16 @@ class PluginService extends PluginServiceAbstract {
 
 		if (mode === "stats") {
 			events.push("EnmityAggroList");
-			events.push("PartyChanged");
+			if (!this.structured_activity) {
+				events.push("PartyChanged");
+			}
 		}
 
 		if (data.enmity) {
 			events.push("EnmityTargetData");
 		}
 
-		if (data.log) {
+		if (data.log && !this.structured_activity) {
 			events.push("LogLine");
 		}
 

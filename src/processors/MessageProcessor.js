@@ -1,8 +1,158 @@
 import store from "../redux/store/index";
 import { parseGameData, parseEnmity, parseAggroList, parseParty, parseLogLine, updateState } from "../redux/actions/index";
 import Constants from "../constants";
+import SkillData from "../constants/SkillData";
+import SpellService from "../services/SpellService";
+import TTSService from "../services/TTSService";
 
 class MessageProcessor {
+	activity_epoch = null;
+	activity_actions = new Set();
+	activity_statuses = new Map();
+
+	processActivity = ({ detail }) => {
+		if (!detail || !Number.isSafeInteger(detail.epoch) || !Array.isArray(detail.actors) ||
+			!Array.isArray(detail.actions) || !Array.isArray(detail.statuses)) {
+			return;
+		}
+
+		const state = store.getState();
+		if (!state.settings.spells_mode) {
+			return;
+		}
+
+		const self_id = state.internal.character_id;
+		const actors  = new Map(detail.actors.map(actor => [actor.id, actor]));
+		const self    = actors.get(self_id);
+
+		if (this.activity_epoch !== detail.epoch) {
+			this.activity_epoch = detail.epoch;
+			this.activity_actions.clear();
+			this.activity_statuses.clear();
+			TTSService.resetActivityResources();
+			store.dispatch({ type : "resetActivity" });
+		}
+
+		if (self) {
+			const job = Constants.GameJobsID[self.classJob]?.abbreviation;
+			if (job && job !== state.internal.character_job) {
+				store.dispatch(updateState({ key : "internal.character_job", value : job }));
+			}
+
+			if (Number.isInteger(self.level) && self.level !== state.internal.character_level) {
+				store.dispatch(updateState({ key : "internal.character_level", value : self.level }));
+			}
+		}
+
+		if (detail.party && Array.isArray(detail.party.members)) {
+			const party = detail.party.members.filter(member => member.ownParty);
+			const names = detail.party.isInParty ? party.map(member => member.name) : [];
+
+			if (names.length !== state.internal.party.length || names.some((name, index) => name !== state.internal.party[index])) {
+				store.dispatch(updateState({ key : "internal.party", value : names }));
+			}
+
+			const counts = new Map();
+			for (const name of names) {
+				counts.set(name, (counts.get(name) || 0) + 1);
+			}
+
+			TTSService.resetActivityResources(["YOU", ...names.filter(name => counts.get(name) === 1)]);
+
+			if (state.internal.mode === "stats") {
+				for (const { id } of party) {
+					const actor = actors.get(id);
+					if (id !== self_id && actor && counts.get(actor.name) === 1) {
+						TTSService.processActivityResources(actor, false, state);
+					}
+				}
+			}
+		}
+
+		if (state.internal.mode === "stats" && self) {
+			TTSService.processActivityResources(self, true, state);
+		}
+
+		if (state.internal.mode === "spells" && self_id !== null) {
+			this.processActivitySpells(detail, actors, self_id, self?.level);
+		}
+	};
+
+	processActivitySpells(detail, actors, self_id, self_level) {
+		const now  = Date.now();
+		const seen = new Set();
+
+		for (const { key, actorId, actionId, ageMs } of detail.actions) {
+			if (!actors.has(actorId) || !Number.isFinite(ageMs) || ageMs < 0 || ageMs >= 10000) {
+				continue;
+			}
+
+			const id     = String(actionId);
+			const level  = actorId === self_id ? self_level : 0;
+			const recast = Math.max(SpellService.getSkillRecast(id, level) || 0,
+				SpellService.getSkillRecast(SkillData.SkillIndirections[id], level) || 0);
+
+			if (!recast || ageMs >= recast * 1000) {
+				continue;
+			}
+
+			seen.add(key);
+			if (!this.activity_actions.has(key)) {
+				store.dispatch({
+					type    : "applyActivitySpell",
+					payload : {
+						id, type       : "skill", char_id    : actorId, class_job  : actors.get(actorId).classJob,
+						date       : new Date(now - ageMs), structured : true,
+					},
+				});
+			}
+		}
+
+		this.activity_actions = seen;
+		const current         = new Map();
+
+		for (const { actorId, items } of detail.statuses) {
+			if (items === null) {
+				for (const [key, status] of this.activity_statuses) {
+					if (status.actor_id === actorId) {
+						current.set(key, status);
+					}
+				}
+
+				continue;
+			}
+
+			for (const { slot, statusId, sourceActorId, param, remainingMs } of items) {
+				const id      = String(statusId);
+				const effect  = SkillData.Effects[id];
+				const char_id = effect?.dot || effect?.debuff ? sourceActorId : actorId;
+
+				if (!effect || typeof remainingMs !== "number" || remainingMs <= 0 || !actors.has(char_id)) {
+					continue;
+				}
+
+				const key = `${actorId}:${slot ?? "-"}:${id}:${sourceActorId}`;
+				current.set(key, {
+					type       : "effect", id, char_id, actor_id   : actorId, class_job  : actors.get(char_id).classJob,
+					date       : new Date(now), duration   : remainingMs / 1000, stacks     : param % 256,
+					structured : true, status_key : key,
+				});
+			}
+		}
+
+		for (const [key, status] of this.activity_statuses) {
+			if (!current.has(key)) {
+				store.dispatch({ type : "applyActivitySpell", payload : { ...status, removed : true } });
+			}
+		}
+
+		for (const status of current.values()) {
+			store.dispatch({ type : "applyActivitySpell", payload : status });
+		}
+
+		this.activity_statuses = current;
+	}
+
 	processMessage(e) {
 		let data = e;
 		let type = false;

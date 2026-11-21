@@ -96,7 +96,7 @@ class SpellService {
 						break;
 				}
 
-				new_date.setSeconds(date.getSeconds() + recast);
+				new_date.setTime(date.getTime() + (recast * 1000));
 			}
 
 			if (max_charges) {
