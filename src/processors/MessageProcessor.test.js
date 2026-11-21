@@ -33,3 +33,29 @@ test("the first activity frame applies valid actions once and starts them at the
 	]);
 	jest.restoreAllMocks();
 });
+
+test("a status with an unknown duration keeps its current countdown until removal", () => {
+	jest.clearAllMocks();
+	store.getState.mockReturnValue({
+		settings : { spells_mode : {} },
+		internal : { character_id : 16, character_job : "WAR", character_level : 100, mode : "spells" },
+	});
+	const status  = { slot : 3, statusId : 1177, sourceActorId : 16, param : 3 };
+	const detail  = {
+		epoch   : 3,
+		actors  : [{ id : 16, classJob : 21, level : 100 }],
+		actions : [],
+	};
+	const publish = items => MessageProcessor.processActivity({
+		detail : { ...detail, statuses : [{ actorId : 16, items }] },
+	});
+	const last    = () => store.dispatch.mock.calls.at(-1)[0].payload;
+
+	publish([{ ...status, remainingMs : 12500 }]);
+	const timed = last();
+	expect(timed).toMatchObject({ id : "1177", duration : 12.5, stacks : 3 });
+	publish([{ ...status, remainingMs : null }]);
+	expect(last()).toBe(timed);
+	publish([]);
+	expect(last()).toMatchObject({ id : "1177", removed : true });
+});

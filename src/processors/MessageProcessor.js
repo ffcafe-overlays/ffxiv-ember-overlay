@@ -127,15 +127,35 @@ class MessageProcessor {
 				const effect  = SkillData.Effects[id];
 				const char_id = effect?.dot || effect?.debuff ? sourceActorId : actorId;
 
-				if (!effect || typeof remainingMs !== "number" || remainingMs <= 0 || !actors.has(char_id)) {
+				if (!effect || !actors.has(char_id)) {
 					continue;
 				}
 
 				const key = `${actorId}:${slot ?? "-"}:${id}:${sourceActorId}`;
+				if (remainingMs === null) {
+					const previous = this.activity_statuses.get(key);
+					if (previous) {
+						current.set(key, previous);
+					}
+
+					continue;
+				}
+
+				if (!Number.isFinite(remainingMs) || remainingMs <= 0) {
+					continue;
+				}
+
 				current.set(key, {
-					type       : "effect", id, char_id, actor_id   : actorId, class_job  : actors.get(char_id).classJob,
-					date       : new Date(now), duration   : remainingMs / 1000, stacks     : param % 256,
-					structured : true, status_key : key,
+					type       : "effect",
+					id,
+					char_id,
+					actor_id   : actorId,
+					class_job  : actors.get(char_id).classJob,
+					date       : new Date(now),
+					duration   : remainingMs / 1000,
+					stacks     : param % 256,
+					structured : true,
+					status_key : key,
 				});
 			}
 		}
