@@ -201,6 +201,7 @@ To build this yourself, do the following:
     - Alternatively, you can [download the ZIP file](https://github.com/GoldenChrysus/ffxiv-ember-overlay/archive/bleeding-edge.zip) for the repository.
 2. Run `npm install` to install the Node packages.
 3. Make a file `.env-cmdrc` and provide environment variables as necessary, using `.env-cmdrc.sample` as a guide.
+    - `REACT_APP_REDIRECT_URL` is the HTTP origin used for insecure WebSocket connections outside OverlayPlugin, such as `http://overlays.ffcafe.cn`; `REACT_APP_HTTP_BASE` supplies the app path, such as `/ember`. An existing OverlayPlugin API takes precedence over socket URL parameters.
 4. To launch the server immediately:
     1. Run `npm start` to start the React app on your machine on port 3000.
     2. Navigate to your.server.host:3000 to view the app.
