@@ -93,7 +93,7 @@ test("an unknown duration keeps the current countdown until removal and an expir
 });
 
 test("dispatches independent nonempty enmity tables once and preserves the last visible rows on empty input", () => {
-	store.getState.mockReturnValue({ settings : {}, internal : { mode : "stats" }, settings_data : { getSetting : () => ["enmity_percent"] } });
+	store.getState.mockReturnValue({ settings : {}, internal : { mode : "stats", encounter_history : [{}] }, settings_data : { getSetting : () => ["enmity_percent"] } });
 	const frame  = { ...makeFrame(90, []), actors : [], statuses : [] };
 	const enmity = { Entries : [{ Name : "One", Enmity : 8000 }, { Name : "Two", Enmity : 160 }] };
 	const aggro  = { AggroList : [{ ID : 45, Name : "Enemy", Target : { ID : 16, isMe : false } }] };
@@ -105,4 +105,16 @@ test("dispatches independent nonempty enmity tables once and preserves the last 
 	MessageProcessor.processActivity({ ...frame, aggro : changed });
 	MessageProcessor.processActivity({ ...frame, aggro : changed });
 	expect(store.dispatch.mock.calls.map(([a]) => a.type)).toEqual(["parseEnmity", "parseAggroList", "parseAggroList"]);
+});
+
+test("retries retained enmity once the first combat report creates its encounter", () => {
+	MessageProcessor.activity_snapshot = null;
+	const state                        = { settings : {}, internal : { mode : "stats", encounter_history : [] }, settings_data : { getSetting : () => ["enmity_percent"] } };
+	store.getState.mockReturnValue(state);
+	const frame = { ...makeFrame(91, []), actors : [], statuses : [], enmity : { Entries : [{ Name : "One", Enmity : 250 }] } };
+	MessageProcessor.processActivity(frame);
+	expect(store.dispatch).not.toHaveBeenCalled();
+	state.internal.encounter_history.push({});
+	store.subscribe.mock.calls[0][0]();
+	expect(store.dispatch.mock.calls.map(([a]) => a.type)).toEqual(["parseEnmity"]);
 });
