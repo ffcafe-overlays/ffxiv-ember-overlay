@@ -2,7 +2,6 @@ import React from "react";
 import { Container } from "semantic-ui-react";
 
 import LocalizationService from "../../services/LocalizationService";
-import VersionService from "../../services/VersionService";
 
 import SocialLink from "./About/SocialLink";
 

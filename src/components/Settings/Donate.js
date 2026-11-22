@@ -2,7 +2,6 @@ import React from "react";
 import { Container } from "semantic-ui-react";
 import SocialLink from "./About/SocialLink";
 
-
 class Donate extends React.Component {
 	render() {
 		return (
