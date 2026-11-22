@@ -191,7 +191,7 @@ class TTSService {
 		const mobs = [];
 
 		for (const monster of data) {
-			if (monster.Target && monster.Target.isMe) {
+			if (monster.Name && monster.Target && monster.Target.isMe) {
 				mobs.push(monster.Name);
 			}
 		}
