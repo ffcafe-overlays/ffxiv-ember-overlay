@@ -91,3 +91,18 @@ test("an unknown duration keeps the current countdown until removal and an expir
 	publish([{ ...timed_status, remainingMs : 12500 }]);
 	expect(store.dispatch).toHaveBeenCalledTimes(3);
 });
+
+test("dispatches independent nonempty enmity tables once and preserves the last visible rows on empty input", () => {
+	store.getState.mockReturnValue({ settings : {}, internal : { mode : "stats" }, settings_data : { getSetting : () => ["enmity_percent"] } });
+	const frame  = { ...makeFrame(90, []), actors : [], statuses : [] };
+	const enmity = { Entries : [{ Name : "One", Enmity : 8000 }, { Name : "Two", Enmity : 160 }] };
+	const aggro  = { AggroList : [{ ID : 45, Name : "Enemy", Target : { ID : 16, isMe : false } }] };
+	MessageProcessor.processActivity({ ...frame, enmity, aggro });
+	MessageProcessor.processActivity({ ...frame, publishedAt : 20010, enmity, aggro });
+	MessageProcessor.processActivity({ ...frame, enmity : { Entries : [] }, aggro });
+	expect(store.dispatch.mock.calls.map(([a]) => a.type)).toEqual(["parseEnmity", "parseAggroList"]);
+	const changed = { AggroList : [{ ...aggro.AggroList[0], Target : { ID : 17, isMe : true } }] };
+	MessageProcessor.processActivity({ ...frame, aggro : changed });
+	MessageProcessor.processActivity({ ...frame, aggro : changed });
+	expect(store.dispatch.mock.calls.map(([a]) => a.type)).toEqual(["parseEnmity", "parseAggroList", "parseAggroList"]);
+});

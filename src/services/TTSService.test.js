@@ -31,3 +31,18 @@ test("structured warnings preserve first low, repeated low, unknown, and recover
 	expect(TTSService.state.critical_hp).toEqual([]);
 	expect(TTSService.queue.critical_mp).toEqual({});
 });
+
+test("queues a named enemy once when it switches from a party member to the local player", () => {
+	TTSService.state.aggro = [];
+	TTSService.queue.aggro = {};
+	const target           = isMe => [{ Name : "Synthetic enemy", Target : { ID : isMe ? 1 : 2, isMe } }];
+	TTSService.processAggro([{ Target : { ID : 1, isMe : true } }]);
+	expect(TTSService.queue.aggro).toEqual({});
+	TTSService.processAggro(target(false));
+	expect(TTSService.queue.aggro).toEqual({});
+	TTSService.processAggro(target(true));
+	expect(TTSService.queue.aggro).toEqual({ "Synthetic enemy" : true });
+	TTSService.queue.aggro = {};
+	TTSService.processAggro(target(true));
+	expect(TTSService.queue.aggro).toEqual({});
+});

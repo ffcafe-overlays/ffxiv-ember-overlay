@@ -4,6 +4,7 @@ import Constants from "../constants";
 import SkillData from "../constants/SkillData";
 import SpellService from "../services/SpellService";
 import TTSService from "../services/TTSService";
+import UsageService from "../services/UsageService";
 
 class MessageProcessor {
 	activity_epoch = null;
@@ -11,6 +12,7 @@ class MessageProcessor {
 	activity_statuses = new Map();
 	activity_snapshot = null;
 	activity_context = null;
+	activity_tables = {};
 
 	processActivity = detail => {
 		if (!detail || !Number.isSafeInteger(detail.epoch) || !Number.isFinite(detail.publishedAt) || !Array.isArray(detail.actors) ||
@@ -31,13 +33,16 @@ class MessageProcessor {
 		this.applyActivity(store.getState());
 	};
 
-	activityContext({ settings, internal }) {
-		return `${Boolean(settings.spells_mode)}:${internal.character_id}:${internal.mode}`;
+	activityContext({ settings, settings_data, internal }) {
+		return `${Boolean(settings.spells_mode)}:${internal.character_id}:${internal.mode}:${Boolean(settings_data && UsageService.usingEnmity(settings_data))}`;
 	}
 
 	applyActivity(state) {
 		const detail          = this.activity_snapshot;
 		this.activity_context = this.activityContext(state);
+		const enabled         = state.settings_data && UsageService.usingEnmity(state.settings_data);
+		this.applyTable("enmity", enabled && detail.enmity?.Entries?.length ? detail.enmity : null, parseEnmity);
+		this.applyTable("aggro", state.internal.mode === "stats" && detail.aggro?.AggroList?.length ? detail.aggro : null, parseAggroList);
 		if (!state.settings.spells_mode || (state.internal.character_id === null && detail.actors.length)) {
 			return;
 		}
@@ -96,6 +101,19 @@ class MessageProcessor {
 
 		if (state.internal.mode === "spells" && self_id !== null) {
 			this.processActivitySpells(detail, actors, self_id, self?.level);
+		}
+	}
+
+	applyTable(name, data, parse) {
+		const key = data ? JSON.stringify([this.activity_snapshot.epoch, data]) : null;
+		if (this.activity_tables[name] === key) {
+			return;
+		}
+
+		this.activity_tables[name] = key;
+		if (data) {
+			// The existing parsers normalize their input in place. Keep the activity snapshot intact.
+			store.dispatch(parse(JSON.parse(JSON.stringify(data))));
 		}
 	}
 
