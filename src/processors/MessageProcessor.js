@@ -34,15 +34,16 @@ class MessageProcessor {
 	};
 
 	activityContext({ settings, settings_data, internal }) {
-		return `${Boolean(settings.spells_mode)}:${internal.character_id}:${internal.mode}:${Boolean(settings_data && UsageService.usingEnmity(settings_data))}`;
+		return `${Boolean(settings.spells_mode)}:${internal.character_id}:${internal.mode}:${Boolean(internal.encounter_history?.length)}:${Boolean(settings_data && UsageService.usingEnmity(settings_data))}`;
 	}
 
 	applyActivity(state) {
 		const detail          = this.activity_snapshot;
 		this.activity_context = this.activityContext(state);
-		const enabled         = state.settings_data && UsageService.usingEnmity(state.settings_data);
+		const ready           = Boolean(state.internal.encounter_history?.length);
+		const enabled         = ready && state.settings_data && UsageService.usingEnmity(state.settings_data);
 		this.applyTable("enmity", enabled && detail.enmity?.Entries?.length ? detail.enmity : null, parseEnmity);
-		this.applyTable("aggro", state.internal.mode === "stats" && detail.aggro?.AggroList?.length ? detail.aggro : null, parseAggroList);
+		this.applyTable("aggro", ready && state.internal.mode === "stats" && detail.aggro?.AggroList?.length ? detail.aggro : null, parseAggroList);
 		if (!state.settings.spells_mode || (state.internal.character_id === null && detail.actors.length)) {
 			return;
 		}
